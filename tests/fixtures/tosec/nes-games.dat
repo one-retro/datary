@@ -1,0 +1,1615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE datafile PUBLIC "-//Logiqx//DTD ROM Management Datafile//EN" "http://www.logiqx.com/Dats/datafile.dtd">
+
+<datafile>
+	<header>
+		<name>Nintendo Famicom &amp; Entertainment System - Games - [NES]</name>
+		<description>Nintendo Famicom &amp; Entertainment System - Games - [NES] (TOSEC-v2023-06-14)</description>
+		<category>TOSEC</category>
+		<version>2023-06-14</version>
+		<author>etabeta - Cassiel - Newpain - mictlantecuhtle</author>
+		<email>contact@tosecdev.org</email>
+		<homepage>TOSEC</homepage>
+		<url>http://www.tosecdev.org/</url>
+	</header>
+	<game name="!Mario (2000-11-19)(Dokokalaki)(JP)[h][Super Mario Bros.]">
+		<description>!Mario (2000-11-19)(Dokokalaki)(JP)[h][Super Mario Bros.]</description>
+		<rom name="!Mario (2000-11-19)(Dokokalaki)(JP)[h][Super Mario Bros.].nes" size="40976" crc="2e2bf112" md5="b1a0e41cfd30c1d61de3b7900232de59" sha1="7849ccb4cba5714042694da0e076092565023fc9"/>
+	</game>
+	<game name="'89 Dennou Kyuusei Uranai (1988-12-10)(Induction Produce)(JP)">
+		<description>'89 Dennou Kyuusei Uranai (1988-12-10)(Induction Produce)(JP)</description>
+		<rom name="'89 Dennou Kyuusei Uranai (1988-12-10)(Induction Produce)(JP).nes" size="262160" crc="679db8f7" md5="31c66f47bd73568b4a675c9f8d995684" sha1="3918c52a5491695ed6b10b65f59622687dd7dc66"/>
+	</game>
+	<game name="'89 Dennou Kyuusei Uranai (1988-12-10)(Induction Produce)(JP)[h][enlarged rom]">
+		<description>'89 Dennou Kyuusei Uranai (1988-12-10)(Induction Produce)(JP)[h][enlarged rom]</description>
+		<rom name="'89 Dennou Kyuusei Uranai (1988-12-10)(Induction Produce)(JP)[h][enlarged rom].nes" size="786464" crc="9c487963" md5="c8ff5d779b2dd93939ecd072f6510d2a" sha1="54718ba4b699d3127ca98adda6c9e7276826b6a9"/>
+	</game>
+	<game name="10 Yard Fight (1985-08-30)(Irem)(JP)">
+		<description>10 Yard Fight (1985-08-30)(Irem)(JP)</description>
+		<rom name="10 Yard Fight (1985-08-30)(Irem)(JP).nes" size="24592" crc="08f0d1bd" md5="ad5c1baaecf9e7201ece0214b898f885" sha1="2f8ae874fd0bb87832cfb9474877fe6ed455fff2"/>
+	</game>
+	<game name="10 Yard Fight (1985-08-30)(Irem)(JP)[h][o][iNES title]">
+		<description>10 Yard Fight (1985-08-30)(Irem)(JP)[h][o][iNES title]</description>
+		<rom name="10 Yard Fight (1985-08-30)(Irem)(JP)[h][o][iNES title].nes" size="41103" crc="4e477d4c" md5="2ffdf800b332d70706790b84ee73d29d" sha1="1bacb89b7ac4c0beab9991ac6d9a4f44a288cabc"/>
+	</game>
+	<game name="10 Yard Fight (1985-08-30)(Irem)(JP)[o]">
+		<description>10 Yard Fight (1985-08-30)(Irem)(JP)[o]</description>
+		<rom name="10 Yard Fight (1985-08-30)(Irem)(JP)[o].nes" size="40976" crc="6fa17044" md5="6eb557c4d6f086302037f904b7e53e58" sha1="1c60a725103ee9eddd26ba7ed296053d4c5c96e4"/>
+	</game>
+	<game name="10 Yard Fight (1987)(FMG)(JP)[p]">
+		<description>10 Yard Fight (1987)(FMG)(JP)[p]</description>
+		<rom name="10 Yard Fight (1987)(FMG)(JP)[p].nes" size="24592" crc="5ce62793" md5="64356236295eeea513757a9e7fb9a931" sha1="7d5c1b1703a281803b332e01087788d5963a5438"/>
+	</game>
+	<game name="10 Yard Fight (1987)(FMG)(JP)[p][o]">
+		<description>10 Yard Fight (1987)(FMG)(JP)[p][o]</description>
+		<rom name="10 Yard Fight (1987)(FMG)(JP)[p][o].nes" size="40976" crc="1b0fdd15" md5="7953cedef409d295504fa5dbb881a1d0" sha1="ce261268ae4eb088139183120129952adfd6cf54"/>
+	</game>
+	<game name="10-Yard Fight (1985-10)(Nintendo)(US)">
+		<description>10-Yard Fight (1985-10)(Nintendo)(US)</description>
+		<rom name="10-Yard Fight (1985-10)(Nintendo)(US).nes" size="40976" crc="c38b62cb" md5="8caac792d5567da81e6846dbda833a57" sha1="6416170dd2b2a741cfdade7ebec1cefb664e99e4"/>
+	</game>
+	<game name="10-Yard Fight (1985-10)(Nintendo)(US)[b]">
+		<description>10-Yard Fight (1985-10)(Nintendo)(US)[b]</description>
+		<rom name="10-Yard Fight (1985-10)(Nintendo)(US)[b].nes" size="40976" crc="f89702fa" md5="d2ce8cda219fe3f15a189cbda5c9a08f" sha1="a9ec7e129a99b4075459cbb2f1f8e62e1a8a0714"/>
+	</game>
+	<game name="10-Yard Fight (1985-10)(Nintendo)(US)[h Vimm][iNES title]">
+		<description>10-Yard Fight (1985-10)(Nintendo)(US)[h Vimm][iNES title]</description>
+		<rom name="10-Yard Fight (1985-10)(Nintendo)(US)[h Vimm][iNES title].nes" size="41104" crc="96b8bae6" md5="4b11f0d137abf8167122fb28f0171d9f" sha1="fd532012f2639e733be6507304f5bd023b950e56"/>
+	</game>
+	<game name="100 in 1 Contra Function 16 (19xx)(-)(AS)[h][p][b5][iNES title]">
+		<description>100 in 1 Contra Function 16 (19xx)(-)(AS)[h][p][b5][iNES title]</description>
+		<rom name="100 in 1 Contra Function 16 (19xx)(-)(AS)[h][p][b5][iNES title].nes" size="1048720" crc="16bda9dc" md5="98cfbdb0bdd74ceb983454a37567c8a4" sha1="0cb5f2f2ebdf7714b319a977e051b713fd5f1bb7"/>
+	</game>
+	<game name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p]">
+		<description>100 in 1 Contra Function 16 (19xx)(-)(AS)[p]</description>
+		<rom name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p].nes" size="1048592" crc="eee75e94" md5="4b2424292b583b0ec7651b109b5f0cdb" sha1="ed51e75baa0daccb9c9ae75d37d27f54170731f1"/>
+	</game>
+	<game name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b2]">
+		<description>100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b2]</description>
+		<rom name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b2].nes" size="1048592" crc="70c7b1bc" md5="44309032a6b0a4dccff2d48d82903e2d" sha1="7e62c3d66b486a092b5eedf17a18c0965f6cff58"/>
+	</game>
+	<game name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b3]">
+		<description>100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b3]</description>
+		<rom name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b3].nes" size="1048592" crc="998bff01" md5="18d16899c6830f059c6a09cd23e16c5f" sha1="dc328955d5fd53a52a1d50df350dfa6f116c83ab"/>
+	</game>
+	<game name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b4]">
+		<description>100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b4]</description>
+		<rom name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b4].nes" size="1048592" crc="bb10c537" md5="1e9cdde2ebb3813e768e43fe467a0004" sha1="804dff6997cd7e091c962fdf6045d2ef2ad575b5"/>
+	</game>
+	<game name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b5]">
+		<description>100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b5]</description>
+		<rom name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b5].nes" size="1048592" crc="2a3044ed" md5="72d45f29c9820659b1c532e83fe86349" sha1="c18f116e914263854baf29b8c06e25df5bc15547"/>
+	</game>
+	<game name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b6]">
+		<description>100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b6]</description>
+		<rom name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b6].nes" size="1048592" crc="439fdb29" md5="d145b7aaef7f11cd94b7c93362662c9a" sha1="8f9ba1286b9464f5892b6d3c56479d486e2051f2"/>
+	</game>
+	<game name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b]">
+		<description>100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b]</description>
+		<rom name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][b].nes" size="1048592" crc="de9e997a" md5="7cbf9025f7d801ba2a3b5ceee0119233" sha1="713c67803ba72657122f2660558b8e2febbf267e"/>
+	</game>
+	<game name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][u2]">
+		<description>100 in 1 Contra Function 16 (19xx)(-)(AS)[p][u2]</description>
+		<rom name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][u2].nes" size="65040" crc="7490340c" md5="4f75917722f0b6bef1d65ce369d45692" sha1="918a2ca4470e56db0ada8bf2a49c5c8060b56e9b"/>
+	</game>
+	<game name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][u3]">
+		<description>100 in 1 Contra Function 16 (19xx)(-)(AS)[p][u3]</description>
+		<rom name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][u3].nes" size="65536" crc="a3eb545f" md5="9c8cd6a9128c6c5f36fd9d8b1961e863" sha1="76ecd06f97f4d4c7e55abcfad82d80e58172585d"/>
+	</game>
+	<game name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][u]">
+		<description>100 in 1 Contra Function 16 (19xx)(-)(AS)[p][u]</description>
+		<rom name="100 in 1 Contra Function 16 (19xx)(-)(AS)[p][u].nes" size="714960" crc="0be1fdf1" md5="72a98ea1ac9c5f57d732e43e7fbf23b3" sha1="65bc625f2e24e077e7d6f8e28db5e31a211f3553"/>
+	</game>
+	<game name="10000000 in 1 (199x)(-)(AS)[p]">
+		<description>10000000 in 1 (199x)(-)(AS)[p]</description>
+		<rom name="10000000 in 1 (199x)(-)(AS)[p].nes" size="196624" crc="d805c77f" md5="fd3b8d3cf07347cb7aad780ff03088a8" sha1="e3bb00b0859ca7070e354a659488aa7094554a75"/>
+	</game>
+	<game name="106 in 1 (199x)(-)(AS)[p]">
+		<description>106 in 1 (199x)(-)(AS)[p]</description>
+		<rom name="106 in 1 (199x)(-)(AS)[p].nes" size="196624" crc="1e6bbc56" md5="7886495efd38d44d0029cb9c0399c7c2" sha1="29f8c729ba5892dbb37d079f8644f7b58269ac00"/>
+	</game>
+	<game name="11 in 1 Ball Series (1992)(-)(AS)[p]">
+		<description>11 in 1 Ball Series (1992)(-)(AS)[p]</description>
+		<rom name="11 in 1 Ball Series (1992)(-)(AS)[p].nes" size="524304" crc="a8c50fa5" md5="c1aefac680d38f6be0c7a3ef43e0b40b" sha1="7c2ad4d3decc4e06bf052cc07a7c7c9a944d9d9b"/>
+	</game>
+	<game name="11 in 1 Ball Series (1992)(-)(AS)[p][o]">
+		<description>11 in 1 Ball Series (1992)(-)(AS)[p][o]</description>
+		<rom name="11 in 1 Ball Series (1992)(-)(AS)[p][o].nes" size="532496" crc="13f0263a" md5="821c51f2b8be32ccb04f371072366954" sha1="29876515a11f9a6033c4d0ef3daea43c9159d65c"/>
+	</game>
+	<game name="110 in 1 (19xx)(-)(AS)[h][p][menu only]">
+		<description>110 in 1 (19xx)(-)(AS)[h][p][menu only]</description>
+		<rom name="110 in 1 (19xx)(-)(AS)[h][p][menu only].nes" size="24592" crc="4ccd6a7d" md5="0b9f32fda0f09dea2eec390c083ffcd5" sha1="4e039f75345a2bda53d5133cee976bf6c4c3a957"/>
+	</game>
+	<game name="110 in 1 (19xx)(-)(AS)[p]">
+		<description>110 in 1 (19xx)(-)(AS)[p]</description>
+		<rom name="110 in 1 (19xx)(-)(AS)[p].nes" size="3145744" crc="7b371dc4" md5="3c576c74655d1d331f79d6152b0e9ae0" sha1="7efcc86fc9beb3c948314a6d623c45beb1fbd452"/>
+	</game>
+	<game name="110 in 1 (19xx)(-)(AS)[p][b2]">
+		<description>110 in 1 (19xx)(-)(AS)[p][b2]</description>
+		<rom name="110 in 1 (19xx)(-)(AS)[p][b2].nes" size="2097168" crc="32f11239" md5="70080cb14e1fefc79d413d6f58c5bdbc" sha1="f3e1079183a47cc55f95f22143ad582544555eeb"/>
+	</game>
+	<game name="110 in 1 (19xx)(-)(AS)[p][b3]">
+		<description>110 in 1 (19xx)(-)(AS)[p][b3]</description>
+		<rom name="110 in 1 (19xx)(-)(AS)[p][b3].nes" size="2097168" crc="e298ebff" md5="41362f051922439b1faa93611342f359" sha1="7be272fc0acdf9204a7e905f22ee45b35b6bd8e3"/>
+	</game>
+	<game name="110 in 1 (19xx)(-)(AS)[p][b4]">
+		<description>110 in 1 (19xx)(-)(AS)[p][b4]</description>
+		<rom name="110 in 1 (19xx)(-)(AS)[p][b4].nes" size="3145744" crc="5c8edbbf" md5="16370fcfad53a8bd44515af3204e3825" sha1="02d8d03e3d6d3d3fa6e51fb802951c41811a9f8b"/>
+	</game>
+	<game name="110 in 1 (19xx)(-)(AS)[p][b5]">
+		<description>110 in 1 (19xx)(-)(AS)[p][b5]</description>
+		<rom name="110 in 1 (19xx)(-)(AS)[p][b5].nes" size="3145744" crc="1869bbfb" md5="bd21e3cd99cef98697044d1e4d133012" sha1="4e509f072c3a97fa942639d821d4a077fdce96e0"/>
+	</game>
+	<game name="110 in 1 (19xx)(-)(AS)[p][b]">
+		<description>110 in 1 (19xx)(-)(AS)[p][b]</description>
+		<rom name="110 in 1 (19xx)(-)(AS)[p][b].nes" size="3145744" crc="ab5ee402" md5="d9fae2f01b59c75e8fea069f6116c5c7" sha1="d4fcb191f23a265b2e44200908169d907c9e7ebe"/>
+	</game>
+	<game name="115 in 1 (19xx)(-)(AS)[p]">
+		<description>115 in 1 (19xx)(-)(AS)[p]</description>
+		<rom name="115 in 1 (19xx)(-)(AS)[p].nes" size="3145744" crc="dcd9dc51" md5="239e9bfe08a0ef6fabc6484fb69a9c92" sha1="88f3c7074d6f17884ea6dca862ecdfda714e1959"/>
+	</game>
+	<game name="116 in 1 (199x)(-)(AS)[p][GK-192 board]">
+		<description>116 in 1 (199x)(-)(AS)[p][GK-192 board]</description>
+		<rom name="116 in 1 (199x)(-)(AS)[p][GK-192 board].nes" size="196624" crc="7ded1751" md5="9260d7ab5cdeebf7dab9f1ccd9525f0f" sha1="2ff217c10547e5ef3cfaf720b723e4d3a5122abb"/>
+	</game>
+	<game name="118 in 1 (199x)(-)(AS)[p][GK-192 board]">
+		<description>118 in 1 (199x)(-)(AS)[p][GK-192 board]</description>
+		<rom name="118 in 1 (199x)(-)(AS)[p][GK-192 board].nes" size="196624" crc="4a4e3d11" md5="6c0c95da33691ae2192b1668f05a7e1c" sha1="910479406128452fad6d3830429b27a40033527a"/>
+	</game>
+	<game name="1200 in 1 (199x)(-)(AS)[p]">
+		<description>1200 in 1 (199x)(-)(AS)[p]</description>
+		<rom name="1200 in 1 (199x)(-)(AS)[p].nes" size="196624" crc="1af747bc" md5="7007e63553b88c8bab0490da9ea0a731" sha1="8687e1ae6824f75d7d76a2b7ea775e5b8491895c"/>
+	</game>
+	<game name="1200 in 1 (199x)(-)(AS)[p][a games]">
+		<description>1200 in 1 (199x)(-)(AS)[p][a games]</description>
+		<rom name="1200 in 1 (199x)(-)(AS)[p][a games].nes" size="524304" crc="6c78df22" md5="3e2ffd3ad12644dbb2fec0bfb85f9990" sha1="852a8b9be05fa79043a1ecaa2ec0a12d279b3836"/>
+	</game>
+	<game name="15 in 1 (199x)(-)(AS)[p]">
+		<description>15 in 1 (199x)(-)(AS)[p]</description>
+		<rom name="15 in 1 (199x)(-)(AS)[p].nes" size="1048592" crc="f668b133" md5="10ac93c5716cca280a6d1833a4d93c28" sha1="a3d7da41c609f31fbf428f02cd1533820085fb67"/>
+	</game>
+	<game name="150 in 1 (199x)(-)(AS)[p]">
+		<description>150 in 1 (199x)(-)(AS)[p]</description>
+		<rom name="150 in 1 (199x)(-)(AS)[p].nes" size="2097168" crc="cb5e2bf3" md5="16845b8072e3e76f2b697dc96efc822c" sha1="1115543d2161c2f2238a9aefb668c7c8ff9978e6"/>
+	</game>
+	<game name="150 in 1 (199x)(-)(AS)[p][a]">
+		<description>150 in 1 (199x)(-)(AS)[p][a]</description>
+		<rom name="150 in 1 (199x)(-)(AS)[p][a].nes" size="188432" crc="3652989a" md5="9e412f37f79201c8c3c01158457d0ab1" sha1="7be1e73828b8d98f4b4949c6a02c3c0964c06ac2"/>
+	</game>
+	<game name="168 in 1 (19xx)(-)(AS)[p]">
+		<description>168 in 1 (19xx)(-)(AS)[p]</description>
+		<rom name="168 in 1 (19xx)(-)(AS)[p].nes" size="1048592" crc="61ca959d" md5="91e7ebb11e94550cbab91e1461ec1045" sha1="2215da05d080c306faa4fa03964c64dbe3a6e2bd"/>
+	</game>
+	<game name="1942 (1985-12-11)(Capcom)(JP-US)">
+		<description>1942 (1985-12-11)(Capcom)(JP-US)</description>
+		<rom name="1942 (1985-12-11)(Capcom)(JP-US).nes" size="40976" crc="e9cf747f" md5="4f90905fd77c1c9456bd5dfe1ceddc34" sha1="dfb068f72e9eb44e8dbdb181c235da6ccf6fb4bc"/>
+	</game>
+	<game name="1942 (1985-12-11)(Capcom)(JP-US)[a2]">
+		<description>1942 (1985-12-11)(Capcom)(JP-US)[a2]</description>
+		<rom name="1942 (1985-12-11)(Capcom)(JP-US)[a2].nes" size="40976" crc="b214dab9" md5="d57074dec66118831143fdd8b67a4c8c" sha1="fe274426c59cf8e69087c3ee2fe0c322cf9db445"/>
+	</game>
+	<game name="1942 (1985-12-11)(Capcom)(JP-US)[a]">
+		<description>1942 (1985-12-11)(Capcom)(JP-US)[a]</description>
+		<rom name="1942 (1985-12-11)(Capcom)(JP-US)[a].nes" size="40976" crc="7f61140c" md5="0a7d679de23e9a55a17a78c82aba6de5" sha1="001b71aa2785e8d17c20a09ee14cef7771d66058"/>
+	</game>
+	<game name="1942 (1985-12-11)(Capcom)(JP-US)[b2]">
+		<description>1942 (1985-12-11)(Capcom)(JP-US)[b2]</description>
+		<rom name="1942 (1985-12-11)(Capcom)(JP-US)[b2].nes" size="40976" crc="3a132fa8" md5="ba12a7db5be4637da76ab64ed4b9e605" sha1="af3024d796d50561dee399637732d232b6b74aa0"/>
+	</game>
+	<game name="1942 (1985-12-11)(Capcom)(JP-US)[b]">
+		<description>1942 (1985-12-11)(Capcom)(JP-US)[b]</description>
+		<rom name="1942 (1985-12-11)(Capcom)(JP-US)[b].nes" size="40976" crc="f848f180" md5="5a1c53a6a2c98a0dc6b7a5c120b226f0" sha1="9ba95cf9124c533fc090e662832e6300026df359"/>
+	</game>
+	<game name="1942 (1985-12-11)(Capcom)(JP-US)[h Mindrape &amp; EFX][iNES title]">
+		<description>1942 (1985-12-11)(Capcom)(JP-US)[h Mindrape &amp; EFX][iNES title]</description>
+		<rom name="1942 (1985-12-11)(Capcom)(JP-US)[h Mindrape &amp; EFX][iNES title].nes" size="41103" crc="2021d082" md5="f9101f98c0ea81bfe283c0447fe1ecfc" sha1="4f1d03186d1a1256695a5082e7381255ee892d08"/>
+	</game>
+	<game name="1942 (1985-12-11)(Capcom)(JP-US)[h Vimm][iNES title]">
+		<description>1942 (1985-12-11)(Capcom)(JP-US)[h Vimm][iNES title]</description>
+		<rom name="1942 (1985-12-11)(Capcom)(JP-US)[h Vimm][iNES title].nes" size="41104" crc="169d7206" md5="a675570bf79bbf49ed4f9769d122d152" sha1="c03d4dbb619c19d2dc003dde0bbcff0fa5a975d2"/>
+	</game>
+	<game name="1942 (1985-12-11)(Capcom)(JP-US)[h2][iNES title]">
+		<description>1942 (1985-12-11)(Capcom)(JP-US)[h2][iNES title]</description>
+		<rom name="1942 (1985-12-11)(Capcom)(JP-US)[h2][iNES title].nes" size="41104" crc="3fc6dd13" md5="112352fc185c3c500de6cd7fba333c27" sha1="d919331db6f57e0d3b49cd12a9a6adcc16a20a78"/>
+	</game>
+	<game name="1942 (1985-12-11)(Capcom)(JP-US)[h][iNES title]">
+		<description>1942 (1985-12-11)(Capcom)(JP-US)[h][iNES title]</description>
+		<rom name="1942 (1985-12-11)(Capcom)(JP-US)[h][iNES title].nes" size="41103" crc="f9681fb0" md5="2d8863aae3ef06bef9d8b6dd08f69769" sha1="5d143e5c5a2c3d25a74ad033f06725a0c294f8d0"/>
+	</game>
+	<game name="1942 (1985-12-11)(Capcom)(JP-US)[o]">
+		<description>1942 (1985-12-11)(Capcom)(JP-US)[o]</description>
+		<rom name="1942 (1985-12-11)(Capcom)(JP-US)[o].nes" size="41103" crc="c065bf19" md5="b805f33bd1e84782cc2de6f7bf5daf9d" sha1="8277b5c71dc1866bda990d681a641547016294a7"/>
+	</game>
+	<game name="1942 (1985-12-11)(Capcom)(JP-US)[tr es Emu4ever][98%]">
+		<description>1942 (1985-12-11)(Capcom)(JP-US)[tr es Emu4ever][98%]</description>
+		<rom name="1942 (1985-12-11)(Capcom)(JP-US)[tr es Emu4ever][98%].nes" size="40976" crc="5047b4d2" md5="21f93d7da78b1567ae931edf1d865387" sha1="a19bc5d294266d8aaa8eee938eb0b9ec4771cbe5"/>
+	</game>
+	<game name="1942 (1985-12-11)(Capcom)(JP-US)[tr fr Generation IX][v1.00-20040810]">
+		<description>1942 (1985-12-11)(Capcom)(JP-US)[tr fr Generation IX][v1.00-20040810]</description>
+		<rom name="1942 (1985-12-11)(Capcom)(JP-US)[tr fr Generation IX][v1.00-20040810].nes" size="40976" crc="fdfc90d7" md5="d1dbee883c86a0f312d62aa05f671645" sha1="fbd60f424b9ec219029b13a88aec5e0c0a95f240"/>
+	</game>
+	<game name="1942 (1985-12-11)(Capcom)(JP-US)[tr zh MS emumax][v.20060217]">
+		<description>1942 (1985-12-11)(Capcom)(JP-US)[tr zh MS emumax][v.20060217]</description>
+		<rom name="1942 (1985-12-11)(Capcom)(JP-US)[tr zh MS emumax][v.20060217].nes" size="40976" crc="a36f13d0" md5="0b3ceadb1a155807e7c7aa37fd9904f7" sha1="859a8b0459496fb4e998ffcf04414a69155c1eff"/>
+	</game>
+	<game name="1942 (1987)(Capcom)(PlayChoice-10)">
+		<description>1942 (1987)(Capcom)(PlayChoice-10)</description>
+		<rom name="1942 (1987)(Capcom)(PlayChoice-10).nes" size="49168" crc="be787290" md5="f582c19b228282a2228dba0c6e24809b" sha1="9093d1eadeb422534ab5bac752460d573d87aa2b"/>
+	</game>
+	<game name="1942 (1987)(Capcom)(PlayChoice-10)[a]">
+		<description>1942 (1987)(Capcom)(PlayChoice-10)[a]</description>
+		<rom name="1942 (1987)(Capcom)(PlayChoice-10)[a].nes" size="49168" crc="963f21ae" md5="988814af08f8ff38799c12181d013653" sha1="648ff0c2efa8dc79b92dde6ea5f7d021dae4f35b"/>
+	</game>
+	<game name="1942 (1987)(FMG)(JP)[p]">
+		<description>1942 (1987)(FMG)(JP)[p]</description>
+		<rom name="1942 (1987)(FMG)(JP)[p].nes" size="40976" crc="84cfa453" md5="3cdcfde06778f636ee8d03a1e6f7635f" sha1="7a573ad43f135efebbcf13f481c5176fd2474561"/>
+	</game>
+	<game name="1943 (1988-06-20)(Capcom)(JP)">
+		<description>1943 (1988-06-20)(Capcom)(JP)</description>
+		<rom name="1943 (1988-06-20)(Capcom)(JP).nes" size="131088" crc="8db59be8" md5="cf5e791a2032ba3160ae578bc27ffa8e" sha1="ab6faefc94c0f46dccc235646ba308d338717186"/>
+	</game>
+	<game name="1943 (1988-06-20)(Capcom)(JP)[b2]">
+		<description>1943 (1988-06-20)(Capcom)(JP)[b2]</description>
+		<rom name="1943 (1988-06-20)(Capcom)(JP)[b2].nes" size="131088" crc="726a0020" md5="d0bc994c864e31cfcc8e25a59335e6fa" sha1="c74185c536a28a66fcd2c487dc59235efff4e99b"/>
+	</game>
+	<game name="1943 (1988-06-20)(Capcom)(JP)[b]">
+		<description>1943 (1988-06-20)(Capcom)(JP)[b]</description>
+		<rom name="1943 (1988-06-20)(Capcom)(JP)[b].nes" size="131088" crc="5aeaf504" md5="ac78beb68cd95e54bfb490caa11db1ea" sha1="996fd54a269c7bbc0768031c1ee02e320e0f50a4"/>
+	</game>
+	<game name="1943 - The Battle of Midway (1988-10)(Capcom)(US)">
+		<description>1943 - The Battle of Midway (1988-10)(Capcom)(US)</description>
+		<rom name="1943 - The Battle of Midway (1988-10)(Capcom)(US).nes" size="131088" crc="d131bf15" md5="deeaf9d51fc3f13f11f8e1a65553061a" sha1="443d235fbdd0e0b3adb1dcf18c6caa7eceec8bee"/>
+	</game>
+	<game name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[b2]">
+		<description>1943 - The Battle of Midway (1988-10)(Capcom)(US)[b2]</description>
+		<rom name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[b2].nes" size="131088" crc="b27f8f98" md5="084cb3db461cdbcb1191986ff0e7a634" sha1="4cdf1e4ce987a5e2ae0636e61b3dd65444180a67"/>
+	</game>
+	<game name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[b3]">
+		<description>1943 - The Battle of Midway (1988-10)(Capcom)(US)[b3]</description>
+		<rom name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[b3].nes" size="131088" crc="88663d29" md5="8e1dfe759c9e26ec738b097d17f5cdbd" sha1="04772255543bdfbd185ccfce74c79826382342b3"/>
+	</game>
+	<game name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[b4]">
+		<description>1943 - The Battle of Midway (1988-10)(Capcom)(US)[b4]</description>
+		<rom name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[b4].nes" size="131088" crc="71ea6617" md5="2d7c91f96bd636ee9f7645717d116ac8" sha1="8ac2c40deeff6c29d6ca4ff047dbcac59d2a4fab"/>
+	</game>
+	<game name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[b]">
+		<description>1943 - The Battle of Midway (1988-10)(Capcom)(US)[b]</description>
+		<rom name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[b].nes" size="131521" crc="42a9d6de" md5="4bd18010d4a5e6ecbc679707206c5918" sha1="83439690c516b4f4eeeb6fe843e793dd6db7bb15"/>
+	</game>
+	<game name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[h Vimm][iNES title]">
+		<description>1943 - The Battle of Midway (1988-10)(Capcom)(US)[h Vimm][iNES title]</description>
+		<rom name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[h Vimm][iNES title].nes" size="131216" crc="5a0a1fc3" md5="b582571985659fed604effacc7e7537c" sha1="e318a373b7960b9280bc7ee7eab3de5852e372df"/>
+	</game>
+	<game name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[h][iNES title]">
+		<description>1943 - The Battle of Midway (1988-10)(Capcom)(US)[h][iNES title]</description>
+		<rom name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[h][iNES title].nes" size="131216" crc="104bbcf1" md5="b5d09c5b297a1b8b5d23856b81470ef4" sha1="4586cf2b33d6b70b21e709aeb6e66b42f259f557"/>
+	</game>
+	<game name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[tr el][v1.00]">
+		<description>1943 - The Battle of Midway (1988-10)(Capcom)(US)[tr el][v1.00]</description>
+		<rom name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[tr el][v1.00].nes" size="131088" crc="e947a897" md5="ef3216627e2487986205bb95ded73b0c" sha1="5a966b1e9871120f735111f6666715a9fab7a5b0"/>
+	</game>
+	<game name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[tr pt BR Games]">
+		<description>1943 - The Battle of Midway (1988-10)(Capcom)(US)[tr pt BR Games]</description>
+		<rom name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[tr pt BR Games].nes" size="131088" crc="4bb5825e" md5="8b671b9c152f8f90465e4a90768f5813" sha1="fb9bd3b60342e794cc85fe3115abb8d176224ac7"/>
+	</game>
+	<game name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[u][b]">
+		<description>1943 - The Battle of Midway (1988-10)(Capcom)(US)[u][b]</description>
+		<rom name="1943 - The Battle of Midway (1988-10)(Capcom)(US)[u][b].nes" size="131088" crc="cd73ec01" md5="5ced40e5eb71aa56a8b826f9f3efc9c8" sha1="ba65c60a568ff2f55ccacac95a4842c326becf84"/>
+	</game>
+	<game name="1944 (199x)(-)(AS)[p]">
+		<description>1944 (199x)(-)(AS)[p]</description>
+		<rom name="1944 (199x)(-)(AS)[p].nes" size="131088" crc="46249d57" md5="bf887996c9add45aabe881ceaf1f410a" sha1="ec51157e06c98df1df31031ee103a85ed98e067e"/>
+	</game>
+	<game name="1944 (199x)(-)(AS)[p][b2]">
+		<description>1944 (199x)(-)(AS)[p][b2]</description>
+		<rom name="1944 (199x)(-)(AS)[p][b2].nes" size="131088" crc="50e7019e" md5="1e43a71f04b2dbcf7b9b4e293e841a07" sha1="9ff70ef6b1c71ebbea837f8e0e94060d72604ee1"/>
+	</game>
+	<game name="1944 (199x)(-)(AS)[p][b3]">
+		<description>1944 (199x)(-)(AS)[p][b3]</description>
+		<rom name="1944 (199x)(-)(AS)[p][b3].nes" size="131088" crc="960ef77e" md5="f08ec947c97e80f3afdb4d7164feae7c" sha1="b360988b222304c15b1dc7aa2bce2eae14838474"/>
+	</game>
+	<game name="1944 (199x)(-)(AS)[p][b]">
+		<description>1944 (199x)(-)(AS)[p][b]</description>
+		<rom name="1944 (199x)(-)(AS)[p][b].nes" size="131088" crc="c97f6ce1" md5="312315753f68fc1c019f046b7126bc74" sha1="b24eb48df8e0b297bfa41153d1fd05f7a9564cf5"/>
+	</game>
+	<game name="1944 (199x)(-)(AS)[p][tr zh MS emumax][v.20051205]">
+		<description>1944 (199x)(-)(AS)[p][tr zh MS emumax][v.20051205]</description>
+		<rom name="1944 (199x)(-)(AS)[p][tr zh MS emumax][v.20051205].nes" size="131088" crc="c1d0e658" md5="c1effa96dc9ea5ea3c6cbc04f537cc37" sha1="c7bf3480a1a1a8cf635ff0db3fe8e32189f1a7e6"/>
+	</game>
+	<game name="1944 (199x)(-)(AS)[p][tr zh MS emumax][v.20060511]">
+		<description>1944 (199x)(-)(AS)[p][tr zh MS emumax][v.20060511]</description>
+		<rom name="1944 (199x)(-)(AS)[p][tr zh MS emumax][v.20060511].nes" size="131088" crc="6be23da5" md5="227ef62135aa57d4588614ef62176349" sha1="12637555f30c9fe2f0b7284322630977bb306493"/>
+	</game>
+	<game name="1944 (199x)(-)(AS)[p][tr zh]">
+		<description>1944 (199x)(-)(AS)[p][tr zh]</description>
+		<rom name="1944 (199x)(-)(AS)[p][tr zh].nes" size="131088" crc="0b434fc8" md5="32708d8475af0bf2d1102d9b7dd59ba1" sha1="3debcddc1a12ee93d0e8a61fac2c4532aa96e630"/>
+	</game>
+	<game name="1944 (199x)(-)(AS)[p][tr zh][a]">
+		<description>1944 (199x)(-)(AS)[p][tr zh][a]</description>
+		<rom name="1944 (199x)(-)(AS)[p][tr zh][a].nes" size="131088" crc="005c8ac6" md5="da84c5cf276cc87a8decf45e98b739f4" sha1="525183d4546eac4ae77b909f9ef0485f6ff49a9d"/>
+	</game>
+	<game name="1945 (199x)(-)(AS)[p]">
+		<description>1945 (199x)(-)(AS)[p]</description>
+		<rom name="1945 (199x)(-)(AS)[p].nes" size="196624" crc="eb267c8f" md5="a7cfa2fc38468ea3c8ad21c44f540c33" sha1="62907e356d498010cc3a359738ca52e5db132b63"/>
+	</game>
+	<game name="1997 in 1 (199x)(-)(AS)[p]">
+		<description>1997 in 1 (199x)(-)(AS)[p]</description>
+		<rom name="1997 in 1 (199x)(-)(AS)[p].nes" size="196624" crc="e827c2ba" md5="3ef33e6c903feda2d7c77067c4e0b435" sha1="7cc90726ebbc0e6d859bec234db5ac060ff80cf5"/>
+	</game>
+	<game name="1999 Hore, Mitakotoka! Seikimatsu (1992-09-18)(Coconuts Japan)(JP)">
+		<description>1999 Hore, Mitakotoka! Seikimatsu (1992-09-18)(Coconuts Japan)(JP)</description>
+		<rom name="1999 Hore, Mitakotoka! Seikimatsu (1992-09-18)(Coconuts Japan)(JP).nes" size="393232" crc="0cfb250f" md5="23d338cd00195316c8802b3e90154e8e" sha1="18464639a268aaf2e6abbc4d03039d9dff22227f"/>
+	</game>
+	<game name="1999 Hore, Mitakotoka! Seikimatsu (1992-09-18)(Coconuts Japan)(JP)[b]">
+		<description>1999 Hore, Mitakotoka! Seikimatsu (1992-09-18)(Coconuts Japan)(JP)[b]</description>
+		<rom name="1999 Hore, Mitakotoka! Seikimatsu (1992-09-18)(Coconuts Japan)(JP)[b].nes" size="393232" crc="d8b29e02" md5="34e3e52daa6aff2dcf2872838628b334" sha1="abbaa672270708c863cbdf842247c10800d6d6de"/>
+	</game>
+	<game name="2 in 1 LightGun Game (1993)(Sachen)(TW)[p][SA-023]">
+		<description>2 in 1 LightGun Game (1993)(Sachen)(TW)[p][SA-023]</description>
+		<rom name="2 in 1 LightGun Game (1993)(Sachen)(TW)[p][SA-023].nes" size="131088" crc="d0f08b71" md5="4e50ec7e1a6a4e65bd409b8456a59e8b" sha1="229e03ac591a16035e5315091fefd6bf41789db0"/>
+	</game>
+	<game name="2 in 1 LightGun Game - Tough Cop (1993)(Sachen)(TW)[p][SA-024]">
+		<description>2 in 1 LightGun Game - Tough Cop (1993)(Sachen)(TW)[p][SA-024]</description>
+		<rom name="2 in 1 LightGun Game - Tough Cop (1993)(Sachen)(TW)[p][SA-024].nes" size="131088" crc="7ec004cb" md5="ee2fa6fdd114e5d5a38386c1a049634b" sha1="c7cb10e71894e0162cbaece4db0cecb2ea2661d2"/>
+	</game>
+	<game name="2-in-1 Super Mario Bros. + Duck Hunt (1988-11)(Nintendo)(US)">
+		<description>2-in-1 Super Mario Bros. + Duck Hunt (1988-11)(Nintendo)(US)</description>
+		<rom name="2-in-1 Super Mario Bros. + Duck Hunt (1988-11)(Nintendo)(US).nes" size="81936" crc="666ee28e" md5="1306a0286248a0851005464d7ec8d785" sha1="663ddef71cc808c5382a3426ef6d03b5499a51c8"/>
+	</game>
+	<game name="2-in-1 Super Mario Bros. + Duck Hunt (1988-11)(Nintendo)(US)[b]">
+		<description>2-in-1 Super Mario Bros. + Duck Hunt (1988-11)(Nintendo)(US)[b]</description>
+		<rom name="2-in-1 Super Mario Bros. + Duck Hunt (1988-11)(Nintendo)(US)[b].nes" size="81936" crc="35bce8b8" md5="37737845f0a530db1cc8a281a46f13eb" sha1="23e6040c12c828bd26501069117632570463d2bd"/>
+	</game>
+	<game name="2-in-1 Super Mario Bros. + Duck Hunt (1988-11)(Nintendo)(US)[h Vimm][iNES title]">
+		<description>2-in-1 Super Mario Bros. + Duck Hunt (1988-11)(Nintendo)(US)[h Vimm][iNES title]</description>
+		<rom name="2-in-1 Super Mario Bros. + Duck Hunt (1988-11)(Nintendo)(US)[h Vimm][iNES title].nes" size="82064" crc="8174a5be" md5="7d9fb366e3b40cd5fb01e278a09c3636" sha1="a52f5ae207f965c4e6e1e51de53935e7e03fcd78"/>
+	</game>
+	<game name="2-in-1 Super Mario Bros. + Duck Hunt (1988-11)(Nintendo)(US)[h][iNES title]">
+		<description>2-in-1 Super Mario Bros. + Duck Hunt (1988-11)(Nintendo)(US)[h][iNES title]</description>
+		<rom name="2-in-1 Super Mario Bros. + Duck Hunt (1988-11)(Nintendo)(US)[h][iNES title].nes" size="82064" crc="3e5f1833" md5="90acca200f44dcf752d2e4c64e1724ea" sha1="bee9e1c5a8951621bc1c078592a3a3ccff14d16c"/>
+	</game>
+	<game name="2-in-1 SuperSpike V'Ball + World Cup Soccer (1990-12)(Nintendo)(US)">
+		<description>2-in-1 SuperSpike V'Ball + World Cup Soccer (1990-12)(Nintendo)(US)</description>
+		<rom name="2-in-1 SuperSpike V'Ball + World Cup Soccer (1990-12)(Nintendo)(US).nes" size="524304" crc="c785f090" md5="d949648e11c16befd7554349ed6ea812" sha1="500cd0e149ca119a465aaf900fa942a3a426dbf9"/>
+	</game>
+	<game name="2-in-1 SuperSpike V'Ball + World Cup Soccer (1990-12)(Nintendo)(US)[b2]">
+		<description>2-in-1 SuperSpike V'Ball + World Cup Soccer (1990-12)(Nintendo)(US)[b2]</description>
+		<rom name="2-in-1 SuperSpike V'Ball + World Cup Soccer (1990-12)(Nintendo)(US)[b2].nes" size="262160" crc="420cc1ab" md5="30c18cc034e97cd81a62b6050f0aff85" sha1="d48600678d58bbfde135d4cc95569c6f564d1e27"/>
+	</game>
+	<game name="2-in-1 SuperSpike V'Ball + World Cup Soccer (1990-12)(Nintendo)(US)[b]">
+		<description>2-in-1 SuperSpike V'Ball + World Cup Soccer (1990-12)(Nintendo)(US)[b]</description>
+		<rom name="2-in-1 SuperSpike V'Ball + World Cup Soccer (1990-12)(Nintendo)(US)[b].nes" size="262160" crc="abc49bb4" md5="c81e9d55bad8b6989fb114211c12c924" sha1="66c388e0c70fca128262077f6eb7ee0d6289959a"/>
+	</game>
+	<game name="2-in-1 SuperSpike V'Ball + World Cup Soccer (1990-12)(Nintendo)(US)[h Vimm][iNES title]">
+		<description>2-in-1 SuperSpike V'Ball + World Cup Soccer (1990-12)(Nintendo)(US)[h Vimm][iNES title]</description>
+		<rom name="2-in-1 SuperSpike V'Ball + World Cup Soccer (1990-12)(Nintendo)(US)[h Vimm][iNES title].nes" size="262288" crc="469ff8ff" md5="89f863a18dc46eae0d923512c6dc0b69" sha1="6aee8b20daaf7311417736c41bebd8fc8909de0a"/>
+	</game>
+	<game name="20 in 1 (19xx)(-)(AS)[p][a games][mapper 231]">
+		<description>20 in 1 (19xx)(-)(AS)[p][a games][mapper 231]</description>
+		<rom name="20 in 1 (19xx)(-)(AS)[p][a games][mapper 231].nes" size="524304" crc="ce1c7ca7" md5="987f5edfe8fdfee2aeabce08bcaff69d" sha1="6d682b292c948c03d272e78376889d21394a64c7"/>
+	</game>
+	<game name="20 in 1 (19xx)(-)(AS)[p][mapper 61]">
+		<description>20 in 1 (19xx)(-)(AS)[p][mapper 61]</description>
+		<rom name="20 in 1 (19xx)(-)(AS)[p][mapper 61].nes" size="524304" crc="8b4718b6" md5="e4cf231d86fdee1bd9de53e9e753c7bf" sha1="61778695aa6f417e81dfba228425a59b6fea1e66"/>
+	</game>
+	<game name="21 in 1 (199x)(-)(AS)[p][2006-CA]">
+		<description>21 in 1 (199x)(-)(AS)[p][2006-CA]</description>
+		<rom name="21 in 1 (199x)(-)(AS)[p][2006-CA].nes" size="163856" crc="b5b6f87e" md5="75fff1cc1820be0cf19b3e3a650d4d17" sha1="3be14ca831cde5c082b822d8e3303a954af88ae6"/>
+	</game>
+	<game name="22 in 1 (19xx)(-)(AS)[p][reset based]">
+		<description>22 in 1 (19xx)(-)(AS)[p][reset based]</description>
+		<rom name="22 in 1 (19xx)(-)(AS)[p][reset based].nes" size="655376" crc="4b9a4344" md5="52c3a293b297838d46ff145f5ff5926b" sha1="f5e5b7d664525cc25a5ecab49998f9411f58b9b8"/>
+	</game>
+	<game name="24 in 1 (19xx)(-)(AS)[h2][p][menu only]">
+		<description>24 in 1 (19xx)(-)(AS)[h2][p][menu only]</description>
+		<rom name="24 in 1 (19xx)(-)(AS)[h2][p][menu only].nes" size="98320" crc="a407cb7e" md5="6b62e8c72a68e5b1b15e3cc4b009d047" sha1="ee7348fcb8c14c293d7e3f4f47c56617b203df9d"/>
+	</game>
+	<game name="24 in 1 (19xx)(-)(AS)[h3][p][menu only]">
+		<description>24 in 1 (19xx)(-)(AS)[h3][p][menu only]</description>
+		<rom name="24 in 1 (19xx)(-)(AS)[h3][p][menu only].nes" size="98320" crc="b4fa2a4c" md5="533e85a5fe07e2a33aa7ef9ad29dbdbe" sha1="10f8cfe0778f465fdac808658212952229462b6a"/>
+	</game>
+	<game name="24 in 1 (19xx)(-)(AS)[h4][p][menu only]">
+		<description>24 in 1 (19xx)(-)(AS)[h4][p][menu only]</description>
+		<rom name="24 in 1 (19xx)(-)(AS)[h4][p][menu only].nes" size="98320" crc="d2c89748" md5="09baa7ddadaa4408e9f6c418cd76ff4f" sha1="058a1fc05eb8d6f268bc638deb9126e690e7d185"/>
+	</game>
+	<game name="24 in 1 (19xx)(-)(AS)[h][p][menu only]">
+		<description>24 in 1 (19xx)(-)(AS)[h][p][menu only]</description>
+		<rom name="24 in 1 (19xx)(-)(AS)[h][p][menu only].nes" size="98320" crc="221fe436" md5="bea9ea48a00177f473f89b7ca246a61a" sha1="115bbf31dde3c9de0335fd70160cb0653583ce3e"/>
+	</game>
+	<game name="24 in 1 (19xx)(-)(AS)[h][p][u][menu only]">
+		<description>24 in 1 (19xx)(-)(AS)[h][p][u][menu only]</description>
+		<rom name="24 in 1 (19xx)(-)(AS)[h][p][u][menu only].nes" size="65552" crc="54334143" md5="c5335cceb5a5fe05d5fb60882dd8be35" sha1="e292ece3aaee635ae289c27f85dd0cf8af6d9bcf"/>
+	</game>
+	<game name="260 in 1 (199x)(-)(AS)[p]">
+		<description>260 in 1 (199x)(-)(AS)[p]</description>
+		<rom name="260 in 1 (199x)(-)(AS)[p].nes" size="4194320" crc="0e9dd07d" md5="3aa62d323a67387009d8ed96f75aa31f" sha1="948af64e07b2bf8882abf59c4895c25517916f9a"/>
+	</game>
+	<game name="260 in 1 (19xx)(-)(AS)[p][b]">
+		<description>260 in 1 (19xx)(-)(AS)[p][b]</description>
+		<rom name="260 in 1 (19xx)(-)(AS)[p][b].nes" size="4194320" crc="d9195e85" md5="18c9da610034a165b1d00722b1e7096f" sha1="f28a4f8d1fb5801ed2519c23bf44d874ba4e59d4"/>
+	</game>
+	<game name="3 in 1 (199x)(-)(AS)[p]">
+		<description>3 in 1 (199x)(-)(AS)[p]</description>
+		<rom name="3 in 1 (199x)(-)(AS)[p].nes" size="1048592" crc="85bf3391" md5="a4d52126ffc64365ecc968f1a46289af" sha1="0ba540125d6f63b993f14b88f43edb6f7059c81c"/>
+	</game>
+	<game name="3 in 1 (2001)(WebSoft Productions)(PD)">
+		<description>3 in 1 (2001)(WebSoft Productions)(PD)</description>
+		<rom name="3 in 1 (2001)(WebSoft Productions)(PD).nes" size="262160" crc="2e3f383e" md5="5b91e326f40ffb484f7debac965dbf90" sha1="a524fbb75996902228e1b4d4bf9c7eebd5ef5f22"/>
+	</game>
+	<game name="3 in 1 Supergun (1993)(Micro Genius)(AS)[p]">
+		<description>3 in 1 Supergun (1993)(Micro Genius)(AS)[p]</description>
+		<rom name="3 in 1 Supergun (1993)(Micro Genius)(AS)[p].nes" size="65552" crc="3b95bc4e" md5="1bdeb2a534447cb18b32fe4bb136f09c" sha1="385d82b41049cacc4ec9cd2cec2259e962f7e6ce"/>
+	</game>
+	<game name="3 in 1 Supergun (1993)(Micro Genius)(AS)[p][u]">
+		<description>3 in 1 Supergun (1993)(Micro Genius)(AS)[p][u]</description>
+		<rom name="3 in 1 Supergun (1993)(Micro Genius)(AS)[p][u].nes" size="57360" crc="c8bc564a" md5="8ef9938997de097ea314d3e750bed8a7" sha1="4de0eda2887f97b04021ce0d78ba1a6c6b4e4b26"/>
+	</game>
+	<game name="3-D WorldRunner (1987-09)(Acclaim)(US)">
+		<description>3-D WorldRunner (1987-09)(Acclaim)(US)</description>
+		<rom name="3-D WorldRunner (1987-09)(Acclaim)(US).nes" size="131088" crc="d5ada486" md5="5a5ace7fa14af00433c4a40e90442762" sha1="75b6cc94a952875c936dabfbb6157f9a11c5ac49"/>
+	</game>
+	<game name="3-D WorldRunner (1987-09)(Acclaim)(US)[b2]">
+		<description>3-D WorldRunner (1987-09)(Acclaim)(US)[b2]</description>
+		<rom name="3-D WorldRunner (1987-09)(Acclaim)(US)[b2].nes" size="131088" crc="39b4fb33" md5="72093da0906ddea9cf82a0de0aad6b53" sha1="129700fe836e98861ffebccf7d4e77df09d46cf1"/>
+	</game>
+	<game name="3-D WorldRunner (1987-09)(Acclaim)(US)[b3]">
+		<description>3-D WorldRunner (1987-09)(Acclaim)(US)[b3]</description>
+		<rom name="3-D WorldRunner (1987-09)(Acclaim)(US)[b3].nes" size="131088" crc="3379b527" md5="e38609adf622a377dcd9bee4fe22c30d" sha1="1b06fca4312e3b20a011a172f8bc72a7cba4e921"/>
+	</game>
+	<game name="3-D WorldRunner (1987-09)(Acclaim)(US)[b]">
+		<description>3-D WorldRunner (1987-09)(Acclaim)(US)[b]</description>
+		<rom name="3-D WorldRunner (1987-09)(Acclaim)(US)[b].nes" size="131088" crc="6053aeda" md5="c375a93c6dafd7495b85b27c7dfa282a" sha1="311a76bb96d49d48aa3c5ddf7167f6e1a8cc37eb"/>
+	</game>
+	<game name="3-D WorldRunner (1987-09)(Acclaim)(US)[h Vimm][iNES title]">
+		<description>3-D WorldRunner (1987-09)(Acclaim)(US)[h Vimm][iNES title]</description>
+		<rom name="3-D WorldRunner (1987-09)(Acclaim)(US)[h Vimm][iNES title].nes" size="131216" crc="ed0bdf32" md5="105eff2c6bf88fdefc0bc438e4e1fcaa" sha1="baaa56ceed747aa717f0408f382bb713810599d6"/>
+	</game>
+	<game name="3-D WorldRunner (1987-09)(Acclaim)(US)[h2][iNES title]">
+		<description>3-D WorldRunner (1987-09)(Acclaim)(US)[h2][iNES title]</description>
+		<rom name="3-D WorldRunner (1987-09)(Acclaim)(US)[h2][iNES title].nes" size="131200" crc="70faf1e4" md5="4f5ae526bdcc61e1ae005fc45db873e0" sha1="1a6321b865e133962a0ea61932772bc6e3c5c054"/>
+	</game>
+	<game name="3-D WorldRunner (1987-09)(Acclaim)(US)[h][b][mapper 34]">
+		<description>3-D WorldRunner (1987-09)(Acclaim)(US)[h][b][mapper 34]</description>
+		<rom name="3-D WorldRunner (1987-09)(Acclaim)(US)[h][b][mapper 34].nes" size="131088" crc="e0767ffe" md5="61c9c1935656872b1cfdb219ac65da9d" sha1="d98856a45654fb5d5634690753d96387ff7cae1f"/>
+	</game>
+	<game name="3-D WorldRunner (1987-09)(Acclaim)(US)[h][mapper 34]">
+		<description>3-D WorldRunner (1987-09)(Acclaim)(US)[h][mapper 34]</description>
+		<rom name="3-D WorldRunner (1987-09)(Acclaim)(US)[h][mapper 34].nes" size="262160" crc="f68b6a1a" md5="9d1df1edad3e823caa26de8c19546a97" sha1="eb2ba063d85d46a4a2aeebabc6edeeb5c71c504c"/>
+	</game>
+	<game name="3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG0 (1990-12)(Nintendo)(US)">
+		<description>3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG0 (1990-12)(Nintendo)(US)</description>
+		<rom name="3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG0 (1990-12)(Nintendo)(US).nes" size="196624" crc="a0b0dfc7" md5="2041ef14c3d0f86b62e424f28bf6db2a" sha1="2f939eca208f1f15addb560c9f72eb01a2951b7f"/>
+	</game>
+	<game name="3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG1 (1990-12)(Nintendo)(US)">
+		<description>3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG1 (1990-12)(Nintendo)(US)</description>
+		<rom name="3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG1 (1990-12)(Nintendo)(US).nes" size="196624" crc="92cd88ef" md5="87f93e3f88563bcf4355ef1384a00521" sha1="92e9c4f35d90a45407de4017353fd07b27004c03"/>
+	</game>
+	<game name="3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG1 (1990-12)(Nintendo)(US)[b]">
+		<description>3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG1 (1990-12)(Nintendo)(US)[b]</description>
+		<rom name="3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG1 (1990-12)(Nintendo)(US)[b].nes" size="196624" crc="8ca54858" md5="87d7d7c77c2985fd6000072003708e1d" sha1="a08870cb44cea4e233193c308866f578767fae53"/>
+	</game>
+	<game name="3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG1 (1990-12)(Nintendo)(US)[h Vimm][iNES title]">
+		<description>3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG1 (1990-12)(Nintendo)(US)[h Vimm][iNES title]</description>
+		<rom name="3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG1 (1990-12)(Nintendo)(US)[h Vimm][iNES title].nes" size="196752" crc="440d2430" md5="ef6ce85d9d2ab3a27c7b43027ab5d2b6" sha1="e9e05414b700c93ac0a10f1b24cbf11b58ec607d"/>
+	</game>
+	<game name="3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG1 (1990-12)(Nintendo)(US)[h][iNES title]">
+		<description>3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG1 (1990-12)(Nintendo)(US)[h][iNES title]</description>
+		<rom name="3-in-1 Super Mario Bros. + Duck Hunt + World Class Track Meet Rev PRG1 (1990-12)(Nintendo)(US)[h][iNES title].nes" size="196752" crc="7ce93a0a" md5="773c6b1eb4e5b40d473da145b121676a" sha1="9cf548757ddd5f6aa9b44ea0d3c1b09f84a67e0a"/>
+	</game>
+	<game name="31 in 1 (19xx)(-)(AS)[h][p][menu only]">
+		<description>31 in 1 (19xx)(-)(AS)[h][p][menu only]</description>
+		<rom name="31 in 1 (19xx)(-)(AS)[h][p][menu only].nes" size="32784" crc="c94cfd93" md5="f76414c6f2c04ab94ac52411cbee7731" sha1="3709b392d5f9530f88f3e235f1a920709cb70141"/>
+	</game>
+	<game name="31 in 1 (19xx)(-)(AS)[p]">
+		<description>31 in 1 (19xx)(-)(AS)[p]</description>
+		<rom name="31 in 1 (19xx)(-)(AS)[p].nes" size="786448" crc="301e5909" md5="2c062884139c8e242da1c495a12a76f2" sha1="a7ae3152fe5e26edf5a9871dd2b84b43403ec088"/>
+	</game>
+	<game name="35 in 1 (199x)(-)(AS)[p]">
+		<description>35 in 1 (199x)(-)(AS)[p]</description>
+		<rom name="35 in 1 (199x)(-)(AS)[p].nes" size="98320" crc="d9499d7d" md5="1bf7904c16d2376a8056e677586f9293" sha1="9cf521543c900ea3493dbfe0a9513e067c3c80e1"/>
+	</game>
+	<game name="350 in 1 (19xx)(-)(AS)[h][p][menu only]">
+		<description>350 in 1 (19xx)(-)(AS)[h][p][menu only]</description>
+		<rom name="350 in 1 (19xx)(-)(AS)[h][p][menu only].nes" size="24592" crc="9d2e2cea" md5="5ff04d82e4308fa4b7e248e797468604" sha1="57182328644811438691a87d3395d2b4eed1ccb0"/>
+	</game>
+	<game name="36 in 1 (199x)(-)(AS)[p]">
+		<description>36 in 1 (199x)(-)(AS)[p]</description>
+		<rom name="36 in 1 (199x)(-)(AS)[p].nes" size="196624" crc="9db89759" md5="fe28415d4117a84d8921f024ae8c7b68" sha1="1911204ecbd90d13b17a8e67f3865a571307dd45"/>
+	</game>
+	<game name="3D Block (1990)(RCM)(AS)[h][p][iNES title]">
+		<description>3D Block (1990)(RCM)(AS)[h][p][iNES title]</description>
+		<rom name="3D Block (1990)(RCM)(AS)[h][p][iNES title].nes" size="32912" crc="e2e781c8" md5="54e8a8b4159ee9b942a9accf1ff34b43" sha1="23cb136a14ebebd19c3ee8eac917a27d6729a73a"/>
+	</game>
+	<game name="3D Block (1990)(RCM)(AS)[p]">
+		<description>3D Block (1990)(RCM)(AS)[p]</description>
+		<rom name="3D Block (1990)(RCM)(AS)[p].nes" size="32784" crc="1c4f2651" md5="806e1422ab2a1470681999782af7800e" sha1="ee03b31e17b606dda95d1bc4a01056b27047c287"/>
+	</game>
+	<game name="3D Block (199x)(-)(AS)[p][b2]">
+		<description>3D Block (199x)(-)(AS)[p][b2]</description>
+		<rom name="3D Block (199x)(-)(AS)[p][b2].nes" size="37008" crc="d8aada07" md5="a53d2771d5173594d5ab57e8a2af6b4d" sha1="1c185651d3440ea4e1af65b5a6adc0818f41dec1"/>
+	</game>
+	<game name="3D Block (199x)(-)(AS)[p][b]">
+		<description>3D Block (199x)(-)(AS)[p][b]</description>
+		<rom name="3D Block (199x)(-)(AS)[p][b].nes" size="32784" crc="3949c87a" md5="e36be933b9b8468e85474ea7bd3faa5f" sha1="709cd6b475ff323712aae615494e72bf326cc450"/>
+	</game>
+	<game name="4 in 1 (19xx)(-)(AS)[p][reset based]">
+		<description>4 in 1 (19xx)(-)(AS)[p][reset based]</description>
+		<rom name="4 in 1 (19xx)(-)(AS)[p][reset based].nes" size="98320" crc="e5e3b5bf" md5="78a5f2b4aec48aae4ea04e6a46b425b2" sha1="397c3db4bd45c5da5ebd3d85cd6bab19e446e33b"/>
+	</game>
+	<game name="4 Nin Uchi Mahjong (1984-11-01)(Hudson)(JP)">
+		<description>4 Nin Uchi Mahjong (1984-11-01)(Hudson)(JP)</description>
+		<rom name="4 Nin Uchi Mahjong (1984-11-01)(Hudson)(JP).nes" size="24592" crc="e6a38f26" md5="50a2a13fc9c4809e348a2c59afdd28e5" sha1="4c73f164fc798148b18a35cb9c15c87469021c85"/>
+	</game>
+	<game name="4 Nin Uchi Mahjong (1984-11-01)(Hudson)(JP)[o]">
+		<description>4 Nin Uchi Mahjong (1984-11-01)(Hudson)(JP)[o]</description>
+		<rom name="4 Nin Uchi Mahjong (1984-11-01)(Hudson)(JP)[o].nes" size="40976" crc="61eef876" md5="362e2ef651fe0350b8a155ede9a35e5b" sha1="1797e602afb55add1d256d30a5a9839106d6f426"/>
+	</game>
+	<game name="4 Nin Uchi Mahjong (1987)(FMG)(JP)[p]">
+		<description>4 Nin Uchi Mahjong (1987)(FMG)(JP)[p]</description>
+		<rom name="4 Nin Uchi Mahjong (1987)(FMG)(JP)[p].nes" size="24592" crc="9fc5138a" md5="507e604573d37ecbc2d9da20d4326c65" sha1="bdd1a7bacf9c2f2d4e080263574e308b7ef41282"/>
+	</game>
+	<game name="4 Nin Uchi Mahjong (1987)(FMG)(JP)[p][o]">
+		<description>4 Nin Uchi Mahjong (1987)(FMG)(JP)[p][o]</description>
+		<rom name="4 Nin Uchi Mahjong (1987)(FMG)(JP)[p][o].nes" size="40976" crc="86cf5b51" md5="d2d2f71bcce405f632e45912aaf270bb" sha1="8f04ebf00fcc1c4ab1db429a32f457d1620dfd87"/>
+	</game>
+	<game name="47 in 1 (19xx)(-)(AS)[h][p][menu only][GK-47]">
+		<description>47 in 1 (19xx)(-)(AS)[h][p][menu only][GK-47]</description>
+		<rom name="47 in 1 (19xx)(-)(AS)[h][p][menu only][GK-47].nes" size="40976" crc="f0bdec76" md5="dd283c34b18c046de3ed7528f25094f2" sha1="2950dda15270dccd9aa6c1bb5bd532224a36843e"/>
+	</game>
+	<game name="47 in 1 (19xx)(-)(AS)[p][GK-47]">
+		<description>47 in 1 (19xx)(-)(AS)[p][GK-47]</description>
+		<rom name="47 in 1 (19xx)(-)(AS)[p][GK-47].nes" size="262160" crc="ae81ebbc" md5="86cacced397f18a648d8bbd18a4c8cba" sha1="3d166765ef7d6a29bb78a807911cf0718ac0b4b4"/>
+	</game>
+	<game name="52 Games (19xx)(-)(AS)[h][p][menu only]">
+		<description>52 Games (19xx)(-)(AS)[h][p][menu only]</description>
+		<rom name="52 Games (19xx)(-)(AS)[h][p][menu only].nes" size="24592" crc="c1bd99e3" md5="130bfe84387010b74e1a4217cbc6bb39" sha1="84aa8a05cda6cd0eb4a638059e587f1a387e5691"/>
+	</game>
+	<game name="52 Games (19xx)(-)(AS)[p]">
+		<description>52 Games (19xx)(-)(AS)[p]</description>
+		<rom name="52 Games (19xx)(-)(AS)[p].nes" size="1572880" crc="1c07eca3" md5="9c23d89727a49a61d5aea3d7cd299b7a" sha1="7c0f39604015925e91607bc4f960febffd0a55e7"/>
+	</game>
+	<game name="52 Games (19xx)(-)(AS)[p][b]">
+		<description>52 Games (19xx)(-)(AS)[p][b]</description>
+		<rom name="52 Games (19xx)(-)(AS)[p][b].nes" size="1056768" crc="37e3df08" md5="181f6e6141be2975cd2a793bc800e97a" sha1="1ba548926fbd4ed66f37a80a1931572e9a535948"/>
+	</game>
+	<game name="54 in 1 (199x)(Game Star)(AS)[h][p][menu only][GK-54]">
+		<description>54 in 1 (199x)(Game Star)(AS)[h][p][menu only][GK-54]</description>
+		<rom name="54 in 1 (199x)(Game Star)(AS)[h][p][menu only][GK-54].nes" size="24592" crc="5c100805" md5="057f126060b92f88c2eb634964153f43" sha1="d5b2a76273f4810a0e8240c5fa1476678270cd98"/>
+	</game>
+	<game name="54 in 1 (199x)(Game Star)(AS)[h][p][o][menu only][GK-54]">
+		<description>54 in 1 (199x)(Game Star)(AS)[h][p][o][menu only][GK-54]</description>
+		<rom name="54 in 1 (199x)(Game Star)(AS)[h][p][o][menu only][GK-54].nes" size="40976" crc="b94187bc" md5="1df8151b3603d1a87f4c9b6880c323b2" sha1="2abe2f301218554348628ceb6ffb702e7541e4e0"/>
+	</game>
+	<game name="54 in 1 (199x)(Game Star)(AS)[p][GK-54]">
+		<description>54 in 1 (199x)(Game Star)(AS)[p][GK-54]</description>
+		<rom name="54 in 1 (199x)(Game Star)(AS)[p][GK-54].nes" size="262160" crc="26114cce" md5="f9b0a2ecfb2efaa25cabff3f828794c3" sha1="8721537bdc5bbaa0501d8f8169fc7d3a69603f21"/>
+	</game>
+	<game name="58 in 1 (199x)(Super Technos Co. Ltd)(AS)[h][p][menu only]">
+		<description>58 in 1 (199x)(Super Technos Co. Ltd)(AS)[h][p][menu only]</description>
+		<rom name="58 in 1 (199x)(Super Technos Co. Ltd)(AS)[h][p][menu only].nes" size="24592" crc="4838786c" md5="efe9a8b8706c0d06a25ea3c31ca87195" sha1="c5d10f246e4679a47a9982a1362f8b1a4c34303f"/>
+	</game>
+	<game name="58 in 1 (199x)(Super Technos Co. Ltd)(AS)[p]">
+		<description>58 in 1 (199x)(Super Technos Co. Ltd)(AS)[p]</description>
+		<rom name="58 in 1 (199x)(Super Technos Co. Ltd)(AS)[p].nes" size="1572880" crc="7626c21e" md5="3fa70858e26f4cff398070d449e846a3" sha1="114e5854c13d1bc2ea07986aba39ec915688c92f"/>
+	</game>
+	<game name="6 in 1 (199x)(Game Star)(AS)[h][p][menu only][GK-L01A]">
+		<description>6 in 1 (199x)(Game Star)(AS)[h][p][menu only][GK-L01A]</description>
+		<rom name="6 in 1 (199x)(Game Star)(AS)[h][p][menu only][GK-L01A].nes" size="24592" crc="f0e14ed7" md5="6f2ca146bd1c31f832efd38ff3d82e84" sha1="650d52adee307ed01ac63b039ffa1ee95455d911"/>
+	</game>
+	<game name="6 in 1 (199x)(Game Star)(AS)[h][p][o][menu only][GK-L01A]">
+		<description>6 in 1 (199x)(Game Star)(AS)[h][p][o][menu only][GK-L01A]</description>
+		<rom name="6 in 1 (199x)(Game Star)(AS)[h][p][o][menu only][GK-L01A].nes" size="40976" crc="deddda54" md5="973988c847c906598faa76b2e7d76962" sha1="dd8d1c63ac1a7269b19fab9d13bac5f7109a48a8"/>
+	</game>
+	<game name="6 in 1 (199x)(Game Star)(AS)[p][GK-L01A]">
+		<description>6 in 1 (199x)(Game Star)(AS)[p][GK-L01A]</description>
+		<rom name="6 in 1 (199x)(Game Star)(AS)[p][GK-L01A].nes" size="262160" crc="82ff2257" md5="d3b41f2b08db68dad6bbb80c30582ad2" sha1="6e74fea3bf9214552ea50f2a2c45b6abf472b3c4"/>
+	</game>
+	<game name="6 in 1 (199x)(Game Star)(AS)[p][SuperGK-L02A]">
+		<description>6 in 1 (199x)(Game Star)(AS)[p][SuperGK-L02A]</description>
+		<rom name="6 in 1 (199x)(Game Star)(AS)[p][SuperGK-L02A].nes" size="262160" crc="def53a1e" md5="ac874797cf3ed6d0676a9b0b5ec636b4" sha1="30e6ae3903b1bd45c540e4118db43e07f873fc48"/>
+	</game>
+	<game name="64 in 1 (199x)(-)(AS)[p]">
+		<description>64 in 1 (199x)(-)(AS)[p]</description>
+		<rom name="64 in 1 (199x)(-)(AS)[p].nes" size="188432" crc="7643709f" md5="e53aeca6c7a6cf0d75c1cacc7487e7e6" sha1="44d537438693ead258253fc641535fb82c924d12"/>
+	</game>
+	<game name="64 in 1 (199x)(-)(AS)[p][a games]">
+		<description>64 in 1 (199x)(-)(AS)[p][a games]</description>
+		<rom name="64 in 1 (199x)(-)(AS)[p][a games].nes" size="1572880" crc="da43065a" md5="fb88b6885081c147be8f1402861ff70f" sha1="b535957d54d5cba15322b7c2db22e6e877c34ac4"/>
+	</game>
+	<game name="65 in 1 (199x)(-)(AS)[p][TN-95]">
+		<description>65 in 1 (199x)(-)(AS)[p][TN-95]</description>
+		<rom name="65 in 1 (199x)(-)(AS)[p][TN-95].nes" size="196624" crc="81f107e4" md5="1c4b2c049c881ee5a86f62e0256326c0" sha1="21b95b8715424e67c5f9af90d164f1166ae257e9"/>
+	</game>
+	<game name="68 in 1 (199x)(Game Star)(AS)[p][HKX5268]">
+		<description>68 in 1 (199x)(Game Star)(AS)[p][HKX5268]</description>
+		<rom name="68 in 1 (199x)(Game Star)(AS)[p][HKX5268].nes" size="196624" crc="1fd44b37" md5="1b4fb1373c3a4d04875c25a1bb78dfa7" sha1="4037b020fd1ce102c76fc461e29b0b172c9e85e2"/>
+	</game>
+	<game name="72 in 1 (19xx)(-)(AS)[h][p][menu only]">
+		<description>72 in 1 (19xx)(-)(AS)[h][p][menu only]</description>
+		<rom name="72 in 1 (19xx)(-)(AS)[h][p][menu only].nes" size="24592" crc="6aee74e5" md5="88a3b016b6f47062dc48d024eb0924e4" sha1="e96df91489d85fc5119eb254dc797967573af65e"/>
+	</game>
+	<game name="72 in 1 (19xx)(-)(AS)[p]">
+		<description>72 in 1 (19xx)(-)(AS)[p]</description>
+		<rom name="72 in 1 (19xx)(-)(AS)[p].nes" size="1572880" crc="00f215fc" md5="c7a77b8c9af3b15c9ebebf5d4e600d37" sha1="65d95d7b7817915ac6264cdc3b9ab358e3c4e153"/>
+	</game>
+	<game name="72 in 1 (19xx)(-)(AS)[p][b]">
+		<description>72 in 1 (19xx)(-)(AS)[p][b]</description>
+		<rom name="72 in 1 (19xx)(-)(AS)[p][b].nes" size="1572880" crc="bb3dbf75" md5="4382218d8479f3ab61baeb1f59a0eaf6" sha1="e8229a274f164ff39efa4b77129e2206a40edf4d"/>
+	</game>
+	<game name="720 Degrees (1989-11)(Mindscape)(US)">
+		<description>720 Degrees (1989-11)(Mindscape)(US)</description>
+		<rom name="720 Degrees (1989-11)(Mindscape)(US).nes" size="131088" crc="9b37d149" md5="448431d360ac64bfb9332cb261775307" sha1="6a7533cd7491ad109f87842b6c26656c88fd25e6"/>
+	</game>
+	<game name="720 Degrees (1989-11)(Mindscape)(US)[a]">
+		<description>720 Degrees (1989-11)(Mindscape)(US)[a]</description>
+		<rom name="720 Degrees (1989-11)(Mindscape)(US)[a].nes" size="131088" crc="6bc968af" md5="6026ebe9ec9e971374acab76c161805f" sha1="b92ca0784c6012e0978cb9c42fe0c2919b83cf32"/>
+	</game>
+	<game name="720 Degrees (1989-11)(Mindscape)(US)[b2]">
+		<description>720 Degrees (1989-11)(Mindscape)(US)[b2]</description>
+		<rom name="720 Degrees (1989-11)(Mindscape)(US)[b2].nes" size="131088" crc="37f1cc63" md5="672507850311f5826470921891b38b59" sha1="6e1b19303b700eeaf2d768bb9dbb30978b8712d1"/>
+	</game>
+	<game name="720 Degrees (1989-11)(Mindscape)(US)[b]">
+		<description>720 Degrees (1989-11)(Mindscape)(US)[b]</description>
+		<rom name="720 Degrees (1989-11)(Mindscape)(US)[b].nes" size="131088" crc="3eb4c36a" md5="138e8d04f4f6f1f86b270be6c5244704" sha1="23734d088695a42b39d8b98f392ac1f3e88993c1"/>
+	</game>
+	<game name="720 Degrees (1989-11)(Mindscape)(US)[h Vimm][iNES title]">
+		<description>720 Degrees (1989-11)(Mindscape)(US)[h Vimm][iNES title]</description>
+		<rom name="720 Degrees (1989-11)(Mindscape)(US)[h Vimm][iNES title].nes" size="131216" crc="368b51c7" md5="6448df740308478a05d067016dbb9dec" sha1="0697c2e2c5e3baa5874a95617da6204d398bf3ca"/>
+	</game>
+	<game name="720 Degrees (1989-11)(Mindscape)(US)[h][b2][iNES title]">
+		<description>720 Degrees (1989-11)(Mindscape)(US)[h][b2][iNES title]</description>
+		<rom name="720 Degrees (1989-11)(Mindscape)(US)[h][b2][iNES title].nes" size="131216" crc="a6024f3a" md5="fb38e2dd1da9559204638f73484f55bc" sha1="1453fafae9f7908a2a50bef969b2c14cd3e7f288"/>
+	</game>
+	<game name="720 Degrees (1989-11)(Mindscape)(US)[h][iNES title]">
+		<description>720 Degrees (1989-11)(Mindscape)(US)[h][iNES title]</description>
+		<rom name="720 Degrees (1989-11)(Mindscape)(US)[h][iNES title].nes" size="131216" crc="cf2c9328" md5="55ba8865959f7ff6dc5cd0ed87c86fcd" sha1="7362afedcbcd1c2bf05eb2492b35d309972ccb7e"/>
+	</game>
+	<game name="73 in 1 (199x)(-)(AS)[p][GK-192 board]">
+		<description>73 in 1 (199x)(-)(AS)[p][GK-192 board]</description>
+		<rom name="73 in 1 (199x)(-)(AS)[p][GK-192 board].nes" size="196624" crc="0b7347ba" md5="43e2c69801f832f3ac19df7f7cc40401" sha1="a7a57ebc4cc85293ef3e4f4bbeba8e5d787a9ddc"/>
+	</game>
+	<game name="76 in 1 (1990)(-)(AS)[h2][p][menu only]">
+		<description>76 in 1 (1990)(-)(AS)[h2][p][menu only]</description>
+		<rom name="76 in 1 (1990)(-)(AS)[h2][p][menu only].nes" size="32784" crc="0da248c5" md5="fde6dc91a6330a25a9e7ccb55697e59f" sha1="169a552fb695b916ddce3d8c2b3f510b7f00316e"/>
+	</game>
+	<game name="76 in 1 (1990)(-)(AS)[h3][p][menu only]">
+		<description>76 in 1 (1990)(-)(AS)[h3][p][menu only]</description>
+		<rom name="76 in 1 (1990)(-)(AS)[h3][p][menu only].nes" size="32784" crc="e9af5700" md5="f83db20fd10b31a8fd19d17f4479ca8d" sha1="bd37043ac544b9be0b61b4160376fe4d78bd4000"/>
+	</game>
+	<game name="76 in 1 (1990)(-)(AS)[h][p]">
+		<description>76 in 1 (1990)(-)(AS)[h][p]</description>
+		<rom name="76 in 1 (1990)(-)(AS)[h][p].nes" size="2097168" crc="f743df3b" md5="6fbf03182f1184e36f1588c9f3b698f5" sha1="7e99e25db858319ed538b02060418bfcd592fe38"/>
+	</game>
+	<game name="76 in 1 (1990)(-)(AS)[p]">
+		<description>76 in 1 (1990)(-)(AS)[p]</description>
+		<rom name="76 in 1 (1990)(-)(AS)[p].nes" size="2097168" crc="79988bb0" md5="07cd0643dfce31537b9c8a1de67d0e6f" sha1="252aa1b4bbbde19924098d29f9c2f70d92a63427"/>
+	</game>
+	<game name="76 in 1 (1990)(-)(AS)[p][b2]">
+		<description>76 in 1 (1990)(-)(AS)[p][b2]</description>
+		<rom name="76 in 1 (1990)(-)(AS)[p][b2].nes" size="2097168" crc="299e8ca5" md5="7272fb8a67e7e0f609f7edd90f367f29" sha1="389714ff049747eff6c8601ba6de4b942f0c9562"/>
+	</game>
+	<game name="76 in 1 (1990)(-)(AS)[p][b]">
+		<description>76 in 1 (1990)(-)(AS)[p][b]</description>
+		<rom name="76 in 1 (1990)(-)(AS)[p][b].nes" size="2097168" crc="cb2a9943" md5="03df3b87d731328c5be881f4fb3c2989" sha1="57251f78417cf6284277af166d7dd722cea0e3cf"/>
+	</game>
+	<game name="777 Lucky Bingo (1989)(Sachen)(TW)[p][SA-004][NES cart]">
+		<description>777 Lucky Bingo (1989)(Sachen)(TW)[p][SA-004][NES cart]</description>
+		<rom name="777 Lucky Bingo (1989)(Sachen)(TW)[p][SA-004][NES cart].nes" size="32784" crc="81a7dc14" md5="355042ce68cd47d43fbd01506038d9a7" sha1="9b6e4eb09ff3b381146f1c7828a832859bc52257"/>
+	</game>
+	<game name="8 Eye's (1988-09-27)(Seta)(JP)">
+		<description>8 Eye's (1988-09-27)(Seta)(JP)</description>
+		<rom name="8 Eye's (1988-09-27)(Seta)(JP).nes" size="262160" crc="d24639e3" md5="4e0af17f6a4791b629f63a2390ba6ddf" sha1="84bae3b9e3bbd281d828c92d24df089ee4748965"/>
+	</game>
+	<game name="8 Eye's (1988-09-27)(Seta)(JP)[h][enlarged rom]">
+		<description>8 Eye's (1988-09-27)(Seta)(JP)[h][enlarged rom]</description>
+		<rom name="8 Eye's (1988-09-27)(Seta)(JP)[h][enlarged rom].nes" size="786464" crc="51ef5fa1" md5="615994e6c4abe3aa44d61970109be23b" sha1="3106dce02d41a0d53b59d6d94d4846c6e046564d"/>
+	</game>
+	<game name="8 Eyes (1990-01)(Taxan)(US)">
+		<description>8 Eyes (1990-01)(Taxan)(US)</description>
+		<rom name="8 Eyes (1990-01)(Taxan)(US).nes" size="262160" crc="18f9bb24" md5="0d3ddb15fb94c7c663062c9bbf804299" sha1="fddc581f9837c47628fcfba01f258f3318af9641"/>
+	</game>
+	<game name="8 Eyes (1990-01)(Taxan)(US)[b2]">
+		<description>8 Eyes (1990-01)(Taxan)(US)[b2]</description>
+		<rom name="8 Eyes (1990-01)(Taxan)(US)[b2].nes" size="262160" crc="907edab8" md5="05e23dd4e4a18af2d4b7aeacbd1cb2e8" sha1="0473966d979abe055c3f1dbbe0360b7c0abdbf23"/>
+	</game>
+	<game name="8 Eyes (1990-01)(Taxan)(US)[b]">
+		<description>8 Eyes (1990-01)(Taxan)(US)[b]</description>
+		<rom name="8 Eyes (1990-01)(Taxan)(US)[b].nes" size="262160" crc="7b8ca173" md5="257599515a9c17d9551ec1a6a9cbf7e3" sha1="ff6ba8865619d7a06591819f117e38a29e400483"/>
+	</game>
+	<game name="8 Eyes (1990-01)(Taxan)(US)[h Vimm][iNES title]">
+		<description>8 Eyes (1990-01)(Taxan)(US)[h Vimm][iNES title]</description>
+		<rom name="8 Eyes (1990-01)(Taxan)(US)[h Vimm][iNES title].nes" size="262288" crc="849d542e" md5="5b267fd72c60f4d7cfeec36a15e349ad" sha1="40cc161362a83a91a35ae189954b4ad3cd272d18"/>
+	</game>
+	<game name="8 Eyes (1990-01)(Taxan)(US)[h][iNES title]">
+		<description>8 Eyes (1990-01)(Taxan)(US)[h][iNES title]</description>
+		<rom name="8 Eyes (1990-01)(Taxan)(US)[h][iNES title].nes" size="262288" crc="7494b58a" md5="f1fbaa217ccb5c5bae7868a37de5fe5e" sha1="4dbbd433f4e611dda3aaef577f082cc7b00aa3b8"/>
+	</game>
+	<game name="8 Eyes (1990-01)(Taxan)(US)[tr es DJTraducciones][v1.0]">
+		<description>8 Eyes (1990-01)(Taxan)(US)[tr es DJTraducciones][v1.0]</description>
+		<rom name="8 Eyes (1990-01)(Taxan)(US)[tr es DJTraducciones][v1.0].nes" size="262160" crc="04dee974" md5="39725f51d5db1f1fdb2e3037cff65c25" sha1="ab34fac1827623135a1ea2f443d76b9e68adc13c"/>
+	</game>
+	<game name="8 Eyes (1990-01)(Taxan)(US)[tr fr KS151][v1.0]">
+		<description>8 Eyes (1990-01)(Taxan)(US)[tr fr KS151][v1.0]</description>
+		<rom name="8 Eyes (1990-01)(Taxan)(US)[tr fr KS151][v1.0].nes" size="262160" crc="0d3b35db" md5="87c90e64465406cd27f3dd37861e722b" sha1="7192d84ec9849e623b567272b4d0702512989e67"/>
+	</game>
+	<game name="8 Eyes (1990-01)(Taxan)(US)[tr pt BR Games][v1.0-1999]">
+		<description>8 Eyes (1990-01)(Taxan)(US)[tr pt BR Games][v1.0-1999]</description>
+		<rom name="8 Eyes (1990-01)(Taxan)(US)[tr pt BR Games][v1.0-1999].nes" size="262160" crc="13c668f2" md5="95cb93318a9ccebb0428eea790157d65" sha1="5c0f187c793dd3bb646df438702e6eee6290b02f"/>
+	</game>
+	<game name="8 Eyes (1990-01)(Taxan)(US)[tr pt CBT][v1.0-1999]">
+		<description>8 Eyes (1990-01)(Taxan)(US)[tr pt CBT][v1.0-1999]</description>
+		<rom name="8 Eyes (1990-01)(Taxan)(US)[tr pt CBT][v1.0-1999].nes" size="262160" crc="86f44b5a" md5="3989d0f764f3f6d3f687b334c646544d" sha1="4d81008eba50bcf5c913fbe96950abcd29149043"/>
+	</game>
+	<game name="8 in 1 (199x)(-)(AS)[p]">
+		<description>8 in 1 (199x)(-)(AS)[p]</description>
+		<rom name="8 in 1 (199x)(-)(AS)[p].nes" size="163856" crc="4500ba6f" md5="05ed34b16c27ae1f04c154b9065e71a9" sha1="87ee3203c602053136ac11f8e0bb6167fdb146c7"/>
+	</game>
+	<game name="9 in 1 (19xx)(-)(AS)[p]">
+		<description>9 in 1 (19xx)(-)(AS)[p]</description>
+		<rom name="9 in 1 (19xx)(-)(AS)[p].nes" size="262160" crc="7ec19efc" md5="0b92007c42a7c349190086a41df1654d" sha1="a6a642fefec9ae5569618f383adddf84c6bfd779"/>
+	</game>
+	<game name="98 in 1 (199x)(-)(AS)[p][GK-192 board]">
+		<description>98 in 1 (199x)(-)(AS)[p][GK-192 board]</description>
+		<rom name="98 in 1 (199x)(-)(AS)[p][GK-192 board].nes" size="196624" crc="75e50283" md5="6e59ae52c6b369a68b1187b6715be5e5" sha1="250755641de8eaf65b3b10d7e93fd100a51d8412"/>
+	</game>
+	<game name="9999 in 1 (199x)(-)(AS)[h Dr. Titus][p][menu only]">
+		<description>9999 in 1 (199x)(-)(AS)[h Dr. Titus][p][menu only]</description>
+		<rom name="9999 in 1 (199x)(-)(AS)[h Dr. Titus][p][menu only].nes" size="24592" crc="6d24a943" md5="1dfadddacf75d37589783558885c4813" sha1="c9aae4418e6480d0d46573707a455a4380c2cd3a"/>
+	</game>
+	<game name="9999999 in 1 (199x)(-)(AS)[h Dr. Titus][p][menu only]">
+		<description>9999999 in 1 (199x)(-)(AS)[h Dr. Titus][p][menu only]</description>
+		<rom name="9999999 in 1 (199x)(-)(AS)[h Dr. Titus][p][menu only].nes" size="24592" crc="ace5f7cc" md5="bf3176e35a7c5e2fee35d9c8c3dbc8ae" sha1="4ee559d5d1da9bec28485f1760238ebb745086cf"/>
+	</game>
+	<game name="9999999 in 1 (199x)(-)(AS)[p]">
+		<description>9999999 in 1 (199x)(-)(AS)[p]</description>
+		<rom name="9999999 in 1 (199x)(-)(AS)[p].nes" size="196624" crc="b5146b12" md5="737dcc9e43510002ca6a0195f2d9525d" sha1="41d2c7fdd8154d316f44e8e0f73dacfa171de81b"/>
+	</game>
+	<game name="A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)">
+		<description>A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)</description>
+		<rom name="A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP).nes" size="147472" crc="58fe5467" md5="eef6577471c300c86f8e67be96bb6f15" sha1="fb64047d320c540eeb0cf72d9d7b80d08e2f410c"/>
+	</game>
+	<game name="A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[b2]">
+		<description>A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[b2]</description>
+		<rom name="A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[b2].nes" size="147472" crc="ae89618e" md5="8a04d2ce6c8b304e67bd238a72f833c0" sha1="50a653bbb21f615e1668adc4dbffc6c380b18abf"/>
+	</game>
+	<game name="A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[b3]">
+		<description>A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[b3]</description>
+		<rom name="A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[b3].nes" size="131088" crc="bd6ee826" md5="443d5837f3721ad59b0296d1b3dd1268" sha1="8f73986e4d77a7f1c9cbc88c75171c7ea0271484"/>
+	</game>
+	<game name="A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[b]">
+		<description>A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[b]</description>
+		<rom name="A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[b].nes" size="139280" crc="2899b08a" md5="3ef7458f7de5f964f6e9b3891066e98a" sha1="0d24a54db3d113a3d733e5565f74baa5fb3cf852"/>
+	</game>
+	<game name="A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[h][enlarged rom]">
+		<description>A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[h][enlarged rom]</description>
+		<rom name="A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[h][enlarged rom].nes" size="671776" crc="f81cc09c" md5="de4c12ee3c89d014d03c714c42fa945e" sha1="bc86e03e95204eab2ccdbc258810023464815c81"/>
+	</game>
+	<game name="A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[o]">
+		<description>A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[o]</description>
+		<rom name="A Ressha de Ikou (1991-08-21)(Pony Canyon)(JP)[o].nes" size="262160" crc="cc67c6a4" md5="621b8f061bf3201db67d14274aaf0a0a" sha1="ecad5cc486d7c9f0b2d9d1db35ff4e763d3f919d"/>
+	</game>
+	<game name="AA Mario (200x)(Snowarrow)(JP)[h][Super Mario Bros.]">
+		<description>AA Mario (200x)(Snowarrow)(JP)[h][Super Mario Bros.]</description>
+		<rom name="AA Mario (200x)(Snowarrow)(JP)[h][Super Mario Bros.].nes" size="40976" crc="da348ea1" md5="308f84852c47e1e6ab950a5d2b2e81bf" sha1="e929a7bcf12c46bdf1e0defc66d4172722d7d6d1"/>
+	</game>
+	<game name="Aa Yakyuu Jinsei Icchokusen (1992-12-25)(Sammy)(JP)">
+		<description>Aa Yakyuu Jinsei Icchokusen (1992-12-25)(Sammy)(JP)</description>
+		<rom name="Aa Yakyuu Jinsei Icchokusen (1992-12-25)(Sammy)(JP).nes" size="524304" crc="310c0ee7" md5="5d26cd0c5dce8941a6e93b709636f50e" sha1="a3693e5f51728bebab44e0b8a4a41b94ac9ad53d"/>
+	</game>
+	<game name="Aa Yakyuu Jinsei Icchokusen (1992-12-25)(Sammy)(JP)[h][enlarged rom]">
+		<description>Aa Yakyuu Jinsei Icchokusen (1992-12-25)(Sammy)(JP)[h][enlarged rom]</description>
+		<rom name="Aa Yakyuu Jinsei Icchokusen (1992-12-25)(Sammy)(JP)[h][enlarged rom].nes" size="1048608" crc="e92a908b" md5="f62d302f7a54ad6be3f990c41891015f" sha1="480e23a7dc983d9b717900e04c1afb9528316cc7"/>
+	</game>
+	<game name="Abadox (1989-12-15)(Natsume)(JP)">
+		<description>Abadox (1989-12-15)(Natsume)(JP)</description>
+		<rom name="Abadox (1989-12-15)(Natsume)(JP).nes" size="262160" crc="797e7640" md5="7aed513c8be0520e4199441b551d22b4" sha1="3de7a3266b7824ac8e0cffa12d915a6bed810f1e"/>
+	</game>
+	<game name="Abadox (1989-12-15)(Natsume)(JP)[b]">
+		<description>Abadox (1989-12-15)(Natsume)(JP)[b]</description>
+		<rom name="Abadox (1989-12-15)(Natsume)(JP)[b].nes" size="262160" crc="5a91ab60" md5="bf8d41c17312f4643137980e34eff67b" sha1="506385dcd70afd6cdd36f8d65d129a3f49f4cd6b"/>
+	</game>
+	<game name="Abadox (1989-12-15)(Natsume)(JP)[h2][enlarged rom]">
+		<description>Abadox (1989-12-15)(Natsume)(JP)[h2][enlarged rom]</description>
+		<rom name="Abadox (1989-12-15)(Natsume)(JP)[h2][enlarged rom].nes" size="786464" crc="5b49f1c4" md5="90e9a754bc8aae3018864cafabd062c5" sha1="f275f584ad947c031f6ae361c7103080897c4428"/>
+	</game>
+	<game name="Abadox (1989-12-15)(Natsume)(JP)[h][p][FFE copier]">
+		<description>Abadox (1989-12-15)(Natsume)(JP)[h][p][FFE copier]</description>
+		<rom name="Abadox (1989-12-15)(Natsume)(JP)[h][p][FFE copier].nes" size="262672" crc="4ed48587" md5="b1e9d2b152261553ad8977104b110ef1" sha1="83a92a4e0f45769abc80f198bb3885616fba2b32"/>
+	</game>
+	<game name="Abadox (1989-12-15)(Natsume)(JP)[tr zh kamming]">
+		<description>Abadox (1989-12-15)(Natsume)(JP)[tr zh kamming]</description>
+		<rom name="Abadox (1989-12-15)(Natsume)(JP)[tr zh kamming].nes" size="262160" crc="c0aeec28" md5="e877da3661d394f5b8322d8f61eb52fb" sha1="5bbc89901c85b43489892635b7232364b7373373"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US).nes" size="262160" crc="dc87f63d" md5="c096127c895bb7904c810007119a0225" sha1="e20d3f4fefa0ad7de198f957563f70b11410af52"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[b2]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[b2]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[b2].nes" size="262160" crc="35506f48" md5="f566e3aafe0ac5f110a4230993195e95" sha1="762845394f39d60223312fc7aa644d4cf486c2b0"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[b3]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[b3]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[b3].nes" size="262160" crc="a8dbf3bd" md5="865a5f13e2de914ee80df0e5694ec863" sha1="ff08947963523cdfcf5649e8039d4b1335604da5"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[b4]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[b4]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[b4].nes" size="262160" crc="bc3b4453" md5="09771a6e048b6412edaca196b36ab9d7" sha1="54ba7a8f8a0b7abf2c0be4ad2569326d949328d4"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[b]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[b]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[b].nes" size="262160" crc="57a68026" md5="416231804f87ee98c3f132706e537263" sha1="9b67e897ce9066607934a4b5b3503514e212e0a4"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h Vimm][iNES title]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h Vimm][iNES title]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h Vimm][iNES title].nes" size="262288" crc="dd3db18c" md5="08cb5e60c2ce9feda5b6aa79a0be2864" sha1="6f80ad65ed53eefa9ba93bc349cfb43d02d062ac"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h2][iNES title]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h2][iNES title]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h2][iNES title].nes" size="262287" crc="e217c784" md5="e653048d9efbd7d9a06d687b5864a68d" sha1="d4c22d582c085d74560af3f20bab2c022c0cab82"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h][iNES title]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h][iNES title]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h][iNES title].nes" size="262287" crc="050fbd22" md5="529e636d81c4efb92fbe5defbeca2b8b" sha1="fb5472334e89c63397e6f7bb1401c807795ccfd6"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h][tr pt BR Games][iNES title, v1.0-1999]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h][tr pt BR Games][iNES title, v1.0-1999]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h][tr pt BR Games][iNES title, v1.0-1999].nes" size="262287" crc="fae06b86" md5="d03e76048035be0df4f22ba294f7d743" sha1="5a3663ea77c32b6f406639792f416c397c4a821b"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h][tr pt CBT][iNES title, v1.0-1999]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h][tr pt CBT][iNES title, v1.0-1999]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[h][tr pt CBT][iNES title, v1.0-1999].nes" size="262287" crc="c34af145" md5="d503c53803f6333315fccbb3ba715ed8" sha1="5e735553a21888dae98bcc62d4ddd015ab2ccb19"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr es Paladin Knights][v0.99]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr es Paladin Knights][v0.99]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr es Paladin Knights][v0.99].nes" size="262160" crc="61148190" md5="03762f2df19789eaecba082bed804531" sha1="7554914d173e9ab5507e5ed5da6d8e954a4105ea"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr fr Generation IX][v1.1-20040808]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr fr Generation IX][v1.1-20040808]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr fr Generation IX][v1.1-20040808].nes" size="262160" crc="63b462e8" md5="261cd8cc5834f4f65cd25d36467d7db0" sha1="7f942e348205cd69609942f1fae55413fa0d954e"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr pt BR Games][v1.0-1999]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr pt BR Games][v1.0-1999]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr pt BR Games][v1.0-1999].nes" size="262160" crc="1bcdfb8b" md5="cdd3b4fc99a06da399bb4f4f97e43c41" sha1="e3c52f9ece8faa7053a1b915b5939c9ecca66e1b"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr pt CBT][v1.0-1999]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr pt CBT][v1.0-1999]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr pt CBT][v1.0-1999].nes" size="262160" crc="c257a355" md5="68313696ca2abd31b5c68d89f55e9a50" sha1="7072187e510161e7148912180ffb2c1ebf674f7e"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr pt Groxo][50%]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr pt Groxo][50%]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr pt Groxo][50%].nes" size="262160" crc="2b1cd913" md5="3ce5256f0105846416715faa95cfbecc" sha1="95c8789c191580f080fdd516a8927c80018b9a1c"/>
+	</game>
+	<game name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr ru 2R Team][v1.3-100%-20000115]">
+		<description>Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr ru 2R Team][v1.3-100%-20000115]</description>
+		<rom name="Abadox - The Deadly Inner War (1990-03)(Milton Bradley)(US)[tr ru 2R Team][v1.3-100%-20000115].nes" size="262160" crc="5ce9df2d" md5="a25bf6cba18aff4802115efc3a4c4ec3" sha1="4d913b9b07fe522f3b96ba2a7c4887e1dd0a4c1c"/>
+	</game>
+	<game name="Abarenbou Jong-Il (2000)(Rinkaku)(JP)[h][Abarenbou Tengu]">
+		<description>Abarenbou Jong-Il (2000)(Rinkaku)(JP)[h][Abarenbou Tengu]</description>
+		<rom name="Abarenbou Jong-Il (2000)(Rinkaku)(JP)[h][Abarenbou Tengu].nes" size="262160" crc="5f7080a4" md5="1afab47917d58f01bc9b1dd0e03db136" sha1="25cd7478fc4e42c044e512abfe3bec8886547984"/>
+	</game>
+	<game name="Abarenbou Laden (2001)(OKG)(JP)[h][Abarenbou Tengu]">
+		<description>Abarenbou Laden (2001)(OKG)(JP)[h][Abarenbou Tengu]</description>
+		<rom name="Abarenbou Laden (2001)(OKG)(JP)[h][Abarenbou Tengu].nes" size="262160" crc="14071bda" md5="a8c79d07dd03debc76fc0568ce1ae5fb" sha1="ebd9d408ae00cc23b460a60a77c39336008c5671"/>
+	</game>
+	<game name="Abarenbou Tengu (1990-12-14)(Meldac)(JP)">
+		<description>Abarenbou Tengu (1990-12-14)(Meldac)(JP)</description>
+		<rom name="Abarenbou Tengu (1990-12-14)(Meldac)(JP).nes" size="262160" crc="e6e94558" md5="6a10ba726ebd3d5fff2d203295eee35d" sha1="1d1b182040ed35a66a435dc1dd7322e528cbe99d"/>
+	</game>
+	<game name="Abarenbou Tengu (1990-12-14)(Meldac)(JP)[h][enlarged rom]">
+		<description>Abarenbou Tengu (1990-12-14)(Meldac)(JP)[h][enlarged rom]</description>
+		<rom name="Abarenbou Tengu (1990-12-14)(Meldac)(JP)[h][enlarged rom].nes" size="786464" crc="1f2a6d91" md5="21a9873ecaa2f15338e01166ed58e43e" sha1="66c1907d45a9331d5e064378be1d552b69eefb2f"/>
+	</game>
+	<game name="Aces - Iron Eagle 3 (1992-08-07)(Pack-in Video)(JP)">
+		<description>Aces - Iron Eagle 3 (1992-08-07)(Pack-in Video)(JP)</description>
+		<rom name="Aces - Iron Eagle 3 (1992-08-07)(Pack-in Video)(JP).nes" size="524304" crc="1cf96eff" md5="54f99caace60ebc2fb2e46cd90f11b47" sha1="adcd6a1b074cb4e7ef7e60665c0f56127414c3c4"/>
+	</game>
+	<game name="Aces - Iron Eagle 3 (1992-08-07)(Pack-in Video)(JP)[h][enlarged rom]">
+		<description>Aces - Iron Eagle 3 (1992-08-07)(Pack-in Video)(JP)[h][enlarged rom]</description>
+		<rom name="Aces - Iron Eagle 3 (1992-08-07)(Pack-in Video)(JP)[h][enlarged rom].nes" size="1048608" crc="ea7e4174" md5="35141c4bd49c08ab6af09a0cba8daf0c" sha1="ee2acd5898c4a474299036b217c2f287cf1604f8"/>
+	</game>
+	<game name="Acid Hackman (19xx)(NevOuS)[h][Pac-Man]">
+		<description>Acid Hackman (19xx)(NevOuS)[h][Pac-Man]</description>
+		<rom name="Acid Hackman (19xx)(NevOuS)[h][Pac-Man].nes" size="40976" crc="32fd6813" md5="052dec1faff72e34ca535f3168801c2f" sha1="0edf2498490926a35a2cc2b94392ae40f4c78a5e"/>
+	</game>
+	<game name="Action 52 (1992-05)(Active Enterprises)(EU)">
+		<description>Action 52 (1992-05)(Active Enterprises)(EU)</description>
+		<rom name="Action 52 (1992-05)(Active Enterprises)(EU).nes" size="2097168" crc="7fa90614" md5="dcd2c8fd954effd36c47440980499261" sha1="67af5fc47f5a93485e900f22ce302f6f61b5c709"/>
+	</game>
+	<game name="Action 52 (1992-05)(Active Enterprises)(EU)[b2]">
+		<description>Action 52 (1992-05)(Active Enterprises)(EU)[b2]</description>
+		<rom name="Action 52 (1992-05)(Active Enterprises)(EU)[b2].nes" size="2097168" crc="e881023b" md5="14cff3ed4b39a971c979479915c139e8" sha1="a1bb677435c3152bf44fc5994bf4ad9a2671d6bc"/>
+	</game>
+	<game name="Action 52 (1992-05)(Active Enterprises)(EU)[b]">
+		<description>Action 52 (1992-05)(Active Enterprises)(EU)[b]</description>
+		<rom name="Action 52 (1992-05)(Active Enterprises)(EU)[b].nes" size="2097168" crc="79189547" md5="985d9e884defd644ab3ae478280e9890" sha1="a6da2b5061156ed0a15d1e5dcf3d7cc0bfe9a993"/>
+	</game>
+	<game name="Action 52 (1992-05)(Active Enterprises)(EU)[h Vimm][iNES title]">
+		<description>Action 52 (1992-05)(Active Enterprises)(EU)[h Vimm][iNES title]</description>
+		<rom name="Action 52 (1992-05)(Active Enterprises)(EU)[h Vimm][iNES title].nes" size="2097296" crc="9e0a9492" md5="8ab5edf306066d207090a938a90c31da" sha1="7a9d1c2ee47cbe4a90c6bd0f9ab515444336d53e"/>
+	</game>
+	<game name="Action 52 (1992-05)(Active Enterprises)(US)">
+		<description>Action 52 (1992-05)(Active Enterprises)(US)</description>
+		<rom name="Action 52 (1992-05)(Active Enterprises)(US).nes" size="2097168" crc="224b90ff" md5="d71edbe0e936dfd26534b6c3e03fbdfc" sha1="a3eaf3ec222c0df2034778d6faa3da216064ad07"/>
+	</game>
+	<game name="Action 52 (1992-05)(Active Enterprises)(US)[b2]">
+		<description>Action 52 (1992-05)(Active Enterprises)(US)[b2]</description>
+		<rom name="Action 52 (1992-05)(Active Enterprises)(US)[b2].nes" size="2097168" crc="ee309168" md5="b3061fb1ed31b7c1fe69d0f81e0db859" sha1="d5be7b587e58496da3e4c11ea18fee902b1b6596"/>
+	</game>
+	<game name="Action 52 (1992-05)(Active Enterprises)(US)[b]">
+		<description>Action 52 (1992-05)(Active Enterprises)(US)[b]</description>
+		<rom name="Action 52 (1992-05)(Active Enterprises)(US)[b].nes" size="2096656" crc="2515570d" md5="621df3030574626596d43ea72c00001a" sha1="49d370b7e698c01752f31c6cab83eba857ba26f5"/>
+	</game>
+	<game name="Action 53 Volume 1 - Function 16 (2013-07-06)(Action 53)">
+		<description>Action 53 Volume 1 - Function 16 (2013-07-06)(Action 53)</description>
+		<rom name="Action 53 Volume 1 - Function 16 (2013-07-06)(Action 53).nes" size="524304" crc="54fc4fae" md5="a0c51b5643ec403b893d36fcde4dd496" sha1="c9523bf3b6ace744f530eb3893781bb5a0e02ecc"/>
+	</game>
+	<game name="Action 53 Volume 4 - Actually 54 (2020-11-06)(Action 53)">
+		<description>Action 53 Volume 4 - Actually 54 (2020-11-06)(Action 53)</description>
+		<rom name="Action 53 Volume 4 - Actually 54 (2020-11-06)(Action 53).nes" size="2097168" crc="8e62e4c0" md5="7ef9eb1515bbc883597918a847942688" sha1="109a9818275d8126c10689e17f2f6d512b207fe7"/>
+	</game>
+	<game name="Action in New York (1991)(Infogrames)(EU)">
+		<description>Action in New York (1991)(Infogrames)(EU)</description>
+		<rom name="Action in New York (1991)(Infogrames)(EU).nes" size="262160" crc="5773a224" md5="2cb0aa64636440b4f26c8defe44c8125" sha1="6238d189eaa3f885f9d8e92cc4ffce69a081bcaa"/>
+	</game>
+	<game name="Action in New York (1991)(Infogrames)(EU)[tr zh maoweimam][v.20040508]">
+		<description>Action in New York (1991)(Infogrames)(EU)[tr zh maoweimam][v.20040508]</description>
+		<rom name="Action in New York (1991)(Infogrames)(EU)[tr zh maoweimam][v.20040508].nes" size="262160" crc="bfa7e8e5" md5="2dd497b001ab2ac5f086845d8f8ec2bd" sha1="95bf3913b57355fbd5184c50f74bd3047bb053c0"/>
+	</game>
+	<game name="Addams Family, The (1992)(Ocean)(EU)(M3)">
+		<description>Addams Family, The (1992)(Ocean)(EU)(M3)</description>
+		<rom name="Addams Family, The (1992)(Ocean)(EU)(M3).nes" size="262160" crc="d2c3255e" md5="953001ddfe281b73efb5ffbbdaac77b1" sha1="08c039c6114ee51b987b27d301b273c3c20114cc"/>
+	</game>
+	<game name="Addams Family, The (1992-01)(Ocean)(US)">
+		<description>Addams Family, The (1992-01)(Ocean)(US)</description>
+		<rom name="Addams Family, The (1992-01)(Ocean)(US).nes" size="262160" crc="08e2af80" md5="186023fd956cb560706817a96b7bdfa4" sha1="c831410a86a9b759a1e5ec53e8e1ee6789c79569"/>
+	</game>
+	<game name="Addams Family, The (1992-01)(Ocean)(US)[b]">
+		<description>Addams Family, The (1992-01)(Ocean)(US)[b]</description>
+		<rom name="Addams Family, The (1992-01)(Ocean)(US)[b].nes" size="262160" crc="c16d41ee" md5="a81a0dcb42f1400e925b145354f7b30a" sha1="30b8b009d731031736c3760135764a22f0ed6b16"/>
+	</game>
+	<game name="Addams Family, The (1992-01)(Ocean)(US)[h Vimm][iNES title]">
+		<description>Addams Family, The (1992-01)(Ocean)(US)[h Vimm][iNES title]</description>
+		<rom name="Addams Family, The (1992-01)(Ocean)(US)[h Vimm][iNES title].nes" size="262288" crc="390b35d3" md5="4d93bca69ecaf42a667e76b59a38fdb2" sha1="19082ae4305d440d60cbf998aadf1e5adc917a3d"/>
+	</game>
+	<game name="Addams Family, The (1992-01)(Ocean)(US)[tr it Psyco][a]">
+		<description>Addams Family, The (1992-01)(Ocean)(US)[tr it Psyco][a]</description>
+		<rom name="Addams Family, The (1992-01)(Ocean)(US)[tr it Psyco][a].nes" size="262160" crc="c55a0123" md5="af14331d70782b728c0bbb9fa5787592" sha1="b9c090e24444ee0fdf63f610eb0e5d5a2f104b50"/>
+	</game>
+	<game name="Addams Family, The (1992-01)(Ocean)(US)[tr it Psyco][v1.0]">
+		<description>Addams Family, The (1992-01)(Ocean)(US)[tr it Psyco][v1.0]</description>
+		<rom name="Addams Family, The (1992-01)(Ocean)(US)[tr it Psyco][v1.0].nes" size="262160" crc="8a9d37b5" md5="a3b7a94bacc5a1b1d034217d4e772b31" sha1="7b0a8199ed4e43d8c0649ecccf1781eac43a973d"/>
+	</game>
+	<game name="Addams Family, The (1992-01)(Ocean)(US)[tr pl]">
+		<description>Addams Family, The (1992-01)(Ocean)(US)[tr pl]</description>
+		<rom name="Addams Family, The (1992-01)(Ocean)(US)[tr pl].nes" size="262160" crc="3908f7be" md5="01e4c5d283cdd31b85181e38173897ea" sha1="93d2a3e086d2a2c6179bad590b0de8fafcc8167f"/>
+	</game>
+	<game name="Addams Family, The (1992-01)(Ocean)(US)[tr pt K-Trad][v1.01]">
+		<description>Addams Family, The (1992-01)(Ocean)(US)[tr pt K-Trad][v1.01]</description>
+		<rom name="Addams Family, The (1992-01)(Ocean)(US)[tr pt K-Trad][v1.01].nes" size="262160" crc="3db484d4" md5="c62150dfb591ade8e2b2efd22dbb57d3" sha1="51721dcfef43e1414c1ba6e1c4b07d1a71be5d64"/>
+	</game>
+	<game name="Addams Family, The (1992-01)(Ocean)(US)[tr ru]">
+		<description>Addams Family, The (1992-01)(Ocean)(US)[tr ru]</description>
+		<rom name="Addams Family, The (1992-01)(Ocean)(US)[tr ru].nes" size="262160" crc="4def1838" md5="254a96d4c22c0e67f8d106c835fb6be9" sha1="becfe20c822824fe0bd2cc2f9b51299f30217a0b"/>
+	</game>
+	<game name="Addams Family, The - Pugsley's Scavenger Hunt (1992)(Ocean)(EU)">
+		<description>Addams Family, The - Pugsley's Scavenger Hunt (1992)(Ocean)(EU)</description>
+		<rom name="Addams Family, The - Pugsley's Scavenger Hunt (1992)(Ocean)(EU).nes" size="262160" crc="0c1a2683" md5="b6f71f330827a0bf939caa75e3666715" sha1="0f213c93d6b153739c0e653c7d5790e5b342d0d5"/>
+	</game>
+	<game name="Addams Family, The - Pugsley's Scavenger Hunt (1993)(Ocean)(EU)(proto)">
+		<description>Addams Family, The - Pugsley's Scavenger Hunt (1993)(Ocean)(EU)(proto)</description>
+		<rom name="Addams Family, The - Pugsley's Scavenger Hunt (1993)(Ocean)(EU)(proto).nes" size="262160" crc="a54122d7" md5="4bdf856e19680521156db63ee9abc699" sha1="6a0a20c602d43d258598d202eb9a45bafdb816dc"/>
+	</game>
+	<game name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)">
+		<description>Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)</description>
+		<rom name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US).nes" size="262160" crc="6b8d777d" md5="b8444488249ef5bffcb8136196e0ebad" sha1="4fc0d34e3914199b1cfe849a1bbf24e975d062e5"/>
+	</game>
+	<game name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[b2]">
+		<description>Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[b2]</description>
+		<rom name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[b2].nes" size="262160" crc="0ba8fd95" md5="59d40c28312a66a3ff9b15c81c829000" sha1="b2ac33b4dec68dacb9200bc3a67ef82eea10dcc0"/>
+	</game>
+	<game name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[b3]">
+		<description>Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[b3]</description>
+		<rom name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[b3].nes" size="262160" crc="0c53e211" md5="663e722843c8035d900c8490dc86c54e" sha1="8d7579b5043a3f9203af49bb51085dabd3492cf0"/>
+	</game>
+	<game name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[b4]">
+		<description>Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[b4]</description>
+		<rom name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[b4].nes" size="262160" crc="632cf02f" md5="7fe97fec2491d84eb55c2a0918013874" sha1="5b164e156d5651146ecdb3bdf3027e13e4208460"/>
+	</game>
+	<game name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[b]">
+		<description>Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[b]</description>
+		<rom name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[b].nes" size="262160" crc="d91a9159" md5="9087eee046e9d9920846978e45fd1891" sha1="27416e8680a04a33bae46b2437b10d2941b0a90f"/>
+	</game>
+	<game name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[h Vimm][iNES title]">
+		<description>Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[h Vimm][iNES title]</description>
+		<rom name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[h Vimm][iNES title].nes" size="262288" crc="77e560d5" md5="4ba10bd0b0567785dd2eb6f8e298f7a4" sha1="1472e6454d9b172d031a480129af55b79d39bd83"/>
+	</game>
+	<game name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[tr fr Generation IX][v.beta-20041031]">
+		<description>Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[tr fr Generation IX][v.beta-20041031]</description>
+		<rom name="Addams Family, The - Pugsley's Scavenger Hunt (1993-08)(Ocean)(US)[tr fr Generation IX][v.beta-20041031].nes" size="262160" crc="7c107de2" md5="602e90316a3c8b5cb730e50dc4db8703" sha1="ec1811b0248129413f5be023c0b0d81a87f6e0d2"/>
+	</game>
+	<game name="Adventure Island 3 (1992-09)(Hudson)(US)">
+		<description>Adventure Island 3 (1992-09)(Hudson)(US)</description>
+		<rom name="Adventure Island 3 (1992-09)(Hudson)(US).nes" size="262160" crc="952cdacf" md5="f15d5835041c4b28b98b9551fb3ce764" sha1="9f8d51762125df0c1a6ab6eff41fbf7d0e65d465"/>
+	</game>
+	<game name="Adventure Island 3 (1992-09)(Hudson)(US)[b2]">
+		<description>Adventure Island 3 (1992-09)(Hudson)(US)[b2]</description>
+		<rom name="Adventure Island 3 (1992-09)(Hudson)(US)[b2].nes" size="262160" crc="b6e63aa5" md5="2c0c496ab703d6fe33a2326f285a9de4" sha1="ce225cbe27d7eaa6eeb6c2848009a488185ea12b"/>
+	</game>
+	<game name="Adventure Island 3 (1992-09)(Hudson)(US)[b3]">
+		<description>Adventure Island 3 (1992-09)(Hudson)(US)[b3]</description>
+		<rom name="Adventure Island 3 (1992-09)(Hudson)(US)[b3].nes" size="262160" crc="cba557f5" md5="eb7ccdb35525305a2ec2de7cb93c8317" sha1="7ce2512fbe08fca7e6a2961671c0be037bedc4e5"/>
+	</game>
+	<game name="Adventure Island 3 (1992-09)(Hudson)(US)[b4]">
+		<description>Adventure Island 3 (1992-09)(Hudson)(US)[b4]</description>
+		<rom name="Adventure Island 3 (1992-09)(Hudson)(US)[b4].nes" size="262160" crc="4026c390" md5="772e635d5dc73ed22362134d1ad9056d" sha1="c4015093981688d0957863e6f0093c20036bdda7"/>
+	</game>
+	<game name="Adventure Island 3 (1992-09)(Hudson)(US)[b5]">
+		<description>Adventure Island 3 (1992-09)(Hudson)(US)[b5]</description>
+		<rom name="Adventure Island 3 (1992-09)(Hudson)(US)[b5].nes" size="262160" crc="b16959e6" md5="ee07c0407a076217db7588bda4270a95" sha1="4869335dcc5cad6ae86db21fbbc5fe70135dd88d"/>
+	</game>
+	<game name="Adventure Island 3 (1992-09)(Hudson)(US)[b6]">
+		<description>Adventure Island 3 (1992-09)(Hudson)(US)[b6]</description>
+		<rom name="Adventure Island 3 (1992-09)(Hudson)(US)[b6].nes" size="262160" crc="aa08ce7c" md5="801579551d568c1cdbd1822dde5a4ecd" sha1="fa3c7d12762af9436a93901c7879a06721886540"/>
+	</game>
+	<game name="Adventure Island 3 (1992-09)(Hudson)(US)[b]">
+		<description>Adventure Island 3 (1992-09)(Hudson)(US)[b]</description>
+		<rom name="Adventure Island 3 (1992-09)(Hudson)(US)[b].nes" size="262160" crc="0bc06cec" md5="3638b7cd5ae9f135cc5f5773945cbfc2" sha1="0584cac1e862c6f885afdae45a2d4a58c40abad1"/>
+	</game>
+	<game name="Adventure Island 3 (1992-09)(Hudson)(US)[h Vimm][iNES title]">
+		<description>Adventure Island 3 (1992-09)(Hudson)(US)[h Vimm][iNES title]</description>
+		<rom name="Adventure Island 3 (1992-09)(Hudson)(US)[h Vimm][iNES title].nes" size="262288" crc="adb079b3" md5="80317b03888668b5d548d9d620445d77" sha1="3600f26354d931a3913f7f4bc483c015df28caad"/>
+	</game>
+	<game name="Adventure Island 3 (1992-09)(Hudson)(US)[h2 Vimm][iNES title]">
+		<description>Adventure Island 3 (1992-09)(Hudson)(US)[h2 Vimm][iNES title]</description>
+		<rom name="Adventure Island 3 (1992-09)(Hudson)(US)[h2 Vimm][iNES title].nes" size="262288" crc="e205d50b" md5="b14924d921f0e036582b981d330aa672" sha1="39d662dd0e7266b26cdecc29e83219fc406388aa"/>
+	</game>
+	<game name="Adventure Island 3 (1992-09)(Hudson)(US)[tr es Chilensis][100%]">
+		<description>Adventure Island 3 (1992-09)(Hudson)(US)[tr es Chilensis][100%]</description>
+		<rom name="Adventure Island 3 (1992-09)(Hudson)(US)[tr es Chilensis][100%].nes" size="262160" crc="227325ef" md5="3f8fe669d21dfef51f16ae29d45bcf3c" sha1="8281d264890784f0e128bc0fc5f5de8faa272ac4"/>
+	</game>
+	<game name="Adventure Island 3 (1992-09)(Hudson)(US)[tr es Paladin Knight][95%]">
+		<description>Adventure Island 3 (1992-09)(Hudson)(US)[tr es Paladin Knight][95%]</description>
+		<rom name="Adventure Island 3 (1992-09)(Hudson)(US)[tr es Paladin Knight][95%].nes" size="262160" crc="a3a2c695" md5="5c6f1c63dd81bde3984751975a83ed1b" sha1="34118a18f46b925e63c1caf45500992e7084b35e"/>
+	</game>
+	<game name="Adventure Island 3 (1992-09)(Hudson)(US)[tr zh Ziria][v.20031115]">
+		<description>Adventure Island 3 (1992-09)(Hudson)(US)[tr zh Ziria][v.20031115]</description>
+		<rom name="Adventure Island 3 (1992-09)(Hudson)(US)[tr zh Ziria][v.20031115].nes" size="262160" crc="70067bff" md5="a3fb37bacded11bd0048171bacd20fbe" sha1="cc716484a86a4febac74471aefe1c915f64d4567"/>
+	</game>
+	<game name="Adventure Island 3 (1992-09)(Hudson)(US)[u]">
+		<description>Adventure Island 3 (1992-09)(Hudson)(US)[u]</description>
+		<rom name="Adventure Island 3 (1992-09)(Hudson)(US)[u].nes" size="262143" crc="fc49f1ab" md5="2c8db351b6ca6840eb29be4893f5a944" sha1="3d5f6dee718f5fc4e31ab6848f94bf19cf4a6b09"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)">
+		<description>Adventure Island II (1991-02)(Hudson)(US)</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US).nes" size="262160" crc="5d8f80c7" md5="da01f528959b065acbfed341e892d9c0" sha1="f53fd2b03cfc5cf28d68021b47815e8710c3b44d"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[b2]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[b2]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[b2].nes" size="262160" crc="8d10c79e" md5="0cc5c3ebc5965678e5e421687ed48cff" sha1="8620de2e0ae892b890a636b5015e552f01f83250"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[b3]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[b3]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[b3].nes" size="262160" crc="eede51a5" md5="5b45bace183fe72b594ddc09c45ecdbf" sha1="f3012dd9ebf855df9b3130eafd5d9bed7dee1809"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[b4]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[b4]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[b4].nes" size="262160" crc="9f004d74" md5="eff748ab5137189e6c98b2d3664756b0" sha1="e3f98c7a22f63a71c47b728c238a3f0310bab9b5"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[b5]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[b5]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[b5].nes" size="262160" crc="fd1533b4" md5="b7596d357b89101d13903ea1e14445b0" sha1="3a34b1350a5508aee5ec3b339834ec2c22c03afd"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[b6]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[b6]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[b6].nes" size="262160" crc="5bcee274" md5="6c4931dec8b6e90359fb086491d12dd5" sha1="994449db249d1bbe45645be819072bfbce4039aa"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[b]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[b]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[b].nes" size="262160" crc="d5b0716d" md5="1ef860cb68fb0389f208b72d8b959f7f" sha1="50baa059f09eea1d9df50e41076e86b0a3184e50"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[h Vimm][iNES title]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[h Vimm][iNES title]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[h Vimm][iNES title].nes" size="262288" crc="3773e4d4" md5="256878200c6115da1903bc753e82d72d" sha1="8137f909e284b03f63d0545c4d6ae0183f785ef0"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[h2 Vimm][iNES title]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[h2 Vimm][iNES title]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[h2 Vimm][iNES title].nes" size="262288" crc="cba5af1e" md5="b68a36356187baa3ba7d4adee5d70e59" sha1="b69cf6b7a3e962b5d04f46100240df38b5f36706"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[h][b][iNES title]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[h][b][iNES title]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[h][b][iNES title].nes" size="262287" crc="bf49deb9" md5="94e6e4aa5af65f62ac1c036df25d0023" sha1="73d90b59a39ab783587125eb350da9f3e1f90d4d"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[tr es Paladin Knights][v1.0]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[tr es Paladin Knights][v1.0]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[tr es Paladin Knights][v1.0].nes" size="262160" crc="58a52c75" md5="75c77cdde2a1a2dc8c1594469d575948" sha1="53398930bb9c8b4b6ae1b9c8d011dc26b4ae3599"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[tr fr FlashPV]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[tr fr FlashPV]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[tr fr FlashPV].nes" size="262160" crc="8a919342" md5="cbd6846236cf614dc63f24ebdf60ffbf" sha1="96f2b665a9dd9566edbac093adda54ad7032509d"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[tr it ZombiKiller][v.finale-20011025]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[tr it ZombiKiller][v.finale-20011025]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[tr it ZombiKiller][v.finale-20011025].nes" size="262160" crc="2a09e18c" md5="1755fe15421fded3710f22a3a4a92764" sha1="14173dc62bba221e8f1860b1663af86f12d7b6bf"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[tr pt CBT][v1.0]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[tr pt CBT][v1.0]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[tr pt CBT][v1.0].nes" size="262160" crc="f71b5c12" md5="34caab52aaed1c96dc04a3e3b83b8ebe" sha1="b9bcbac669a98aa35964a0aa1cedec2ee836da74"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[tr pt TRB][90%]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[tr pt TRB][90%]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[tr pt TRB][90%].nes" size="262160" crc="307f15f8" md5="96d4b4258129299e2a1db3eb4a6399f7" sha1="93575396cc4fe244a361be4cc5c481047b9e14f1"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[tr zh god of MM][v.20060101]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[tr zh god of MM][v.20060101]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[tr zh god of MM][v.20060101].nes" size="262160" crc="3b9d3346" md5="d62855a58a5c3b11736cfd57ff9e3047" sha1="c7652060748d9061307eed1c8971a1bfba9d780e"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[tr zh MS emumax][v.20060217]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[tr zh MS emumax][v.20060217]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[tr zh MS emumax][v.20060217].nes" size="262160" crc="248b5b49" md5="da6effb38bdee2f744065cfc8885e16e" sha1="1f8b0892687646c5979c8eab502d0a3e5373e942"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[tr zh Ziria][v.20031113]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[tr zh Ziria][v.20031113]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[tr zh Ziria][v.20031113].nes" size="262160" crc="8b726331" md5="b1e4b43fe27d2d10a7be51ec72489e0e" sha1="dbe403d1002d2f26d203daaaccfe04ab7420d555"/>
+	</game>
+	<game name="Adventure Island II (1991-02)(Hudson)(US)[u]">
+		<description>Adventure Island II (1991-02)(Hudson)(US)[u]</description>
+		<rom name="Adventure Island II (1991-02)(Hudson)(US)[u].nes" size="262143" crc="a722f04e" md5="9a49d90c0e868e24aab306ef8bd24d57" sha1="04f0b3dbb112da14f952fa899f46cb374b635945"/>
+	</game>
+	<game name="Adventure Island II, The (1992-07-22)(Hudson)(EU)">
+		<description>Adventure Island II, The (1992-07-22)(Hudson)(EU)</description>
+		<rom name="Adventure Island II, The (1992-07-22)(Hudson)(EU).nes" size="262160" crc="54d8af1d" md5="718bef14c15cd69aa9cfa68ef97542b1" sha1="946fa41bde1185c5c726ab5ec80109f2b6db6258"/>
+	</game>
+	<game name="Adventure Island in the Pacific - Classic (1991)(Hudson)(EU)">
+		<description>Adventure Island in the Pacific - Classic (1991)(Hudson)(EU)</description>
+		<rom name="Adventure Island in the Pacific - Classic (1991)(Hudson)(EU).nes" size="65552" crc="c9ad622c" md5="d35723ce47a3b9a8d6d55ad31d9c3b6b" sha1="1e28999c356e61b1df86830e6a44a28064b5c817"/>
+	</game>
+	<game name="Adventure Island MCB v2.0 (2000)(MacBee)[h][Hudson's Adventure Island]">
+		<description>Adventure Island MCB v2.0 (2000)(MacBee)[h][Hudson's Adventure Island]</description>
+		<rom name="Adventure Island MCB v2.0 (2000)(MacBee)[h][Hudson's Adventure Island].nes" size="65552" crc="88c936b3" md5="f2a9a3c81d9a01b0ee787fa74edfaf71" sha1="de7ecaa7478f7e95d0bb51d408efb5472091a67e"/>
+	</game>
+	<game name="Adventures In The Magic Kingdom (1990-06)(Capcom)(US)">
+		<description>Adventures In The Magic Kingdom (1990-06)(Capcom)(US)</description>
+		<rom name="Adventures In The Magic Kingdom (1990-06)(Capcom)(US).nes" size="262160" crc="300e41b7" md5="8839403a475c128e5bb0b1f1a5059352" sha1="cc8cb9eebaae9c695be7ee965e3c8d7cf82c6d18"/>
+	</game>
+	<game name="Adventures In The Magic Kingdom (1990-06)(Capcom)(US)(proto)">
+		<description>Adventures In The Magic Kingdom (1990-06)(Capcom)(US)(proto)</description>
+		<rom name="Adventures In The Magic Kingdom (1990-06)(Capcom)(US)(proto).nes" size="262160" crc="514468f0" md5="1ea93c430da96e7425e9038330e00604" sha1="5a3664bdc7c591066227ed7453b1e27904b5b256"/>
+	</game>
+	<game name="Adventures In The Magic Kingdom (1990-06)(Capcom)(US)[b2]">
+		<description>Adventures In The Magic Kingdom (1990-06)(Capcom)(US)[b2]</description>
+		<rom name="Adventures In The Magic Kingdom (1990-06)(Capcom)(US)[b2].nes" size="262160" crc="32b5b9e6" md5="3a79ee46bad1a8b2d72602f96f27efbe" sha1="a4f8ec24e50d36631c8af28229f28d68262aa8bc"/>
+	</game>
+	<game name="Adventures In The Magic Kingdom (1990-06)(Capcom)(US)[b]">
+		<description>Adventures In The Magic Kingdom (1990-06)(Capcom)(US)[b]</description>
+		<rom name="Adventures In The Magic Kingdom (1990-06)(Capcom)(US)[b].nes" size="262160" crc="4b74f64d" md5="231b70513e8631e3f7e4d383b5baa67b" sha1="4644968929052147ddc3a1fcb8278060c71fb27b"/>
+	</game>
+	<game name="Adventures In The Magic Kingdom (1990-06)(Capcom)(US)[h Vimm][iNES title]">
+		<description>Adventures In The Magic Kingdom (1990-06)(Capcom)(US)[h Vimm][iNES title]</description>
+		<rom name="Adventures In The Magic Kingdom (1990-06)(Capcom)(US)[h Vimm][iNES title].nes" size="262288" crc="6e6c8273" md5="50ac50afdeb6aadaad7969cf6c73161d" sha1="837b725ac26109759145165ed6f50cdbc3282bd0"/>
+	</game>
+	<game name="Adventures In The Magic Kingdom (1990-06)(Capcom)(US)[h][iNES title]">
+		<description>Adventures In The Magic Kingdom (1990-06)(Capcom)(US)[h][iNES title]</description>
+		<rom name="Adventures In The Magic Kingdom (1990-06)(Capcom)(US)[h][iNES title].nes" size="262288" crc="b93c9e19" md5="822b984e8a9a662c0cda1d088d6ea024" sha1="57d6d7456925460e6358287776d665e450a22eed"/>
+	</game>
+	<game name="Adventures In The Magic Kingdom (1992-12-10)(Capcom)(EU)">
+		<description>Adventures In The Magic Kingdom (1992-12-10)(Capcom)(EU)</description>
+		<rom name="Adventures In The Magic Kingdom (1992-12-10)(Capcom)(EU).nes" size="262160" crc="06c53976" md5="279d13cf870609100418b2727b7e93af" sha1="5af79db20f0cc408d21772d9bb32fdb4a366d019"/>
+	</game>
+	<game name="Adventures of Bass 2, The (2001)(Sivak Drac)[h][Mega Man 2]">
+		<description>Adventures of Bass 2, The (2001)(Sivak Drac)[h][Mega Man 2]</description>
+		<rom name="Adventures of Bass 2, The (2001)(Sivak Drac)[h][Mega Man 2].nes" size="262160" crc="9fb71aac" md5="d5c71bbb5c1da7a446cb298e3852291e" sha1="237abae9e1e5977847b5972f4544f786d601b491"/>
+	</game>
+	<game name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)">
+		<description>Adventures of Bayou Billy, The (1989-06)(Konami)(US)</description>
+		<rom name="Adventures of Bayou Billy, The (1989-06)(Konami)(US).nes" size="262160" crc="0ac631ba" md5="fadd166217e75f3759a5cb7af213734a" sha1="7ebcfdc5cebfcd64bb371ede1af42e1b36a7e3e1"/>
+	</game>
+	<game name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[b2]">
+		<description>Adventures of Bayou Billy, The (1989-06)(Konami)(US)[b2]</description>
+		<rom name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[b2].nes" size="262160" crc="05d2edaf" md5="e022f0127499d2fe626798f56b1dda6a" sha1="b6fc91c0d83f65997ad25a3761a69453c8fb4c6b"/>
+	</game>
+	<game name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[b3]">
+		<description>Adventures of Bayou Billy, The (1989-06)(Konami)(US)[b3]</description>
+		<rom name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[b3].nes" size="262160" crc="2b7b3869" md5="0da1510aec2eb831294497502809c705" sha1="c91401e478ad8613c1fcaed707072d19f172c3fd"/>
+	</game>
+	<game name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[b]">
+		<description>Adventures of Bayou Billy, The (1989-06)(Konami)(US)[b]</description>
+		<rom name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[b].nes" size="262160" crc="d566fbce" md5="c94fe332704bdae648628906a81b922e" sha1="a4b960bffe34bf6a9ae10ae171db168b4231c858"/>
+	</game>
+	<game name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[h EFX][iNES title]">
+		<description>Adventures of Bayou Billy, The (1989-06)(Konami)(US)[h EFX][iNES title]</description>
+		<rom name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[h EFX][iNES title].nes" size="262287" crc="200c3a12" md5="db1ec72fce8e2575beabbeb545c60776" sha1="8360d16d61738857d0d38b6992131e91f8459ade"/>
+	</game>
+	<game name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[h Vimm][iNES title]">
+		<description>Adventures of Bayou Billy, The (1989-06)(Konami)(US)[h Vimm][iNES title]</description>
+		<rom name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[h Vimm][iNES title].nes" size="262288" crc="7293209f" md5="ee55c9623cb1a1d44641814aaab55cf8" sha1="ad5bee836810ebaeb6ea939d7ad5d36fc4d6f465"/>
+	</game>
+	<game name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[h2][iNES title]">
+		<description>Adventures of Bayou Billy, The (1989-06)(Konami)(US)[h2][iNES title]</description>
+		<rom name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[h2][iNES title].nes" size="262287" crc="0f084db3" md5="b3e0a6779182bfef85381718528571b1" sha1="dabee445d8c772e24cac0185604d491eb2f06a22"/>
+	</game>
+	<game name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[h][iNES title]">
+		<description>Adventures of Bayou Billy, The (1989-06)(Konami)(US)[h][iNES title]</description>
+		<rom name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[h][iNES title].nes" size="262287" crc="3520ed4e" md5="ea19ad332c9df2d9716656598e8f579f" sha1="40933f068251e0490ee0bcd03084837f8d446b9a"/>
+	</game>
+	<game name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[tr fr KS151][v.Beta]">
+		<description>Adventures of Bayou Billy, The (1989-06)(Konami)(US)[tr fr KS151][v.Beta]</description>
+		<rom name="Adventures of Bayou Billy, The (1989-06)(Konami)(US)[tr fr KS151][v.Beta].nes" size="262160" crc="6c0b510b" md5="43087785057079d79131a036824af3f3" sha1="71b829e76b80b4ee6d609fe4bc5f241b57898d0b"/>
+	</game>
+	<game name="Adventures of Bayou Billy, The (1991-01-24)(Konami)(EU)">
+		<description>Adventures of Bayou Billy, The (1991-01-24)(Konami)(EU)</description>
+		<rom name="Adventures of Bayou Billy, The (1991-01-24)(Konami)(EU).nes" size="262160" crc="d128dee5" md5="260af8fea7d08d5e20be9ae336183af2" sha1="02e465c3bfa628c6ce92cbe06199eee78d2781e3"/>
+	</game>
+	<game name="Adventures of DinoRiki (1989-09)(Hudson)(US)">
+		<description>Adventures of DinoRiki (1989-09)(Hudson)(US)</description>
+		<rom name="Adventures of DinoRiki (1989-09)(Hudson)(US).nes" size="65552" crc="d4f5287b" md5="cfa4b1475a25918ced2efd63972d3411" sha1="d0a91cbf4b268e898f17e1b4ad2c0eff6f2cd7bf"/>
+	</game>
+	<game name="Adventures of DinoRiki (1989-09)(Hudson)(US)[b]">
+		<description>Adventures of DinoRiki (1989-09)(Hudson)(US)[b]</description>
+		<rom name="Adventures of DinoRiki (1989-09)(Hudson)(US)[b].nes" size="65552" crc="127daa40" md5="31104d84586d8653eeed0590fb5d752c" sha1="9c80d464c52b9b557084b88098912479d4a55750"/>
+	</game>
+	<game name="Adventures of DinoRiki (1989-09)(Hudson)(US)[h Mindrape &amp; EFX][iNES title]">
+		<description>Adventures of DinoRiki (1989-09)(Hudson)(US)[h Mindrape &amp; EFX][iNES title]</description>
+		<rom name="Adventures of DinoRiki (1989-09)(Hudson)(US)[h Mindrape &amp; EFX][iNES title].nes" size="65680" crc="aa82481b" md5="9270a8d8c617eacf31045d795d619596" sha1="59a80de273747c7ef726808d7eaed049f973c190"/>
+	</game>
+	<game name="Adventures of DinoRiki (1989-09)(Hudson)(US)[h Vimm][iNES title]">
+		<description>Adventures of DinoRiki (1989-09)(Hudson)(US)[h Vimm][iNES title]</description>
+		<rom name="Adventures of DinoRiki (1989-09)(Hudson)(US)[h Vimm][iNES title].nes" size="65680" crc="03f71026" md5="2cd418b41ca83ccefbe9c1ce6b550911" sha1="8d4153b9132add4a8e7e8902892bcc9c4dcc254a"/>
+	</game>
+	<game name="Adventures of Gilligan's Island, The (1990-07)(Bandai)(US)">
+		<description>Adventures of Gilligan's Island, The (1990-07)(Bandai)(US)</description>
+		<rom name="Adventures of Gilligan's Island, The (1990-07)(Bandai)(US).nes" size="131088" crc="667eebb4" md5="4b5e5deac2de9ecb403231d128b42f3e" sha1="a13dd4b5b89d9409f17cddac89d6cd9565ce515f"/>
+	</game>
+	<game name="Adventures of Gilligan's Island, The (1990-07)(Bandai)(US)[b]">
+		<description>Adventures of Gilligan's Island, The (1990-07)(Bandai)(US)[b]</description>
+		<rom name="Adventures of Gilligan's Island, The (1990-07)(Bandai)(US)[b].nes" size="131088" crc="7ecee27d" md5="9ff603bbe9e3c9ee842c359b6de5c3b7" sha1="7266189bf25bb6e6dacd94bc15c31e172c7cae84"/>
+	</game>
+	<game name="Adventures of Ice Mario, The v0.8.1beta (1998-10-06)(Rage Games)[h][Super Mario Bros. no title]">
+		<description>Adventures of Ice Mario, The v0.8.1beta (1998-10-06)(Rage Games)[h][Super Mario Bros. no title]</description>
+		<rom name="Adventures of Ice Mario, The v0.8.1beta (1998-10-06)(Rage Games)[h][Super Mario Bros. no title].nes" size="40976" crc="ac5e171a" md5="d44f94d2c7a20fe8b003acbaf4decfc1" sha1="38b3d3a93b7d6f586eea866323bd3fb9e4eca3a8"/>
+	</game>
+	<game name="Adventures of Ice Mario, The v0.8.1beta (1998-10-06)(Rage Games)[h][Super Mario Bros.]">
+		<description>Adventures of Ice Mario, The v0.8.1beta (1998-10-06)(Rage Games)[h][Super Mario Bros.]</description>
+		<rom name="Adventures of Ice Mario, The v0.8.1beta (1998-10-06)(Rage Games)[h][Super Mario Bros.].nes" size="40976" crc="b9f42768" md5="33dda7e987741f587b2df710fef10ea7" sha1="6f8e6102756ba3bc48ae2a859f6f9d0b29f790df"/>
+	</game>
+	<game name="Adventures of Lex and Grim, The (2004-04)(Echeverria, Joey - Tomczack, Mark - Lopez, Damien - Anderson, Zach)(PD)">
+		<description>Adventures of Lex and Grim, The (2004-04)(Echeverria, Joey - Tomczack, Mark - Lopez, Damien - Anderson, Zach)(PD)</description>
+		<rom name="Adventures of Lex and Grim, The (2004-04)(Echeverria, Joey - Tomczack, Mark - Lopez, Damien - Anderson, Zach)(PD).nes" size="49168" crc="01397c5d" md5="f1fd7c7e0b29126f5e7f18e45745bd2f" sha1="31c22dc41dc70de595ba39e4851a71072d6c5f2c"/>
+	</game>
+	<game name="Adventures of Lolo (1989)(HAL Laboratory)(EU)">
+		<description>Adventures of Lolo (1989)(HAL Laboratory)(EU)</description>
+		<rom name="Adventures of Lolo (1989)(HAL Laboratory)(EU).nes" size="65552" crc="773510bb" md5="c822d0e86260b195a472edd06f28667d" sha1="d37c8003bf052404248ffaca106f7d32c75c8076"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US).nes" size="65552" crc="d9c4cbf7" md5="72a5692523ad5ab51cf2272a06d669d0" sha1="355e2a11e6e585dab55635766c43bc4c0e5d6968"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[b10]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[b10]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[b10].nes" size="65552" crc="280ff231" md5="5361de6e1d74ea8d37e3bf25cf6b2c71" sha1="5bc49324a6556a16cd4ca937109678192c2eef10"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[b11]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[b11]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[b11].nes" size="114704" crc="23c1b83c" md5="377e9276185cb778577044dcdc88be2c" sha1="dd0b4378c76847e9550f93263422689c947814d0"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[b12]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[b12]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[b12].nes" size="163856" crc="7527118e" md5="b2ad5f15277f1e3c78fb88e1209ca794" sha1="084a10108e364c66d8f5fe803dd5d8e708bdc196"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[b13]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[b13]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[b13].nes" size="65552" crc="eee81e51" md5="12f882fc8947fb8b91ca701e28b4ffe5" sha1="e47a6dadddc63e37c07b839c034717cf5e44e296"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[b2]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[b2]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[b2].nes" size="65552" crc="56235e22" md5="a10ab465f8b9c97523ba71ebd0585252" sha1="df24626c718334fc16ce08ba04893634f2398743"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[b3]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[b3]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[b3].nes" size="81936" crc="d41ca6e7" md5="e697e6745f0b80b0b55c0b5b3c1f9079" sha1="124282d012614f4db3d5bc47c2440af89fc2a82e"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[b4]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[b4]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[b4].nes" size="262160" crc="39336080" md5="6e6c3a5aec99d40fae1c79aaab92c599" sha1="e610aa315652320af12ec9f46d6b0950cf2dd4f3"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[b5]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[b5]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[b5].nes" size="262160" crc="c1aa543d" md5="7a5e0c79d833ccd77f7391bf9f01de19" sha1="6ad8771d79f733b927fdb06923f388b162cef951"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[b6]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[b6]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[b6].nes" size="81936" crc="32e6f4b8" md5="ac0ddf9b60ac0547d4b44c6a15b27b9c" sha1="4ebd2b4b17d458b6db2d3eb4ab95541dea6ffaa8"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[b7]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[b7]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[b7].nes" size="90128" crc="c653fa99" md5="bce33320a6e0b651c14772c307de09ff" sha1="ae4ea53c09b5709bf51101a907ceb226c6c902fe"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[b8]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[b8]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[b8].nes" size="114704" crc="9221668c" md5="d8ff866b60f67b422414bb24d24622dd" sha1="75fd2ad7607808ca3fe7b5e919a13e4ad605f477"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[b9]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[b9]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[b9].nes" size="65552" crc="4e76f5e7" md5="e2733eb3a0c0a770008aff27e277c20f" sha1="ec6fb5ae4e6348bd70a71f289a87095a4c335f6a"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[b]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[b]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[b].nes" size="65552" crc="b66471cb" md5="38516649d5d9c0b51a9a578c8178ee5b" sha1="e66048b864f656495a4eb9771b91ac822d6a5c38"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[h Vimm][b4][iNES title]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[h Vimm][b4][iNES title]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[h Vimm][b4][iNES title].nes" size="262288" crc="4a5f999c" md5="f226903a12136d62966c7f07e6325ebc" sha1="2a39a168de416959a1830258ada28ff3fc5a765d"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[h Vimm][b][iNES title]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[h Vimm][b][iNES title]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[h Vimm][b][iNES title].nes" size="65680" crc="35ac7ff5" md5="5e0c68a1ca1bab1462f2b80163163b1d" sha1="e45ad8c99f18c7c27e90151f186e9f77f0920c10"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[h][b4][iNES title]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[h][b4][iNES title]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[h][b4][iNES title].nes" size="262288" crc="e3cc34e3" md5="30ec46c26cd7c8b63ecc4aa2db51fb38" sha1="b520f618e02def9fe0028997f54c20f9d8c082f6"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[o][b]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[o][b]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[o][b].nes" size="262160" crc="faa4f12f" md5="283c348123068b2653dea0684344b334" sha1="4b45babc2cccc874db97872db33c18049be96058"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[tr de SkuSS Trans][b][v1.1-19991203]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[tr de SkuSS Trans][b][v1.1-19991203]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[tr de SkuSS Trans][b][v1.1-19991203].nes" size="150159" crc="2b59cf09" md5="5d4875232340338549daef3dc4448fcd" sha1="5d8f6ae2cd3f2ea0c9bc96190180d50b5c91aafb"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[tr de SkuSS Trans][u][b][v1.1-19991203]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[tr de SkuSS Trans][u][b][v1.1-19991203]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[tr de SkuSS Trans][u][b][v1.1-19991203].nes" size="65552" crc="9b5cd151" md5="659364c3d2ca0ff516c27323a6cfd523" sha1="e4b92c5b3f4282490bc91f7495fabb8ceb74e449"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[tr fr Terminus][b]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[tr fr Terminus][b]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[tr fr Terminus][b].nes" size="65552" crc="d75f4046" md5="ecfdf38f6a2d1a03d3c36d0c70545e87" sha1="f11d932c396f663d93f690e4d7b6d6fa2d557379"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[tr it Clomax Dominion][b][v1.0beta]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[tr it Clomax Dominion][b][v1.0beta]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[tr it Clomax Dominion][b][v1.0beta].nes" size="65552" crc="64b70803" md5="e9320857430891256794a7ddf0203f98" sha1="165649bb55d4da2595cb9afd6e6128429d2698cd"/>
+	</game>
+	<game name="Adventures of Lolo (1989-04)(Hal America)(US)[tr sv The Translators][b][v1.0-2001]">
+		<description>Adventures of Lolo (1989-04)(Hal America)(US)[tr sv The Translators][b][v1.0-2001]</description>
+		<rom name="Adventures of Lolo (1989-04)(Hal America)(US)[tr sv The Translators][b][v1.0-2001].nes" size="151415" crc="1134b22f" md5="a5c034c8d5c27c7cf76defd829f47a7c" sha1="59848c7bad25340f2391a59099ed35ecf568b533"/>
+	</game>
+	<game name="Adventures of Lolo (1990-01-06)(HAL Kenkyuujo)(JP)">
+		<description>Adventures of Lolo (1990-01-06)(HAL Kenkyuujo)(JP)</description>
+		<rom name="Adventures of Lolo (1990-01-06)(HAL Kenkyuujo)(JP).nes" size="65552" crc="b6c9f83f" md5="22c27eda6bb0cd2dfebc7c2e48387ad8" sha1="ad9ef7f61d97ecfc837f5f1eeb952935867306d7"/>
+	</game>
+	<game name="Adventures of Lolo (1990-01-06)(HAL Kenkyuujo)(JP)[b]">
+		<description>Adventures of Lolo (1990-01-06)(HAL Kenkyuujo)(JP)[b]</description>
+		<rom name="Adventures of Lolo (1990-01-06)(HAL Kenkyuujo)(JP)[b].nes" size="131088" crc="35ca1346" md5="3694b04b9ef7e541bb607230d1071939" sha1="7ba1092fad49b256d8af1075148f072238e59f41"/>
+	</game>
+	<game name="Adventures of Lolo 2 (1990-03)(Hal America)(US)">
+		<description>Adventures of Lolo 2 (1990-03)(Hal America)(US)</description>
+		<rom name="Adventures of Lolo 2 (1990-03)(Hal America)(US).nes" size="65552" crc="862ab1e5" md5="0f8eac497adc07858685b8e84e59a56b" sha1="47d217722bc2375163ebb4b0821dd6eb3acb38ff"/>
+	</game>
+	<game name="Adventures of Lolo 2 (1990-03)(Hal America)(US)[b2]">
+		<description>Adventures of Lolo 2 (1990-03)(Hal America)(US)[b2]</description>
+		<rom name="Adventures of Lolo 2 (1990-03)(Hal America)(US)[b2].nes" size="65552" crc="364bd48f" md5="0277e1198e42fcaf80f32d35d1d7b82d" sha1="d63708e4a6414577b3b07095a00b1c81a5813c4a"/>
+	</game>
+	<game name="Adventures of Lolo 2 (1990-03)(Hal America)(US)[b3]">
+		<description>Adventures of Lolo 2 (1990-03)(Hal America)(US)[b3]</description>
+		<rom name="Adventures of Lolo 2 (1990-03)(Hal America)(US)[b3].nes" size="65552" crc="231ee03f" md5="8db074c60301a52855e4544aea321d48" sha1="677675ee9d73481a210648ed6365a50659fe20fc"/>
+	</game>
+	<game name="Adventures of Lolo 2 (1990-03)(Hal America)(US)[b]">
+		<description>Adventures of Lolo 2 (1990-03)(Hal America)(US)[b]</description>
+		<rom name="Adventures of Lolo 2 (1990-03)(Hal America)(US)[b].nes" size="65552" crc="82973f90" md5="86328064cf8b3461467382fbc3934e9e" sha1="0c08af493050e8e8ad930dd675a1a245b15eef06"/>
+	</game>
+	<game name="Adventures of Lolo 2 (1990-03)(Hal America)(US)[h Vimm][iNES title]">
+		<description>Adventures of Lolo 2 (1990-03)(Hal America)(US)[h Vimm][iNES title]</description>
+		<rom name="Adventures of Lolo 2 (1990-03)(Hal America)(US)[h Vimm][iNES title].nes" size="65680" crc="5b45703e" md5="52a97567f8f1827c79f3887ae376dacb" sha1="c4452ff4b115d2df9d37fdf6f6dc352e227150f6"/>
+	</game>
+	<game name="Adventures of Lolo 2 (1990-03)(Hal America)(US)[tr fr Terminus]">
+		<description>Adventures of Lolo 2 (1990-03)(Hal America)(US)[tr fr Terminus]</description>
+		<rom name="Adventures of Lolo 2 (1990-03)(Hal America)(US)[tr fr Terminus].nes" size="65552" crc="1f01f9fb" md5="bb609c0ec2ddf47e0c9ed7214b55a192" sha1="d51026078401cf1a52aeb89a37ac95bfaae53b12"/>
+	</game>
+	<game name="Adventures of Lolo 3 (1991-09)(Hal America)(US)">
+		<description>Adventures of Lolo 3 (1991-09)(Hal America)(US)</description>
+		<rom name="Adventures of Lolo 3 (1991-09)(Hal America)(US).nes" size="262160" crc="e06a060b" md5="3dc676f6a0d1e400bb4e1bf908e4c46a" sha1="fd8551f8b02323d31dcc38dcd69545725d6c0538"/>
+	</game>
+	<game name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[b2]">
+		<description>Adventures of Lolo 3 (1991-09)(Hal America)(US)[b2]</description>
+		<rom name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[b2].nes" size="262160" crc="e1a851ad" md5="67fd177b79f82214c7667350586f6c82" sha1="c797d43ae47049e1e557e245835e8427b1343de7"/>
+	</game>
+	<game name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[b3]">
+		<description>Adventures of Lolo 3 (1991-09)(Hal America)(US)[b3]</description>
+		<rom name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[b3].nes" size="262160" crc="e03e625c" md5="ce62224b012054fad6dbe0d7a9adb501" sha1="1b566d279e400860f73414b650afa38b6c9b21be"/>
+	</game>
+	<game name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[b4]">
+		<description>Adventures of Lolo 3 (1991-09)(Hal America)(US)[b4]</description>
+		<rom name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[b4].nes" size="262160" crc="bfcd3746" md5="a40f2f8a67930b64c8ed152cdee6f72f" sha1="40ad074817ce51e8ddf4362e01eee279a8b6de29"/>
+	</game>
+	<game name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[b5]">
+		<description>Adventures of Lolo 3 (1991-09)(Hal America)(US)[b5]</description>
+		<rom name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[b5].nes" size="262160" crc="4e095305" md5="da949b020d1b1e31f319d5dae7295f41" sha1="d1427f453cf38fe9d57d8e305e399cea3ba46de6"/>
+	</game>
+	<game name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[b]">
+		<description>Adventures of Lolo 3 (1991-09)(Hal America)(US)[b]</description>
+		<rom name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[b].nes" size="262160" crc="6c071a95" md5="980a1a625b10c276857c66530c755ea8" sha1="0bb4e43f44a3a1629c04f1ea18c53182fb42fa14"/>
+	</game>
+	<game name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[h Vimm][iNES title]">
+		<description>Adventures of Lolo 3 (1991-09)(Hal America)(US)[h Vimm][iNES title]</description>
+		<rom name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[h Vimm][iNES title].nes" size="262288" crc="0b3967ca" md5="e9a9343d5c2c1a269af2c46a171448d7" sha1="27485f12fe3e30e013c9dca1cc98e2aff570f9ad"/>
+	</game>
+	<game name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[tr it Clomax Dominion][v1.0beta]">
+		<description>Adventures of Lolo 3 (1991-09)(Hal America)(US)[tr it Clomax Dominion][v1.0beta]</description>
+		<rom name="Adventures of Lolo 3 (1991-09)(Hal America)(US)[tr it Clomax Dominion][v1.0beta].nes" size="262160" crc="15df7d8e" md5="c937652d8891ca3ad2a50cb20ec42cc3" sha1="7eb5c2a76b78960979be813972e88b98ffdcfdff"/>
+	</game>
+	<game name="Adventures of Lolo II (1990-12-26)(HAL Kenkyuujo)(JP)">
+		<description>Adventures of Lolo II (1990-12-26)(HAL Kenkyuujo)(JP)</description>
+		<rom name="Adventures of Lolo II (1990-12-26)(HAL Kenkyuujo)(JP).nes" size="262160" crc="870a1dd5" md5="694a1bfa61af8a29dccbcdabd68caa84" sha1="fb9de0a713a4d0caafa9935062de6ad861cb2804"/>
+	</game>
+	<game name="Adventures of Lolo II (1990-12-26)(HAL Kenkyuujo)(JP)[b]">
+		<description>Adventures of Lolo II (1990-12-26)(HAL Kenkyuujo)(JP)[b]</description>
+		<rom name="Adventures of Lolo II (1990-12-26)(HAL Kenkyuujo)(JP)[b].nes" size="262160" crc="f8c33db0" md5="40f7db6167758f155aa842753508614e" sha1="ee35dbf012d07919ce9cdd491c6ba2412b117ff7"/>
+	</game>
+	<game name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)">
+		<description>Adventures of Rad Gravity, The (1990-12)(Activision)(US)</description>
+		<rom name="Adventures of Rad Gravity, The (1990-12)(Activision)(US).nes" size="262160" crc="b55d5747" md5="32afa96f523c8d7322f079abadba2d31" sha1="946c7124a2d4774522c2664c75103ef960bc54b9"/>
+	</game>
+	<game name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[b2]">
+		<description>Adventures of Rad Gravity, The (1990-12)(Activision)(US)[b2]</description>
+		<rom name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[b2].nes" size="262160" crc="f4581f92" md5="bfe623710327b31899c81a7148187525" sha1="6aa7c956a56cab0d61e8cc11ddf630f1d01d1020"/>
+	</game>
+	<game name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[b3]">
+		<description>Adventures of Rad Gravity, The (1990-12)(Activision)(US)[b3]</description>
+		<rom name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[b3].nes" size="262160" crc="2f28979c" md5="5876c7c044ac3f89dd3d26f8d48e76f0" sha1="795878a49609afe5ad91563db3b836d09b39c1a2"/>
+	</game>
+	<game name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[b4]">
+		<description>Adventures of Rad Gravity, The (1990-12)(Activision)(US)[b4]</description>
+		<rom name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[b4].nes" size="262160" crc="9c0127be" md5="f37e95d75ab41267bad428668b3371a8" sha1="72a94cefd9f671de7597e39e190ab74b9e933ea2"/>
+	</game>
+	<game name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[b]">
+		<description>Adventures of Rad Gravity, The (1990-12)(Activision)(US)[b]</description>
+		<rom name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[b].nes" size="262160" crc="55569828" md5="878299e2b57135390fcea77b4f881b3d" sha1="ab151c2617103ffd9ac4cb784dbf35e5a753e6e4"/>
+	</game>
+	<game name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[h Vimm][iNES title]">
+		<description>Adventures of Rad Gravity, The (1990-12)(Activision)(US)[h Vimm][iNES title]</description>
+		<rom name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[h Vimm][iNES title].nes" size="262288" crc="c6cd9c3e" md5="19e9f1a7f9f789b2b18b434bd9f09f03" sha1="60464b1f332261854743c77b7b71fb50717f3b90"/>
+	</game>
+	<game name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[h][b4][iNES title]">
+		<description>Adventures of Rad Gravity, The (1990-12)(Activision)(US)[h][b4][iNES title]</description>
+		<rom name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[h][b4][iNES title].nes" size="262288" crc="d9f3ea73" md5="c2cdd83eb5c244c1a4524a053667bc28" sha1="4e2a789165c60c83b8a966098ec7d539558bd25d"/>
+	</game>
+	<game name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[h][iNES title]">
+		<description>Adventures of Rad Gravity, The (1990-12)(Activision)(US)[h][iNES title]</description>
+		<rom name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[h][iNES title].nes" size="262288" crc="8bcea007" md5="404f4b03df1c293afea259c56559537e" sha1="0ae44bfe7b8d3a9e8a360d4e90030e932cd47084"/>
+	</game>
+	<game name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[tr pl]">
+		<description>Adventures of Rad Gravity, The (1990-12)(Activision)(US)[tr pl]</description>
+		<rom name="Adventures of Rad Gravity, The (1990-12)(Activision)(US)[tr pl].nes" size="262160" crc="12863b43" md5="9e500f3b265dbc62b4f78bc2d541c5f5" sha1="cff89f66784c6c874b8fd3ffe6451e93f42d5e39"/>
+	</game>
+	<game name="Adventures of Rad Gravity, The (1991-05-30)(Activision)(EU)">
+		<description>Adventures of Rad Gravity, The (1991-05-30)(Activision)(EU)</description>
+		<rom name="Adventures of Rad Gravity, The (1991-05-30)(Activision)(EU).nes" size="262160" crc="cea263d1" md5="3c842f5a63c7c4c23cee99945d7356b6" sha1="207f8ebc6bf858825d6e391b97254f7b31847284"/>
+	</game>
+	<game name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)">
+		<description>Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)</description>
+		<rom name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US).nes" size="262160" crc="08effde5" md5="61f71ce15d3ceb2b91521214771dff2a" sha1="b9326fa560c074e0eb611478fd2363dd4104b243"/>
+	</game>
+	<game name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b2]">
+		<description>Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b2]</description>
+		<rom name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b2].nes" size="262160" crc="374914f3" md5="42b935f5bffa7d1764bf2873e3eb57de" sha1="7ba47dfb828c5a1ad160c636444ba1d3f2de8097"/>
+	</game>
+	<game name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b4]">
+		<description>Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b4]</description>
+		<rom name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b4].nes" size="262160" crc="066f42d1" md5="2696e7cdf10c8b268b5f8a36f844feb8" sha1="940df5a605091b84f58a6d1ff7b71788688560f1"/>
+	</game>
+	<game name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b5]">
+		<description>Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b5]</description>
+		<rom name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b5].nes" size="253968" crc="c694eda2" md5="c17c5510bf604640c21f9daa8caf3efe" sha1="826d4c7f5cf89707de80392d252ed7d0d05d97f0"/>
+	</game>
+	<game name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b6]">
+		<description>Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b6]</description>
+		<rom name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b6].nes" size="253968" crc="58a4fe8d" md5="fcd15b9a4fd56b399a67185288bca574" sha1="a0c3e55d521d6edf9059a4a55cd03cd1aad669bf"/>
+	</game>
+	<game name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b7]">
+		<description>Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b7]</description>
+		<rom name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b7].nes" size="262160" crc="65dadcb9" md5="55c6dc752ae60d0c09687a8878db757e" sha1="00eed62e887ef94b263497d6b49f85f1a77a7b30"/>
+	</game>
+	<game name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b]">
+		<description>Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b]</description>
+		<rom name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[b].nes" size="253968" crc="d2bd4f4e" md5="9107cb4e0f6e237d1c0ce7d682f0e263" sha1="30060170c7a4e842ddb79cfcae13f9dba4ec8ac1"/>
+	</game>
+	<game name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[h Vimm][b7][iNES title]">
+		<description>Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[h Vimm][b7][iNES title]</description>
+		<rom name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[h Vimm][b7][iNES title].nes" size="262288" crc="c648b1c1" md5="aeba324d81f40b47613ea0c95b7857a1" sha1="d9a1562dcb2469968b0f53b7f518931a7961d45c"/>
+	</game>
+	<game name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[h Vimm][iNES title]">
+		<description>Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[h Vimm][iNES title]</description>
+		<rom name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[h Vimm][iNES title].nes" size="262288" crc="4dc7f791" md5="827eb6d4cad80a815ecdfbe7c5a51906" sha1="9b12718da370e8954beeeb9068e595c1896d83b9"/>
+	</game>
+	<game name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[h][b3][iNES title]">
+		<description>Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[h][b3][iNES title]</description>
+		<rom name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[h][b3][iNES title].nes" size="262160" crc="dc7b3e65" md5="91b54b3e394f9c0b19583aeed37286f9" sha1="9e3cb8802fadb681bfafa760dfd08c92a8d7f022"/>
+	</game>
+	<game name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[h][u][iNES title]">
+		<description>Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[h][u][iNES title]</description>
+		<rom name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[h][u][iNES title].nes" size="254096" crc="017a8dcc" md5="e7be72eecc5f37cb102847d89ceff543" sha1="d0cb1be629d804efded714e03680837f9c394e26"/>
+	</game>
+	<game name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[u]">
+		<description>Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[u]</description>
+		<rom name="Adventures of Rocky and Bullwinkle and Friends, The (1992-12)(THQ)(US)[u].nes" size="253968" crc="29be4e7e" md5="a13c0c837d29e24406f621e96648534e" sha1="a10f15a88c45bee737921b41cf001fb47fe59841"/>
+	</game>
+	<game name="Adventures of Thunder Mario, The v0.1 (1999-02-04)(Mark Simone)[h][b][Super Mario Bros., patch on bad dump]">
+		<description>Adventures of Thunder Mario, The v0.1 (1999-02-04)(Mark Simone)[h][b][Super Mario Bros., patch on bad dump]</description>
+		<rom name="Adventures of Thunder Mario, The v0.1 (1999-02-04)(Mark Simone)[h][b][Super Mario Bros., patch on bad dump].nes" size="44894" crc="88e73f97" md5="308a7cc610eaeac5961255cf665f0ce3" sha1="ca34b25a91844a3553460f5c8a2c9c965aa2aa5c"/>
+	</game>
+	<game name="Adventures of Thunder Mario, The v0.1 (1999-02-04)(Mark Simone)[h][Super Mario Bros. no title]">
+		<description>Adventures of Thunder Mario, The v0.1 (1999-02-04)(Mark Simone)[h][Super Mario Bros. no title]</description>
+		<rom name="Adventures of Thunder Mario, The v0.1 (1999-02-04)(Mark Simone)[h][Super Mario Bros. no title].nes" size="44894" crc="387b290c" md5="785b64d7b7bd9eb671ad24f9b3555ee6" sha1="ff9a9dadbc051dba184bb2b75898d0b1e2003fa9"/>
+	</game>
+	<game name="Adventures of Tom Sawyer (1989-08)(Seta)(US)">
+		<description>Adventures of Tom Sawyer (1989-08)(Seta)(US)</description>
+		<rom name="Adventures of Tom Sawyer (1989-08)(Seta)(US).nes" size="262160" crc="0336f9f3" md5="df266b997ee8a1b6bbbaef45bd127201" sha1="3d8828fa7ae7108b50979db60f737b95c85b2289"/>
+	</game>
+	<game name="Adventures of Tom Sawyer (1989-08)(Seta)(US)[b2]">
+		<description>Adventures of Tom Sawyer (1989-08)(Seta)(US)[b2]</description>
+		<rom name="Adventures of Tom Sawyer (1989-08)(Seta)(US)[b2].nes" size="262160" crc="8939263b" md5="e9fa8c25eda4180cb1379b9f269fd0c9" sha1="e90ac34221961cfaeecc76875cb4b4481bbf33ba"/>
+	</game>
+	<game name="Adventures of Tom Sawyer (1989-08)(Seta)(US)[b3]">
+		<description>Adventures of Tom Sawyer (1989-08)(Seta)(US)[b3]</description>
+		<rom name="Adventures of Tom Sawyer (1989-08)(Seta)(US)[b3].nes" size="262160" crc="f64b6091" md5="a330c77123d49b329f81adb4b8cdb40e" sha1="225eb45b361ff2f87bc2d93585fea1256383949e"/>
+	</game>
+	<game name="Adventures of Tom Sawyer (1989-08)(Seta)(US)[b4]">
+		<description>Adventures of Tom Sawyer (1989-08)(Seta)(US)[b4]</description>
+		<rom name="Adventures of Tom Sawyer (1989-08)(Seta)(US)[b4].nes" size="262160" crc="f18e86dd" md5="4fbb83d0aab7fdb1b171a40b34efc75c" sha1="c7a97b4922a5aeb5e140dcf300c8c9d0cf7aee03"/>
+	</game>
+	<game name="Adventures of Tom Sawyer (1989-08)(Seta)(US)[b]">
+		<description>Adventures of Tom Sawyer (1989-08)(Seta)(US)[b]</description>
+		<rom name="Adventures of Tom Sawyer (1989-08)(Seta)(US)[b].nes" size="262160" crc="3858d93b" md5="4db905ca6df6a9983c93c88689657d5a" sha1="d10a7a6c2cfbd89877c69a3080d5d38f5df8c2a7"/>
+	</game>
+	<game name="Adventures of Tom Sawyer (1989-08)(Seta)(US)[h EFX][iNES title]">
+		<description>Adventures of Tom Sawyer (1989-08)(Seta)(US)[h EFX][iNES title]</description>
+		<rom name="Adventures of Tom Sawyer (1989-08)(Seta)(US)[h EFX][iNES title].nes" size="262287" crc="af96cb8d" md5="8db6bbb803a0d74b2bb7b2f42b1cc0f9" sha1="3f89aa54f4299f53010e13ef242c5ecda5c5cb15"/>
+	</game>
+	<game name="Adventures of Tom Sawyer (1989-08)(Seta)(US)[h Vimm][iNES title]">
+		<description>Adventures of Tom Sawyer (1989-08)(Seta)(US)[h Vimm][iNES title]</description>
+		<rom name="Adventures of Tom Sawyer (1989-08)(Seta)(US)[h Vimm][iNES title].nes" size="262288" crc="ef3d3c75" md5="ab31f5f4e9e6637c558d0f38289341ab" sha1="9ab8771e74a7e9065dd001d6078fd09003c49745"/>
+	</game>
+	<game name="Adventures of Tomley Kleene, The (2004)(Rost, Bob)(PD)">
+		<description>Adventures of Tomley Kleene, The (2004)(Rost, Bob)(PD)</description>
+		<rom name="Adventures of Tomley Kleene, The (2004)(Rost, Bob)(PD).nes" size="73744" crc="f7bcf00b" md5="9968c39d5050e1782b569bf28afa3a59" sha1="ee860440a9c76f9775acab939f3b9e373611cf9f"/>
+	</game>
+	<game name="Adventures of Tomley Kleene, The (demo) (2004)(Rost, Bob)(PD)">
+		<description>Adventures of Tomley Kleene, The (demo) (2004)(Rost, Bob)(PD)</description>
+		<rom name="Adventures of Tomley Kleene, The (demo) (2004)(Rost, Bob)(PD).nes" size="40976" crc="63c011be" md5="e06b0908330a3eaa1a5f815a5a37405f" sha1="eba90c20cb22b22827b1adf9033c346b2bc301d0"/>
+	</game>
+	<game name="After Burner (1989)(Tengen)(US)">
+		<description>After Burner (1989)(Tengen)(US)</description>
+		<rom name="After Burner (1989)(Tengen)(US).nes" size="393232" crc="a0c558a9" md5="7a8d6a95e31c90286250d2bd6d03d622" sha1="d7df3ed86114ed9426ae77384f67498b573451dc"/>
+	</game>
+	<game name="After Burner (1989)(Tengen)(US)[b2]">
+		<description>After Burner (1989)(Tengen)(US)[b2]</description>
+		<rom name="After Burner (1989)(Tengen)(US)[b2].nes" size="393232" crc="8942c140" md5="ef28a9e760dc008f2bf58a1b728cdb83" sha1="004c230b0e8c587eba76f3321f3ce55554fbcab5"/>
+	</game>
+	<game name="After Burner (1989)(Tengen)(US)[b]">
+		<description>After Burner (1989)(Tengen)(US)[b]</description>
+		<rom name="After Burner (1989)(Tengen)(US)[b].nes" size="393232" crc="f30f2225" md5="d8b2ec2450a65453282d74cfd3051ce7" sha1="7ea1909d0c1bad6fbe588073835b60cb5f9fefb3"/>
+	</game>
+	<game name="After Burner (1989)(Tengen)(US)[h Vimm][iNES title]">
+		<description>After Burner (1989)(Tengen)(US)[h Vimm][iNES title]</description>
+		<rom name="After Burner (1989)(Tengen)(US)[h Vimm][iNES title].nes" size="393360" crc="89f4767d" md5="0bc9b100b69d965c5e2f6f134f2d9df7" sha1="dd413c48fabbbfb05c69c1bb459a31df852e6b32"/>
+	</game>
+	<game name="After Burner II (1989-03-30)(Sunsoft)(JP)">
+		<description>After Burner II (1989-03-30)(Sunsoft)(JP)</description>
+		<rom name="After Burner II (1989-03-30)(Sunsoft)(JP).nes" size="393232" crc="a4928096" md5="d4e8504a98bed9fe6a45b6011fd2cb45" sha1="49b7bcfc6d7f71af5fd97c1da709c1eb407ae4c3"/>
+	</game>
+	<game name="After Burner II (1989-03-30)(Sunsoft)(JP)[b2]">
+		<description>After Burner II (1989-03-30)(Sunsoft)(JP)[b2]</description>
+		<rom name="After Burner II (1989-03-30)(Sunsoft)(JP)[b2].nes" size="393232" crc="14901ae1" md5="82e895800d9df5f9f5b8194287986460" sha1="6bee0a7d5d216ef35e558a02ce7a852e5146e5cf"/>
+	</game>
+	<game name="After Burner II (1989-03-30)(Sunsoft)(JP)[b3]">
+		<description>After Burner II (1989-03-30)(Sunsoft)(JP)[b3]</description>
+		<rom name="After Burner II (1989-03-30)(Sunsoft)(JP)[b3].nes" size="393232" crc="7f22937e" md5="29d3b1aa3256d4a7dc3eb97537e9bcf4" sha1="c7d6a89f4069ceba42266714919780be7b5a0e67"/>
+	</game>
+	<game name="After Burner II (1989-03-30)(Sunsoft)(JP)[b4]">
+		<description>After Burner II (1989-03-30)(Sunsoft)(JP)[b4]</description>
+		<rom name="After Burner II (1989-03-30)(Sunsoft)(JP)[b4].nes" size="393232" crc="add0c899" md5="2b60d1787a4c22f2a0c399af48df5535" sha1="abefa82264e715dd5d0dbcc24dd064e4122ed256"/>
+	</game>
+	<game name="After Burner II (1989-03-30)(Sunsoft)(JP)[b]">
+		<description>After Burner II (1989-03-30)(Sunsoft)(JP)[b]</description>
+		<rom name="After Burner II (1989-03-30)(Sunsoft)(JP)[b].nes" size="393232" crc="911b1a96" md5="a2847b9dfee14528edf53fad0d9e90d7" sha1="8bd7471e2add115edfc46248daf0e2fde5e9f7c5"/>
+	</game>
+</datafile>

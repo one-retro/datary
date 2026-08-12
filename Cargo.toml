@@ -1,0 +1,45 @@
+[package]
+name = "datary"
+version = "0.2.0"
+edition = "2021"
+# Set by the RustCrypto 0.11 hash crates, which require 1.85.
+rust-version = "1.85"
+description = "Read and write No-Intro, Logiqx, Redump and TOSEC DAT ROM datafiles, fully modelled in the type system."
+license = "Apache-2.0"
+repository = "https://github.com/one-retro/datary"
+homepage = "https://github.com/one-retro/datary"
+documentation = "https://docs.rs/datary"
+keywords = ["dat", "rom", "retro", "emulation", "no-intro"]
+categories = ["emulators", "parser-implementations", "game-development"]
+authors = ["Hans Larsen <hans.larsen@gmail.com>"]
+readme = "README.md"
+exclude = ["tests/fixtures/**", ".github/**"]
+
+[dependencies]
+quick-xml = { version = "0.41", features = ["serialize"] }
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+
+# Hash value types are reused from the RustCrypto ecosystem so that a hash read
+# from a DAT compares directly against one computed over a file on disk.
+digest = "0.11"
+md-5 = "0.11"
+sha1 = "0.11"
+sha2 = "0.11"
+
+crc32fast = { version = "1.5", optional = true }
+
+[dev-dependencies]
+pretty_assertions = "1.4"
+rstest = "0.26"
+
+[features]
+default = ["index", "verify"]
+# Lookup tables (by hash, size, name) over a parsed datafile.
+index = []
+# Helpers to hash files/readers and verify them against a datafile.
+verify = ["dep:crc32fast"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

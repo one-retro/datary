@@ -1,0 +1,4 @@
+# Test fixtures are byte-exact copies of published datafiles. The round-trip
+# tests assert we reproduce them exactly, so git must not normalise their line
+# endings — most No-Intro datafiles are CRLF.
+tests/fixtures/** -text

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE datafile PUBLIC "-//Logiqx//DTD ROM Management Datafile//EN" "http://www.logiqx.com/Dats/datafile.dtd">
+<datafile build="TestBuild v1.2" debug="no">
+	<header>
+		<name>Logiqx Full DTD Coverage</name>
+		<description>Exercises every element and attribute in the Logiqx DTD</description>
+		<category>Standard DatFile</category>
+		<version>1.0</version>
+		<date>2024-01-15</date>
+		<author>datary tests</author>
+		<email>test@example.com</email>
+		<homepage>Example</homepage>
+		<url>https://example.com/</url>
+		<comment>A header comment</comment>
+		<clrmamepro header="skipheader.xml" forcemerging="full" forcenodump="required" forcepacking="unzip"/>
+		<romcenter plugin="example.dll" rommode="merged" biosmode="unmerged" samplemode="unmerged" lockrommode="yes" lockbiosmode="yes" locksamplemode="yes"/>
+	</header>
+	<game name="bios-parent" sourcefile="src.cpp" isbios="yes" board="PCB-1" rebuildto="other">
+		<comment>First comment</comment>
+		<comment>Second comment</comment>
+		<description>A BIOS parent set</description>
+		<year>1991</year>
+		<manufacturer>Example Corp</manufacturer>
+		<biosset name="eu" description="Europe BIOS" default="yes"/>
+		<biosset name="jp" description="Japan BIOS"/>
+		<rom name="bios.rom" size="131072" crc="1a2b3c4d" md5="0123456789abcdef0123456789abcdef" sha1="0123456789abcdef0123456789abcdef01234567" status="verified" date="1991-06-01"/>
+	</game>
+	<game name="child-set" cloneof="bios-parent" romof="bios-parent" sampleof="samples-set">
+		<description>A clone that merges into its parent</description>
+		<year>1992</year>
+		<manufacturer>Example Corp</manufacturer>
+		<release name="child-set" region="EU" language="en" date="1992-03-04" default="yes"/>
+		<release name="child-set" region="JP" language="ja"/>
+		<rom name="child.rom" size="65536" crc="deadbeef" merge="bios.rom" status="baddump"/>
+		<rom name="nodump.rom" size="0" status="nodump"/>
+		<disk name="hdd" sha1="aaaabbbbccccddddeeeeffff0000111122223333" md5="ffffeeeeddddccccbbbbaaaa99998888" merge="parentdisk" status="good"/>
+		<sample name="sound1"/>
+		<sample name="sound2"/>
+		<archive name="extras"/>
+	</game>
+</datafile>

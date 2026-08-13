@@ -70,6 +70,14 @@ current No-Intro datafile format, and given a real test suite.
 
 ### Fixed
 
+- **`sample` was read only as a block, and written as one.** It is a bare
+  scalar in this syntax — `sample shot.wav`, repeated once per sample — as
+  ClrMamePro's own documented example and ckmame's parser both have it. Every
+  sample in a real datafile was therefore dropped. Both spellings now read, the
+  scalar form is written, and a fixture in the documented form guards it.
+  `archive` gets the same treatment, since ckmame's handling of it is a stub
+  that settles nothing.
+
 - **A non-UTF-8 datafile reported `Error::Io("stream did not contain valid
   UTF-8")`**, classifying an encoding problem as I/O — indistinguishable from a
   missing file or a permissions failure. There is now an `Error::Encoding`

@@ -163,12 +163,29 @@ fn to_game(block: &Block<'_>, source: &str) -> Result<Game> {
         });
     }
 
+    // `sample` is a bare scalar in this syntax — `sample shot.wav`, repeated
+    // once per sample — not a block. ckmame reads it that way and so does
+    // ClrMamePro's own documented example. The block spelling is accepted too,
+    // since this crate wrote it before that was understood.
+    for name in block.fields("sample") {
+        game.samples.push(Sample {
+            name: name.to_string(),
+        });
+    }
     for sample in block.blocks("sample") {
         game.samples.push(Sample {
             name: sample.field("name").unwrap_or_default().to_string(),
         });
     }
 
+    // `archive` is a stub in ckmame's parser, which consumes no value, so its
+    // shape is genuinely unsettled. Both spellings are accepted rather than
+    // betting on one.
+    for name in block.fields("archive") {
+        game.archives.push(Archive {
+            name: name.to_string(),
+        });
+    }
     for archive in block.blocks("archive") {
         game.archives.push(Archive {
             name: archive.field("name").unwrap_or_default().to_string(),

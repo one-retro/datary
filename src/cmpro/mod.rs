@@ -40,6 +40,13 @@
 //! MAME's `-listinfo` output uses the same grammar with an `emulator (` header
 //! block instead of `clrmamepro (`, and is read by the same parser.
 //!
+//! # Scalars that look like blocks
+//!
+//! Not every repeated key is a block. `sample` and `archive` are bare
+//! scalars — `sample shot.wav`, once per sample — while `rom` and `disk` take
+//! a parenthesised body. Both spellings are accepted on read; the scalar form
+//! is what gets written.
+//!
 //! # Round-tripping
 //!
 //! Unlike the XML side, which reproduces published files byte for byte, this

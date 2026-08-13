@@ -109,11 +109,12 @@ fn write_game(out: &mut String, indent: &str, game: &crate::dat::Game) {
     for disk in &game.disks {
         write_disk(out, indent, disk);
     }
+    // Both are bare scalars, repeated once each — not blocks.
     for sample in &game.samples {
-        writeln!(out, "{indent}sample ( name {} )", quote(&sample.name)).unwrap();
+        field(out, indent, "sample", &sample.name);
     }
     for archive in &game.archives {
-        writeln!(out, "{indent}archive ( name {} )", quote(&archive.name)).unwrap();
+        field(out, indent, "archive", &archive.name);
     }
 
     out.push_str(")\n\n");

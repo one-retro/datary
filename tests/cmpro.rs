@@ -550,7 +550,8 @@ fn sourcefile_and_archive_round_trip() {
 
     let text = ClrMamePro.write(&dat, &WriteOptions::clrmamepro()).unwrap();
     assert!(text.contains("sourcefile src.cpp"), "{text}");
-    assert!(text.contains("archive ( name extras )"), "{text}");
+    // Written as a bare scalar, matching how `sample` works.
+    assert!(text.contains("archive extras"), "{text}");
     assert_eq!(ClrMamePro.parse(&text).unwrap(), dat);
 }
 
@@ -657,4 +658,99 @@ fn a_rom_level_serial_round_trips() {
     let text = datary::cmpro::to_string(&dat);
     assert!(text.contains("serial S-1"), "{text}");
     assert_eq!(datary::cmpro::from_str(&text).unwrap(), dat);
+}
+
+/// `sample` is a bare scalar, not a block.
+///
+/// ClrMamePro's documented example writes `sample shot.wav`, and ckmame's
+/// parser consumes exactly one value for the key rather than expecting `(`.
+/// Reading only the block spelling dropped every sample in a real datafile.
+#[test]
+fn samples_are_bare_scalars() {
+    let dat = datary::cmpro::from_str(
+        "set (\n\tname pacman\n\tsample shot.wav\n\tsample eat.wav\n\tsampleof galaxian\n)",
+    )
+    .unwrap();
+
+    let game = &dat.games[0];
+    let names: Vec<_> = game.samples.iter().map(|s| s.name.as_str()).collect();
+    assert_eq!(names, ["shot.wav", "eat.wav"], "both samples, in order");
+    assert_eq!(game.sample_of.as_deref(), Some("galaxian"));
+}
+
+/// The scalar form is what gets written, and it round-trips.
+#[test]
+fn samples_round_trip_in_scalar_form() {
+    let dat = datary::from_str(
+        r#"<datafile><game name="g"><description>d</description>
+             <sample name="shot.wav"/><sample name="eat.wav"/>
+           </game></datafile>"#,
+    )
+    .unwrap();
+
+    let text = ClrMamePro.write(&dat, &WriteOptions::clrmamepro()).unwrap();
+    assert!(text.contains("sample shot.wav"), "{text}");
+    assert!(
+        !text.contains("sample ( name"),
+        "block form is not the real one: {text}"
+    );
+
+    let back = ClrMamePro.parse(&text).unwrap();
+    assert_eq!(back.games[0].samples.len(), 2);
+    assert_eq!(back, dat);
+}
+
+/// The block spelling this crate used to write must still read, so files it
+/// already produced are not orphaned.
+#[test]
+fn the_block_sample_spelling_still_reads() {
+    let dat = datary::cmpro::from_str("game (\n\tname g\n\tsample ( name shot.wav )\n)").unwrap();
+    assert_eq!(dat.games[0].samples[0].name, "shot.wav");
+}
+
+/// `archive` gets the same treatment: ckmame's parser is a stub that consumes
+/// no value, so its shape is unsettled and both spellings are accepted.
+#[test]
+fn archives_accept_either_spelling() {
+    let scalar = datary::cmpro::from_str("game (\n\tname g\n\tarchive extras\n)").unwrap();
+    assert_eq!(scalar.games[0].archives[0].name, "extras");
+
+    let block = datary::cmpro::from_str("game (\n\tname g\n\tarchive ( name extras )\n)").unwrap();
+    assert_eq!(block.games[0].archives[0].name, "extras");
+    assert_eq!(scalar, block);
+}
+
+/// A fixture written the way the format documents it, so the scalar spellings
+/// are covered by the round-trip glob rather than only by unit tests.
+#[test]
+fn the_documented_form_fixture_parses_fully() {
+    let dat = load("cmpro/documented-form.dat");
+
+    let galaxian = dat.game("galaxian").unwrap();
+    assert_eq!(
+        galaxian
+            .samples
+            .iter()
+            .map(|s| s.name.as_str())
+            .collect::<Vec<_>>(),
+        ["shot.wav", "eat.wav"]
+    );
+
+    let pacman = dat.game("pacman").unwrap();
+    assert_eq!(pacman.sample_of.as_deref(), Some("galaxian"));
+    assert_eq!(pacman.source_file.as_deref(), Some("pacman.cpp"));
+    assert_eq!(pacman.samples.len(), 1);
+    assert_eq!(pacman.archives.len(), 1);
+    assert_eq!(pacman.archives[0].name, "extras");
+
+    // `resource` marks a BIOS set.
+    assert!(dat.game("bios-set").unwrap().is_bios());
+
+    // Merge and flags still work alongside the scalar keys.
+    let modded = dat.game("pacmanmod").unwrap();
+    assert_eq!(modded.roms[0].merge.as_deref(), Some("pacman.rom"));
+    assert_eq!(modded.roms[1].status(), Status::BadDump);
+
+    // Referentially sound, so it can also guard the validator.
+    assert_eq!(dat.validate(), vec![]);
 }

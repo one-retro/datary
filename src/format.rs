@@ -6,13 +6,19 @@
 //! a bespoke in-house format) and have it work with the same reading, writing
 //! and detection helpers.
 //!
+//! The syntaxes are not equally expressive. [`Xml`] can hold everything this
+//! crate models and reproduces published datafiles byte for byte;
+//! [`ClrMamePro`] cannot, and [`crate::cmpro`] documents exactly what it drops.
+//!
 //! ```
 //! use datary::format::{ClrMamePro, DatFormat, Xml};
 //!
 //! # #[cfg(feature = "cmpro")] {
 //! let dat = Xml.parse("<datafile><game name=\"g\"><description>g</description></game></datafile>")?;
 //!
-//! // The same model round-trips through either syntax.
+//! // Both syntaxes describe the same model, so a file read in one can be
+//! // written in the other. Converting *to* ClrMamePro is lossy for constructs
+//! // its grammar has no place for — see [`crate::cmpro`] for the list.
 //! let text = ClrMamePro.write(&dat, &datary::WriteOptions::clrmamepro())?;
 //! assert_eq!(ClrMamePro.parse(&text)?, dat);
 //! # }

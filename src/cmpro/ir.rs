@@ -42,6 +42,17 @@ impl<'a> Block<'a> {
         keys.iter().find_map(|k| self.field(k))
     }
 
+    /// Every scalar value recorded under `key`, in source order.
+    ///
+    /// Keys repeat in this syntax — `sample` is written once per sample — so
+    /// [`Block::field`], which returns only the first, is not enough.
+    pub fn fields<'s>(&'s self, key: &'s str) -> impl Iterator<Item = &'a str> + 's {
+        self.entries.iter().filter_map(move |e| match e {
+            Entry::Field(k, v) if *k == key => Some(*v),
+            _ => None,
+        })
+    }
+
     /// Every nested block named `name`.
     pub fn blocks<'s>(&'s self, name: &'s str) -> impl Iterator<Item = &'s Block<'a>> + 's {
         self.entries.iter().filter_map(move |e| match e {

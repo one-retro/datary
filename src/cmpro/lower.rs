@@ -30,15 +30,28 @@ where
         .strip_prefix("0x")
         .or_else(|| field.strip_prefix("0X"))
         .unwrap_or(field);
+    let prefix = field.len() - raw.len();
 
     match raw.parse::<T>() {
         Ok(value) => Ok(Some(value)),
-        Err(cause) => Err(Error::Cmpro(CmproError {
-            message: format!("invalid {} value {field:?}: {cause}", keys[0]),
+        Err(cause) => {
+            // A bad digit is pinned to that digit; a bad length is about the
+            // whole value, so it stays at the start.
+            let within = match cause {
+                HashParseError::InvalidDigit { index, .. } => prefix + index,
+                HashParseError::InvalidLength { .. } => 0,
+            };
+
             // The value is a slice of the source, so its position is
             // recoverable without the parser having tracked a span.
-            position: Position::of_substring(source, field),
-        })),
+            let position = Position::of_substring(source, field)
+                .map(|start| Position::from_offset(source, start.offset + within));
+
+            Err(Error::Cmpro(CmproError {
+                message: format!("invalid {} value {field:?}: {cause}", keys[0]),
+                position,
+            }))
+        }
     }
 }
 

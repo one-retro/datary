@@ -447,3 +447,65 @@ fn errors_carry_a_byte_offset() {
         "the offset must point at the offending value"
     );
 }
+
+/// An invalid checksum points at the exact offending character, not merely at
+/// the start of the value — an error carrying a digit index should not throw
+/// that precision away.
+#[test]
+fn a_bad_hex_digit_is_pinned_to_that_digit() {
+    // The caret should land on the first `z`, four digits into the value.
+    let source = "game (\n\trom ( name a size 1 crc 0000zz00 )\n)";
+    let position = position_of(source);
+    assert_eq!(&source[position.offset..position.offset + 2], "zz");
+    assert_eq!(position.line, 2);
+
+    // Further in, and in a longer algorithm.
+    let source = "game (\n\trom ( name a size 1 sha1 0123456789XX23456789abcdef0123456789abcd )\n)";
+    let position = position_of(source);
+    assert_eq!(&source[position.offset..position.offset + 2], "XX");
+
+    // The `0x` prefix is skipped, not counted as part of the digits.
+    let source = "game (\n\trom ( name a size 1 crc 0xzzzzzzzz )\n)";
+    let position = position_of(source);
+    assert_eq!(
+        &source[position.offset..position.offset + 1],
+        "z",
+        "must point past the 0x prefix"
+    );
+}
+
+/// A wrong-length checksum is about the whole value, so it points at the start.
+#[test]
+fn a_bad_hex_length_points_at_the_whole_value() {
+    let source = "game (\n\trom ( name a size 1 sha1 abcd )\n)";
+    let position = position_of(source);
+    assert_eq!(&source[position.offset..position.offset + 4], "abcd");
+
+    // Including when prefixed: the value starts at the `0`.
+    let source = "game (\n\trom ( name a size 1 sha1 0xabcd )\n)";
+    let position = position_of(source);
+    assert_eq!(&source[position.offset..position.offset + 6], "0xabcd");
+}
+
+/// Positions stay correct deeper into a file, not just on the first entry.
+#[test]
+fn positions_are_correct_beyond_the_first_game() {
+    let source = concat!(
+        "game ( rom ( name a size 1 crc deadbeef ) )\n",
+        "game (\n",
+        "\tdisk ( name d sha1 nope )\n",
+        ")",
+    );
+    let position = position_of(source);
+    assert_eq!(position.line, 3, "the bad disk hash is on line 3");
+    assert_eq!(&source[position.offset..position.offset + 4], "nope");
+}
+
+/// Returns the position of the sole error in `source`.
+fn position_of(source: &str) -> datary::Position {
+    match datary::cmpro::from_str(source) {
+        Ok(_) => panic!("expected an error for {source:?}"),
+        Err(Error::Cmpro(e)) => e.position.expect("checksum errors are located"),
+        Err(e) => panic!("expected a Cmpro error, got {e:?}"),
+    }
+}

@@ -77,9 +77,9 @@ fn write_header(out: &mut String, indent: &str, header: &crate::dat::Header) {
         if let Some(v) = cmp.force_no_dump {
             field(out, indent, "forcenodump", &lowercase(v));
         }
-        // CMPro spells this `forcezipping`.
+
         if let Some(v) = cmp.force_packing {
-            field(out, indent, "forcezipping", &lowercase(v));
+            field(out, indent, "forcepacking", &lowercase(v));
         }
     }
 
@@ -87,7 +87,13 @@ fn write_header(out: &mut String, indent: &str, header: &crate::dat::Header) {
 }
 
 fn write_game(out: &mut String, indent: &str, game: &crate::dat::Game) {
-    out.push_str("game (\n");
+    // A BIOS or support set is a `resource` block rather than a `game` one;
+    // the syntax has no `isbios` key. ckmame reads `resource` as a game.
+    out.push_str(if game.is_bios() {
+        "resource (\n"
+    } else {
+        "game (\n"
+    });
     field(out, indent, "name", &game.name);
     field(out, indent, "description", &game.description);
     optional(out, indent, "year", game.year.as_ref());
@@ -95,6 +101,7 @@ fn write_game(out: &mut String, indent: &str, game: &crate::dat::Game) {
     optional(out, indent, "cloneof", game.clone_of.as_ref());
     optional(out, indent, "romof", game.rom_of.as_ref());
     optional(out, indent, "sampleof", game.sample_of.as_ref());
+    optional(out, indent, "sourcefile", game.source_file.as_ref());
 
     for rom in &game.roms {
         write_rom(out, indent, rom);
@@ -104,6 +111,9 @@ fn write_game(out: &mut String, indent: &str, game: &crate::dat::Game) {
     }
     for sample in &game.samples {
         writeln!(out, "{indent}sample ( name {} )", quote(&sample.name)).unwrap();
+    }
+    for archive in &game.archives {
+        writeln!(out, "{indent}archive ( name {} )", quote(&archive.name)).unwrap();
     }
 
     out.push_str(")\n\n");

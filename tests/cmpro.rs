@@ -509,3 +509,124 @@ fn position_of(source: &str) -> datary::Position {
         Err(e) => panic!("expected a Cmpro error, got {e:?}"),
     }
 }
+
+/// A BIOS set has no `isbios` key in this syntax; it is a `resource` block.
+#[test]
+fn a_bios_set_round_trips_as_a_resource_block() {
+    let dat = datary::from_str(
+        r#"<datafile>
+             <game name="bios" isbios="yes"><description>B</description>
+               <rom name="b.rom" size="1"/>
+             </game>
+             <game name="normal"><description>N</description>
+               <rom name="n.rom" size="1"/>
+             </game>
+           </datafile>"#,
+    )
+    .unwrap();
+
+    let text = ClrMamePro.write(&dat, &WriteOptions::clrmamepro()).unwrap();
+    assert!(text.contains("resource (\n\tname bios"), "{text}");
+    assert!(text.contains("game (\n\tname normal"), "{text}");
+
+    // ...and reading it back restores the flag.
+    let back = ClrMamePro.parse(&text).unwrap();
+    assert!(back.game("bios").unwrap().is_bios());
+    assert!(!back.game("normal").unwrap().is_bios());
+}
+
+/// `sourcefile` and `archive` are part of the ClrMamePro keyword set and must
+/// survive, not be silently dropped.
+#[test]
+fn sourcefile_and_archive_round_trip() {
+    let source =
+        "game (\n\tname g\n\tdescription d\n\tsourcefile src.cpp\n\tarchive ( name extras )\n)";
+    let dat = ClrMamePro.parse(source).unwrap();
+
+    let game = &dat.games[0];
+    assert_eq!(game.source_file.as_deref(), Some("src.cpp"));
+    assert_eq!(game.archives.len(), 1);
+    assert_eq!(game.archives[0].name, "extras");
+
+    let text = ClrMamePro.write(&dat, &WriteOptions::clrmamepro()).unwrap();
+    assert!(text.contains("sourcefile src.cpp"), "{text}");
+    assert!(text.contains("archive ( name extras )"), "{text}");
+    assert_eq!(ClrMamePro.parse(&text).unwrap(), dat);
+}
+
+/// The packing key is `forcepacking`, per Logiqx's own ClrMamePro example and
+/// ckmame's parser. `forcezipping` is accepted on read but never written.
+#[test]
+fn force_packing_uses_the_real_key() {
+    let dat = ClrMamePro
+        .parse("clrmamepro (\n\tname n\n\tforcepacking unzip\n)")
+        .unwrap();
+    assert_eq!(
+        dat.header
+            .as_ref()
+            .unwrap()
+            .clr_mame_pro
+            .as_ref()
+            .unwrap()
+            .force_packing,
+        Some(datary::ForcePacking::Unzip)
+    );
+
+    let text = ClrMamePro.write(&dat, &WriteOptions::clrmamepro()).unwrap();
+    assert!(text.contains("forcepacking unzip"), "{text}");
+    assert!(
+        !text.contains("forcezipping"),
+        "must not write the proposal spelling"
+    );
+
+    // The alternative spelling still reads, for files that used it.
+    let alt = ClrMamePro
+        .parse("clrmamepro (\n\tname n\n\tforcezipping unzip\n)")
+        .unwrap();
+    assert_eq!(alt, dat);
+}
+
+/// Constructs the syntax cannot express are dropped, not mangled into invented
+/// keys. This pins the loss so it stays deliberate.
+#[test]
+fn unrepresentable_fields_are_dropped_cleanly() {
+    let dat = datary::from_str(
+        r#"<datafile>
+             <game name="g" id="0001" cloneofid="0002" board="PCB">
+               <category>Games</category>
+               <description>d</description>
+               <game_id>0004000</game_id>
+               <biosset name="eu" description="Europe"/>
+               <release name="g" region="EU"/>
+               <rom name="r.rom" size="1" sha256="0000000000000000000000000000000000000000000000000000000000000000" mia="yes"/>
+             </game>
+           </datafile>"#,
+    )
+    .unwrap();
+
+    let text = ClrMamePro.write(&dat, &WriteOptions::clrmamepro()).unwrap();
+    for absent in [
+        "biosset",
+        "release",
+        "cloneofid",
+        "category",
+        "game_id",
+        "mia",
+        "board",
+    ] {
+        assert!(
+            !text.contains(absent),
+            "{absent:?} should not be written: {text}"
+        );
+    }
+
+    // `sha256` is deliberately written despite not being a published key:
+    // dropping a checksum would defeat the purpose of the format.
+    assert!(text.contains("sha256 "), "checksums must survive: {text}");
+
+    // What the syntax *can* express still survives.
+    let back = ClrMamePro.parse(&text).unwrap();
+    assert_eq!(back.games[0].name, "g");
+    assert_eq!(back.games[0].roms[0].size, 1);
+    assert!(back.games[0].bios_sets.is_empty());
+}

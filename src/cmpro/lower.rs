@@ -3,7 +3,7 @@
 //! Every dialect quirk lives here rather than in the grammar.
 
 use super::ir::Block;
-use crate::dat::{ClrMamePro, Datafile, Disk, Game, Header, Rom, Sample};
+use crate::dat::{Archive, ClrMamePro, Datafile, Disk, Game, Header, Rom, Sample};
 use crate::enums::{ForceMerging, ForceNoDump, ForcePacking, Status};
 use crate::error::{CmproError, Error, Position, Result};
 use crate::hash::HashParseError;
@@ -92,7 +92,9 @@ fn to_header(block: &Block<'_>) -> Header {
         header: block.field("header").map(str::to_string),
         force_merging: block.field("forcemerging").and_then(parse_force_merging),
         force_no_dump: block.field("forcenodump").and_then(parse_force_no_dump),
-        // CMPro spells this `forcezipping`; XML calls it `forcepacking`.
+        // `forcepacking` is the real key, in both Logiqx's CMPro example and
+        // ckmame's parser. `forcezipping` appears only as a proposed tool flag
+        // in a 2007 DatUtil note, but is accepted on read in case it escaped.
         force_packing: block
             .any_field(&["forcepacking", "forcezipping"])
             .and_then(parse_force_packing),
@@ -123,6 +125,7 @@ fn to_game(block: &Block<'_>, source: &str) -> Result<Game> {
         clone_of: block.field("cloneof").map(str::to_string),
         rom_of: block.field("romof").map(str::to_string),
         sample_of: block.field("sampleof").map(str::to_string),
+        source_file: block.field("sourcefile").map(str::to_string),
         ..Game::default()
     };
 
@@ -156,6 +159,12 @@ fn to_game(block: &Block<'_>, source: &str) -> Result<Game> {
     for sample in block.blocks("sample") {
         game.samples.push(Sample {
             name: sample.field("name").unwrap_or_default().to_string(),
+        });
+    }
+
+    for archive in block.blocks("archive") {
+        game.archives.push(Archive {
+            name: archive.field("name").unwrap_or_default().to_string(),
         });
     }
 

@@ -49,6 +49,33 @@
 //! differ from the input. One case is genuinely lossy: the format defines no
 //! escape sequence, so a `"` inside a value cannot be represented and is
 //! written as `'`.
+//!
+//! # What this syntax cannot express
+//!
+//! Converting *from* XML is lossy, because the ClrMamePro grammar has no
+//! equivalent for several Logiqx and No-Intro constructs. These are dropped on
+//! write rather than emitted as invented keys that real tools would reject:
+//!
+//! | Dropped | Why |
+//! | --- | --- |
+//! | `<biosset>` | No such block. Neither ckmame nor ClrMamePro reads or writes one, and no published ClrMamePro datafile contains one. |
+//! | `<release>` | No such block. |
+//! | game `@id`, `@cloneofid`, `<category>`, `<game_id>` | No-Intro XML extensions with no ClrMamePro counterpart. |
+//! | game `@board`, `@rebuildto` | Logiqx XML attributes with no counterpart. |
+//! | ROM `@header`, `@mia` | No-Intro XML extensions with no counterpart. |
+//!
+//! A BIOS set is *not* lost: it has no `isbios` key, but is written as a
+//! `resource (` block instead of a `game (` one, which is how ClrMamePro marks
+//! it and how ckmame reads it back.
+//!
+//! Three keys *are* written despite not being in the published keyword set:
+//! `sha256`, `serial` and `date` on a ROM. Losing a checksum in particular
+//! would defeat the point of the format, and the grammar is open — ckmame
+//! warns about an unrecognised key rather than rejecting the file. They
+//! therefore round-trip through this crate, at the cost of output that is a
+//! superset of what other tools understand.
+//!
+//! Use [`crate::format::Xml`] when nothing at all may be lost.
 
 mod ir;
 mod lower;

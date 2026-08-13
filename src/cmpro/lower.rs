@@ -148,7 +148,7 @@ fn to_game(block: &Block<'_>, source: &str) -> Result<Game> {
                 .field("serial")
                 .or_else(|| block.field("serial"))
                 .map(str::to_string),
-            status: rom.any_field(&["flags", "status"]).and_then(parse_status),
+            status: status_of(rom),
             ..Rom::default()
         });
     }
@@ -159,7 +159,7 @@ fn to_game(block: &Block<'_>, source: &str) -> Result<Game> {
             md5: hash(disk, &["md5"], source)?,
             sha1: hash(disk, &["sha1"], source)?,
             merge: disk.field("merge").map(str::to_string),
-            status: disk.any_field(&["flags", "status"]).and_then(parse_status),
+            status: status_of(disk),
         });
     }
 
@@ -193,6 +193,15 @@ fn to_game(block: &Block<'_>, source: &str) -> Result<Game> {
     }
 
     Ok(game)
+}
+
+/// Reads a dump status, which ClrMamePro spells three ways: `flags baddump`,
+/// the XML-style `status baddump`, or a bare `baddump` keyword with no value.
+fn status_of(block: &Block<'_>) -> Option<Status> {
+    if let Some(status) = block.any_field(&["flags", "status"]).and_then(parse_status) {
+        return Some(status);
+    }
+    block.flags().find_map(parse_status)
 }
 
 fn parse_status(s: &str) -> Option<Status> {

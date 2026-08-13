@@ -15,9 +15,10 @@
 
 use super::ir::{Block, Entry};
 use crate::error::{CmproError, Position};
-use winnow::combinator::{alt, cut_err, preceded, repeat, terminated};
+use std::borrow::Cow;
+use winnow::combinator::{alt, cut_err, peek, preceded, repeat, terminated};
 use winnow::error::{ContextError, StrContext, StrContextValue};
-use winnow::token::{take_till, take_while};
+use winnow::token::{any, none_of, take_while};
 use winnow::{ModalResult, Parser};
 
 /// Whitespace, plus the bare `BEGIN`/`END` markers some producers wrap files in.
@@ -41,43 +42,82 @@ fn bare<'a>(input: &mut &'a str) -> ModalResult<&'a str> {
     .parse_next(input)
 }
 
-/// A double-quoted string.
+/// A double-quoted string, honouring backslash escapes.
 ///
-/// The format defines no escape sequence, so the body is a contiguous slice and
-/// this stays zero-copy.
+/// A backslash makes the next character literal, so `\"` embeds a quote and
+/// `\\` a backslash. ckmame's tokenizer implements exactly this, which is why
+/// the writer can emit `\"` rather than mangling the value.
 ///
-/// The body deliberately stops at a newline as well as at the closing quote.
-/// No producer emits a value spanning lines — and without escapes the format
-/// could not represent one unambiguously anyway — while allowing it would make
-/// a single unterminated quote swallow the rest of the file and report the
-/// error thousands of lines below the actual mistake.
+/// The body deliberately stops at an *unescaped* newline. No producer emits a
+/// value spanning lines, and allowing it would make a single unterminated quote
+/// swallow the rest of the file and report the error thousands of lines below
+/// the actual mistake.
 ///
 /// `cut_err` commits once the opening quote is seen, so the failure is reported
 /// here rather than backtracking and resurfacing somewhere unrelated.
-fn quoted<'a>(input: &mut &'a str) -> ModalResult<&'a str> {
-    preceded(
+fn quoted<'a>(input: &mut &'a str) -> ModalResult<Cow<'a, str>> {
+    let raw = preceded(
         '"',
-        cut_err(terminated(take_till(0.., ('"', '\n')), '"'))
-            .context(StrContext::Label("quoted string"))
-            .context(StrContext::Expected(StrContextValue::Description(
-                "a closing '\"'",
-            ))),
+        cut_err(terminated(
+            repeat(
+                0..,
+                alt((('\\', any).void(), none_of(('"', '\\', '\n')).void())),
+            )
+            .map(|()| ())
+            .take(),
+            '"',
+        ))
+        .context(StrContext::Label("quoted string"))
+        .context(StrContext::Expected(StrContextValue::Description(
+            "a closing '\"'",
+        ))),
     )
-    .parse_next(input)
+    .parse_next(input)?;
+
+    Ok(unescape(raw))
 }
 
-fn value<'a>(input: &mut &'a str) -> ModalResult<&'a str> {
-    alt((quoted, bare))
+/// Resolves backslash escapes, borrowing when there are none.
+///
+/// Matches ckmame: a backslash makes the next character literal, and a trailing
+/// backslash stands for itself.
+fn unescape(raw: &str) -> Cow<'_, str> {
+    if !raw.contains('\\') {
+        return Cow::Borrowed(raw);
+    }
+    let mut out = String::with_capacity(raw.len());
+    let mut chars = raw.chars();
+    while let Some(c) = chars.next() {
+        if c == '\\' {
+            match chars.next() {
+                Some(escaped) => out.push(escaped),
+                None => out.push('\\'),
+            }
+        } else {
+            out.push(c);
+        }
+    }
+    Cow::Owned(out)
+}
+
+fn value<'a>(input: &mut &'a str) -> ModalResult<Cow<'a, str>> {
+    alt((quoted, bare.map(Cow::Borrowed)))
         .context(StrContext::Label("value"))
         .parse_next(input)
 }
 
-/// `key value` or `key ( ... )`.
+/// `key value`, `key ( ... )`, or a bare `key` acting as a flag.
+///
+/// The flag arm is why the value arm cannot simply be optional: `name a.rom`
+/// would otherwise be ambiguous between one field and two flags. A bare keyword
+/// only counts as a flag when a `)` follows it, which is where ClrMamePro puts
+/// `baddump` and `nodump`.
 fn entry<'a>(input: &mut &'a str) -> ModalResult<Entry<'a>> {
     let key = terminated(bare, ws).parse_next(input)?;
     alt((
         block_body.map(move |entries| Entry::Block(Block { name: key, entries })),
         terminated(value, ws).map(move |v| Entry::Field(key, v)),
+        peek(')').value(Entry::Flag(key)),
     ))
     .parse_next(input)
 }

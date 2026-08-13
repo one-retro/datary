@@ -29,9 +29,9 @@ current No-Intro datafile format, and given a real test suite.
     `forcepacking`/`forcezipping`, `flags`/`status`, optional `BEGIN`/`END`
     markers, and the `clrmamepro`/`emulator` header block names.
   - Round-tripping this syntax is *semantic*, not byte-exact: it has no
-    specification, producers disagree about when to quote a bare token, and with
-    no escape sequence a `"` inside a value cannot be represented (it is written
-    as `'`). The XML side remains byte-exact.
+    specification and producers disagree about when to quote a bare token. Values
+    themselves survive intact, since a backslash escapes the next character. The
+    XML side remains byte-exact.
 - **`format::DatFormat`**, a public trait, so a downstream crate can add a
   syntax and use the same reading, writing and detection helpers. `Xml` and
   `ClrMamePro` are ordinary implementations of it.
@@ -69,6 +69,17 @@ current No-Intro datafile format, and given a real test suite.
 - Examples: `info` and `scan`.
 
 ### Fixed
+
+- **Three ClrMamePro parsing faults, found by reading ckmame's parser in full
+  rather than grepping it.**
+  - A bare `baddump` or `nodump` keyword inside a `rom` block — the spelling
+    ClrMamePro uses alongside `flags baddump` — was a *parse error*, so a valid
+    datafile was refused outright rather than merely misread.
+  - Backslash escapes were not implemented. `"Tom \"Cat\" Jerry"` silently
+    truncated to `Tom \`.
+  - The writer replaced an embedded `"` with `'`, documented as an unavoidable
+    loss. It was not unavoidable: ckmame's tokenizer resolves `\"`, so quotes
+    and backslashes are now escaped and round-trip intact.
 
 - **`sample` was read only as a block, and written as one.** It is a bare
   scalar in this syntax — `sample shot.wav`, repeated once per sample — as

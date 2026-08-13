@@ -163,9 +163,11 @@ let dat = datary::from_str_as(source, &Sfv)?;
 let format = detect(bytes, &[&Sfv, &Xml]).unwrap();
 ```
 
-One caveat: the ClrMamePro syntax has no specification and no escape sequence,
-so round-tripping it is *semantic* rather than byte-exact — a `"` inside a value
-cannot be represented and is written as `'`. The XML side stays byte-exact.
+One caveat: the ClrMamePro syntax has no specification, and producers disagree
+about when to quote a bare token, so round-tripping it is *semantic* rather than
+byte-exact. Values themselves survive intact — a backslash escapes the next
+character, so quotes and backslashes are written out rather than mangled. The
+XML side stays byte-exact.
 
 ## Checking a datafile
 

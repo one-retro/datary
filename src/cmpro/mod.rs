@@ -40,22 +40,32 @@
 //! MAME's `-listinfo` output uses the same grammar with an `emulator (` header
 //! block instead of `clrmamepro (`, and is read by the same parser.
 //!
-//! # Scalars that look like blocks
+//! # Shapes that are easy to get wrong
 //!
-//! Not every repeated key is a block. `sample` and `archive` are bare
-//! scalars — `sample shot.wav`, once per sample — while `rom` and `disk` take
-//! a parenthesised body. Both spellings are accepted on read; the scalar form
-//! is what gets written.
+//! Not every key has the shape it looks like:
+//!
+//! | Written as | Shape |
+//! | --- | --- |
+//! | `rom ( … )`, `disk ( … )` | A parenthesised block. |
+//! | `sample shot.wav` | A bare scalar, repeated once per sample — not a block. `archive` likewise. |
+//! | `baddump`, `nodump` | A bare keyword with *no* value, alongside the `flags baddump` spelling. |
+//! | `"Tom \"Cat\" Jerry"` | A quoted string in which a backslash escapes the next character. |
+//!
+//! All of these are accepted on read. Where a construct has more than one
+//! spelling in the wild, the one ClrMamePro itself documents is what gets
+//! written.
 //!
 //! # Round-tripping
 //!
 //! Unlike the XML side, which reproduces published files byte for byte, this
 //! syntax has no specification and producers disagree about when to quote a
 //! bare token. Round-tripping is therefore *semantic*: parsing, writing and
-//! re-parsing yields an equal [`Datafile`], but the bytes may
-//! differ from the input. One case is genuinely lossy: the format defines no
-//! escape sequence, so a `"` inside a value cannot be represented and is
-//! written as `'`.
+//! re-parsing yields an equal [`Datafile`], but the bytes may differ from the
+//! input.
+//!
+//! Values themselves are not lossy. A backslash escapes the character after
+//! it, so `"` and `\` inside a value are written as `\"` and `\\` and come
+//! back intact.
 //!
 //! # What this syntax cannot express
 //!

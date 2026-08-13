@@ -8,17 +8,18 @@ use std::fmt::Write as _;
 /// Quotes a value only when it needs it, matching ClrMamePro's own habit of
 /// leaving simple tokens bare.
 ///
-/// The format defines no escape sequence, so an embedded `"` cannot be
-/// represented. It is rewritten as `'`, which is lossy but keeps the output
-/// parseable — the alternative is emitting a file nothing can read back.
+/// A backslash escapes the following character, so an embedded `"` or `\` is
+/// written out rather than mangled. ckmame's tokenizer resolves these, and this
+/// crate's parser does too, so quotes survive a round trip intact.
 fn quote(value: &str) -> String {
     let needs_quotes = value.is_empty()
         || value
             .chars()
-            .any(|c| c.is_whitespace() || c == '(' || c == ')' || c == '"');
+            .any(|c| c.is_whitespace() || c == '(' || c == ')' || c == '"' || c == '\\');
 
     if needs_quotes {
-        format!("\"{}\"", value.replace('"', "'"))
+        let escaped = value.replace('\\', "\\\\").replace('"', "\\\"");
+        format!("\"{escaped}\"")
     } else {
         value.to_string()
     }

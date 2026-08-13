@@ -754,3 +754,88 @@ fn the_documented_form_fixture_parses_fully() {
     // Referentially sound, so it can also guard the validator.
     assert_eq!(dat.validate(), vec![]);
 }
+
+/// `baddump` and `nodump` appear as bare keywords with no value, not only as
+/// `flags baddump`. ckmame accepts both; rejecting the bare form meant refusing
+/// a valid datafile outright.
+#[test]
+fn bare_status_keywords_parse() {
+    for (spelling, expected) in [
+        ("baddump", Status::BadDump),
+        ("nodump", Status::NoDump),
+        ("flags baddump", Status::BadDump),
+        ("flags nodump", Status::NoDump),
+        ("status baddump", Status::BadDump),
+    ] {
+        let src = format!("game (\n\tname g\n\trom ( name a.rom size 1 {spelling} )\n)");
+        let dat =
+            datary::cmpro::from_str(&src).unwrap_or_else(|e| panic!("{spelling:?} rejected: {e}"));
+        assert_eq!(dat.games[0].roms[0].status(), expected, "{spelling:?}");
+    }
+}
+
+/// A bare keyword on a disk works the same way.
+#[test]
+fn a_bare_status_keyword_works_on_disks() {
+    let dat = datary::cmpro::from_str("game (\n\tname g\n\tdisk ( name d baddump )\n)").unwrap();
+    assert_eq!(dat.games[0].disks[0].status(), Status::BadDump);
+}
+
+/// A backslash escapes the next character, so quotes can appear in values.
+/// ckmame's tokenizer implements this; assuming it did not made the writer
+/// lossy and the parser wrong.
+#[test]
+fn backslash_escapes_are_honoured() {
+    let dat = datary::cmpro::from_str(r#"game ( name "Tom \"Cat\" Jerry" )"#).unwrap();
+    assert_eq!(dat.games[0].name, r#"Tom "Cat" Jerry"#);
+
+    let dat = datary::cmpro::from_str(r#"game ( name "back\\slash" )"#).unwrap();
+    assert_eq!(dat.games[0].name, r"back\slash");
+
+    // A backslash before an ordinary character just yields that character.
+    let dat = datary::cmpro::from_str(r#"game ( name "a\bc" )"#).unwrap();
+    assert_eq!(dat.games[0].name, "abc");
+}
+
+/// Quotes survive a round trip rather than being rewritten to apostrophes.
+#[test]
+fn quotes_in_values_round_trip_losslessly() {
+    let original = r#"Tom "Cat" Jerry (USA)"#;
+    let dat = Datafile {
+        games: vec![datary::Game {
+            name: original.into(),
+            description: r"path\with\backslashes".into(),
+            ..datary::Game::default()
+        }],
+        ..Datafile::default()
+    };
+
+    let text = datary::cmpro::to_string(&dat);
+    assert!(
+        text.contains(r#"\"Cat\""#),
+        "must escape, not mangle: {text}"
+    );
+    assert!(
+        !text.contains("'Cat'"),
+        "the old lossy rewrite is gone: {text}"
+    );
+
+    let back = datary::cmpro::from_str(&text).unwrap();
+    assert_eq!(back.games[0].name, original);
+    assert_eq!(back.games[0].description, r"path\with\backslashes");
+    assert_eq!(back, dat);
+}
+
+/// An unterminated quote must still be caught, and still stop at the line.
+#[test]
+fn escapes_do_not_break_unterminated_quote_detection() {
+    let err = datary::cmpro::from_str("game (\n\tname \"oops\n)").unwrap_err();
+    let Error::Cmpro(e) = err else {
+        panic!("expected a Cmpro error")
+    };
+    assert_eq!(e.position.unwrap().line, 2);
+
+    // A trailing backslash before the newline must not swallow it.
+    let err = datary::cmpro::from_str("game (\n\tname \"oops\\\n)").unwrap_err();
+    assert!(matches!(err, Error::Cmpro(_)));
+}

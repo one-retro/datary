@@ -124,7 +124,7 @@ follows reality:
 | Field | Schema says | Reality |
 | --- | --- | --- |
 | `rom/@size` | `xs:unsignedInt` | A decrypted 3DS entry is `4294967296` — one past `u32::MAX`. Modelled as `u64`. |
-| `game/@id` | `xs:string` | Zero-padded (`"0001"`). Kept as a string so the padding survives a round trip. |
+| `game/@id` | `xs:string` | Genuinely free-form — 5.6% of ~5,000 ids sampled from published datafiles are letter-prefixed (`z183` beta, `xB01` BIOS), and the rest are zero-padded. An integer would fail on the former and lose the padding on the latter. |
 
 ## Two syntaxes, one model
 

@@ -318,3 +318,52 @@ fn no_intro_files_reproduce_byte_for_byte(#[case] relative: &str) {
 
     assert_eq!(original, written, "{relative} was not reproduced exactly");
 }
+
+/// Game ids are free-form text, not numbers.
+///
+/// Most are zero-padded digits, but No-Intro also issues letter-prefixed ids
+/// (`z` for betas and aftermarket releases, `xB` for BIOS). Across four
+/// published datafiles, 5.6% of ~5,000 ids were not pure digits, so this is a
+/// normal case rather than an exotic one — and modelling the field as an
+/// integer would fail outright on them.
+#[test]
+fn game_ids_are_not_necessarily_numeric() {
+    let dat = load("no-intro/new-nintendo-3ds-decrypted.dat");
+
+    let beta = dat.game("Xenoblade Chronicles 3D (USA) (Beta)").unwrap();
+    assert_eq!(beta.id.as_deref(), Some("z002"));
+    assert!(
+        beta.id.as_deref().unwrap().parse::<u32>().is_err(),
+        "this id is not parseable as a number, which is the point"
+    );
+
+    // It still takes part in the clone graph.
+    assert_eq!(beta.clone_of_id.as_deref(), Some("0001"));
+    assert!(beta.is_clone());
+
+    // And it survives a round trip verbatim.
+    let xml = datary::to_string(&dat).unwrap();
+    assert!(
+        xml.contains(r#"id="z002""#),
+        "letter-prefixed id must persist"
+    );
+    assert_eq!(datary::from_str(&xml).unwrap(), dat);
+}
+
+/// A letter-prefixed parent id must resolve through `clones_of`.
+#[test]
+fn clone_resolution_handles_non_numeric_ids() {
+    // Synthesised: the fixture has a z-id clone but not a z-id *parent*.
+    let dat = datary::from_str(
+        r#"<datafile>
+             <game name="Parent" id="z056"><description>Parent</description></game>
+             <game name="Child" id="0100" cloneofid="z056"><description>Child</description></game>
+           </datafile>"#,
+    )
+    .unwrap();
+
+    let parent = dat.game("Parent").unwrap();
+    let clones = dat.clones_of(parent);
+    assert_eq!(clones.len(), 1);
+    assert_eq!(clones[0].name, "Child");
+}

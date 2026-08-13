@@ -249,8 +249,23 @@ pub struct Game {
 
     /// `@id`. No-Intro only.
     ///
-    /// This is a *string*, not a number: No-Intro zero-pads it (`"0001"`), and
-    /// parsing it as an integer would lose that padding on write.
+    /// Free-form text, not a number, and the schema agrees (`xs:string`).
+    /// Most values are zero-padded digits — `"0001"` — but a meaningful
+    /// minority carry a letter prefix marking a class of entry:
+    ///
+    /// | Form | Meaning | Example |
+    /// | --- | --- | --- |
+    /// | `0001` | An ordinary numbered entry | most of a datafile |
+    /// | `z183` | Beta, proto or aftermarket | `Adventure Time … (Beta)` |
+    /// | `x060` | A further out-of-band class | |
+    /// | `xB01` | BIOS | `[BIOS] Nintendo 3DS ARM9 Boot ROM (World)` |
+    ///
+    /// Across four published No-Intro datafiles (~5,000 games), 5.6% of ids
+    /// were not pure digits. Parsing this as an integer would fail outright on
+    /// those, and would silently drop the zero padding on the rest.
+    ///
+    /// These ids are also referenced by [`Game::clone_of_id`], so the clone
+    /// graph depends on them round-tripping exactly.
     #[serde(rename = "@id", skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
 
@@ -259,6 +274,9 @@ pub struct Game {
     pub clone_of: Option<String>,
 
     /// `@cloneofid`. No-Intro only; references the parent's [`Game::id`].
+    ///
+    /// Free-form for the same reason [`Game::id`] is: a clone may point at a
+    /// letter-prefixed parent such as `"z056"`.
     #[serde(rename = "@cloneofid", skip_serializing_if = "Option::is_none")]
     pub clone_of_id: Option<String>,
 

@@ -66,6 +66,24 @@
 //! One set of types covers all of them. See [`dat`] for exactly which fields
 //! come from which specification.
 //!
+//! # Checking a datafile
+//!
+//! Parsing is permissive, so a dangling `cloneof` is not an error. Referential
+//! integrity is reported separately by [`Datafile::validate`], which never
+//! fails a file:
+//!
+//! ```
+//! let dat = datary::from_str(r#"
+//!     <datafile>
+//!         <game name="Child" cloneof="Missing"><description>Child</description></game>
+//!     </datafile>"#)?;
+//!
+//! for issue in dat.validate() {
+//!     println!("{issue}");
+//! }
+//! # Ok::<(), datary::Error>(())
+//! ```
+//!
 //! # Which syntax?
 //!
 //! Both the Logiqx XML syntax and ClrMamePro's native one parse into the same
@@ -95,6 +113,7 @@ pub mod enums;
 pub mod error;
 pub mod format;
 pub mod hash;
+pub mod validate;
 pub mod write;
 
 #[cfg(feature = "cmpro")]
@@ -118,6 +137,7 @@ pub use error::{Error, Result};
 // here would collide with `dat::ClrMamePro`, the `<clrmamepro>` header element.
 pub use format::{detect, DatFormat, BUILTIN_FORMATS};
 pub use hash::{Crc32, HashParseError, Md5, Sha1, Sha256};
+pub use validate::{Issue, IssueKind};
 
 #[cfg(feature = "cmpro")]
 pub use error::{CmproError, Position};

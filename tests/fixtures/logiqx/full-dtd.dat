@@ -24,6 +24,14 @@
 		<biosset name="eu" description="Europe BIOS" default="yes"/>
 		<biosset name="jp" description="Japan BIOS"/>
 		<rom name="bios.rom" size="131072" crc="1a2b3c4d" md5="0123456789abcdef0123456789abcdef" sha1="0123456789abcdef0123456789abcdef01234567" status="verified" date="1991-06-01"/>
+		<disk name="parentdisk" sha1="1111222233334444555566667777888899990000"/>
+	</game>
+	<game name="samples-set">
+		<description>The set that owns the shared samples</description>
+		<year>1991</year>
+		<manufacturer>Example Corp</manufacturer>
+		<sample name="sound1"/>
+		<sample name="sound2"/>
 	</game>
 	<game name="child-set" cloneof="bios-parent" romof="bios-parent" sampleof="samples-set">
 		<description>A clone that merges into its parent</description>

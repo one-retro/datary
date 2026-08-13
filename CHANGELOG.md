@@ -12,6 +12,14 @@ current No-Intro datafile format, and given a real test suite.
 
 ### Added
 
+- **`Datafile::validate`**, reporting referential integrity problems without
+  failing the parse: dangling `cloneof`, `cloneofid`, `romof`, `sampleof` and
+  `merge` references, duplicate game names and ids, self-parents, `cloneof` and
+  `cloneofid` disagreeing, and cycles in the clone graph. Conventions are
+  deliberately not policed. An `Issue` carries the game index, its name and a
+  structured `IssueKind`, so callers can filter rather than parse strings.
+  A `lint` example gates on the result.
+
 - **The native ClrMamePro syntax**, behind the default `cmpro` feature. Both it
   and the Logiqx XML syntax parse into the same [`Datafile`], so `index`,
   `verify` and every helper method work regardless of which a file arrived in,

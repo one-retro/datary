@@ -167,6 +167,32 @@ One caveat: the ClrMamePro syntax has no specification and no escape sequence,
 so round-tripping it is *semantic* rather than byte-exact — a `"` inside a value
 cannot be represented and is written as `'`. The XML side stays byte-exact.
 
+## Checking a datafile
+
+Parsing is permissive by design — a `cloneof` naming a game that is not in the
+file is still well-formed, and still useful for everything that does not follow
+that link. Referential integrity is therefore reported separately, and never
+fails a parse:
+
+```rust
+for issue in dat.validate() {
+    println!("{issue}");
+}
+// game "Dup": name "Dup" is already used by game #0
+// game "Child": cloneof names an unknown game "Nowhere"
+// game "A": clone cycle: A -> B -> A
+```
+
+It checks that `cloneof`, `cloneofid`, `romof`, `sampleof` and `merge` all
+resolve, that game names and ids are unique (they are the keys those references
+resolve through), and that the clone graph is acyclic. It deliberately does not
+police conventions such as a `description` differing from a `name`, because
+published datafiles do that on purpose.
+
+```sh
+cargo run --example lint -- Nintendo\ -\ Virtual\ Boy.dat
+```
+
 ## Feature flags
 
 | Feature | Default | What it adds |

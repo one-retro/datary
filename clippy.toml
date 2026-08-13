@@ -1,0 +1,13 @@
+# Product names that look like code identifiers but are not. `doc_markdown`
+# wants them in backticks, which would render them as inline code — wrong for
+# the name of a program or an organisation.
+#
+# ".." extends clippy's built-in list rather than replacing it.
+doc-valid-idents = [
+    "ClrMamePro",
+    "RomCenter",
+    "RomVault",
+    "DAT-o-MATIC",
+    "RustCrypto",
+    "..",
+]

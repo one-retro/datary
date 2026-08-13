@@ -205,7 +205,7 @@ pub struct ClrMamePro {
     pub force_packing: Option<ForcePacking>,
 }
 
-/// The `<romcenter>` element: hints for the `RomCenter` ROM manager.
+/// The `<romcenter>` element: hints for the RomCenter ROM manager.
 ///
 /// Logiqx defines seven attributes here; the No-Intro schema keeps only
 /// `@plugin`.

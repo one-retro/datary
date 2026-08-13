@@ -112,9 +112,8 @@ fn block<'a>(input: &mut &'a str) -> ModalResult<Block<'a>> {
 /// Returns [`CmproError`] with the line, column and a description of what was
 /// expected.
 pub fn blocks(source: &str) -> Result<Vec<Block<'_>>, CmproError> {
-    let mut input = source;
     preceded(ws, repeat(0.., block))
-        .parse(&mut input)
+        .parse(source)
         .map_err(|e| to_error(source, &e))
 }
 

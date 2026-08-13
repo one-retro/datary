@@ -27,8 +27,10 @@ fmt-check:
     cargo fmt --all --check
 
 # Run clippy over the library, tests and examples.
+# `-D warnings` matches the RUSTFLAGS the CI workflow sets globally; without it
+# a lint that fails upstream passes here.
 clippy:
-    cargo clippy --all-targets --all-features
+    cargo clippy --all-targets --all-features -- -D warnings
 
 # Build the documentation, denying warnings. Pass --open to view it.
 doc *ARGS:

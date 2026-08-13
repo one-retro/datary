@@ -153,6 +153,21 @@ asserts the re-serialised output is byte-identical to the original.
 cargo test
 ```
 
+## Development
+
+A [`justfile`](justfile) collects the common tasks — run `just` to list them.
+
+```sh
+just test          # cargo test --all-features
+just ci            # everything CI runs: fmt, clippy, test, features, doc, msrv
+just info          # summarise a bundled fixture
+just doc --open    # build and read the docs
+```
+
+`just ci` mirrors the GitHub Actions workflow, so a green run locally means a
+green run upstream. The MSRV it checks is read from `Cargo.toml` rather than
+duplicated, so the two cannot drift apart.
+
 ## License
 
 Apache-2.0. See [LICENSE](LICENSE).

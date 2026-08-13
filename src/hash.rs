@@ -185,8 +185,10 @@ impl<'de> Deserialize<'de> for Crc32 {
                 f.write_str("a CRC32 checksum as up to 8 hex digits")
             }
 
+            /// Trimmed because attribute values in real datafiles are
+            /// sometimes split across lines. [`FromStr`] stays strict.
             fn visit_str<E: serde::de::Error>(self, v: &str) -> Result<Self::Value, E> {
-                Crc32::from_str(v)
+                Crc32::from_str(v.trim())
                     .map_err(|_| E::invalid_value(Unexpected::Str(v), &"a CRC32 hex string"))
             }
         }
@@ -397,8 +399,10 @@ impl<'de, D: OutputSizeUser> Deserialize<'de> for Digest<D> {
                 write!(f, "a digest as {} hex digits", D::output_size() * 2)
             }
 
+            /// Trimmed because attribute values in real datafiles are
+            /// sometimes split across lines. [`FromStr`] stays strict.
             fn visit_str<E: serde::de::Error>(self, v: &str) -> Result<Self::Value, E> {
-                Digest::<D>::from_str(v).map_err(|e| E::custom(e))
+                Digest::<D>::from_str(v.trim()).map_err(|e| E::custom(e))
             }
         }
         deserializer.deserialize_str(V(std::marker::PhantomData))

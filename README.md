@@ -214,9 +214,12 @@ cargo run --example scan -- Nintendo\ -\ Virtual\ Boy.dat ~/roms/vb
 
 ## Testing
 
-The test suite runs against real datafiles published by No-Intro and TOSEC,
-plus a handcrafted file exercising the corners of the Logiqx DTD that neither
-project emits. The strongest check reparses each published No-Intro file and
+The test suite runs against real datafiles published by No-Intro and TOSEC, a
+handcrafted file exercising the corners of the Logiqx DTD that neither project
+emits, and part of the regression corpus from [ckmame], an independent
+implementation of the ClrMamePro syntax — every ClrMamePro bug found in this
+crate so far came from reading ckmame or its data rather than from fixtures
+written against our own assumptions. The strongest check reparses each published No-Intro file and
 asserts the re-serialised output is byte-identical to the original.
 
 ```sh
@@ -246,5 +249,6 @@ Apache-2.0. See [LICENSE](LICENSE).
 [Redump]: http://redump.org
 [TOSEC]: https://www.tosecdev.org
 [RustCrypto]: https://github.com/RustCrypto/hashes
+[ckmame]: https://github.com/nih-at/ckmame
 [Logiqx DTD]: http://www.logiqx.com/Dats/datafile.dtd
 [No-Intro schema v3]: https://datomatic.no-intro.org/stuff/schema_nointro_datfile_v3.xsd

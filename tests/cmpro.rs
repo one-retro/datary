@@ -839,3 +839,99 @@ fn escapes_do_not_break_unterminated_quote_detection() {
     let err = datary::cmpro::from_str("game (\n\tname \"oops\\\n)").unwrap_err();
     assert!(matches!(err, Error::Cmpro(_)));
 }
+
+/// Datafiles from ckmame's regression suite, an independent implementation of
+/// the same syntax. Every ClrMamePro bug found in this crate so far came from
+/// reading ckmame or its data — fixtures written against our own assumptions
+/// agreed with the bugs instead of catching them.
+mod ckmame_corpus {
+    use super::{fixture, load};
+    use datary::Status;
+
+    #[test]
+    fn a_hexadecimal_size_is_read_as_hex() {
+        let dat = load("ckmame/mamedb-size-hex.dat");
+        // `size "0x10"`; reading it as decimal silently yielded 0, which would
+        // make the entry verify against any empty file.
+        assert_eq!(dat.games[0].roms[0].size, 16);
+    }
+
+    #[test]
+    fn an_absent_size_is_zero_not_an_error() {
+        let dat = load("ckmame/mamedb-size-empty.dat");
+        assert_eq!(dat.games[0].roms[0].size, 0);
+        assert!(dat.games[0].roms[0].crc.is_some());
+    }
+
+    #[test]
+    fn xml_special_characters_survive_conversion_to_xml() {
+        let dat = load("ckmame/mamedb-xml-quoting.dat");
+        assert_eq!(dat.games[0].name, "2&4c<>;");
+
+        // Converting to XML must escape them, and reparse identically.
+        let xml = datary::to_string(&dat).unwrap();
+        assert!(xml.contains("&amp;"), "{xml}");
+        assert_eq!(datary::from_str(&xml).unwrap(), dat);
+    }
+
+    #[test]
+    fn hex_prefixed_checksums_are_read() {
+        let dat = load("ckmame/mamedb-deadbeefish.dat");
+        assert!(dat.roms().all(|(_, r)| r.crc.is_some() || r.sha1.is_some()));
+    }
+
+    #[test]
+    fn duplicate_rom_names_within_a_game_are_kept() {
+        let dat = load("ckmame/mamedb-duplicate-rom-name.dat");
+        assert_eq!(dat.games[0].roms.len(), 2);
+        assert_eq!(dat.games[0].roms[0].name, dat.games[0].roms[1].name);
+    }
+
+    #[test]
+    fn a_lost_parent_parses_but_fails_validation() {
+        let dat = load("ckmame/mamedb-lost-parent.dat");
+        assert!(!dat.games.is_empty(), "a dangling parent must still parse");
+
+        let issues = dat.validate();
+        assert!(
+            !issues.is_empty(),
+            "the dangling reference must be reported"
+        );
+    }
+
+    #[test]
+    fn merges_through_a_parent_validate_cleanly() {
+        let dat = load("ckmame/mamedb-merge-parent.dat");
+        assert_eq!(dat.validate(), vec![], "every merge should resolve");
+        assert!(dat.roms().any(|(_, r)| r.merge.is_some()));
+    }
+
+    /// Files ckmame itself rejects must be rejected here too — and with a
+    /// located error, not a silent default.
+    #[test]
+    fn invalid_files_are_rejected_the_way_ckmame_rejects_them() {
+        for (name, expected) in [
+            ("broken-sha1.dat.bad", "sha1"),
+            ("missing-size.dat.bad", "size"),
+            ("unbalanced-braces.dat.bad", ")"),
+        ] {
+            let path = fixture(&format!("ckmame-invalid/{name}"));
+            let err = datary::read_file(&path)
+                .expect_err("must be rejected")
+                .to_string();
+            assert!(
+                err.contains(expected),
+                "{name}: expected a message mentioning {expected:?}, got {err:?}"
+            );
+            assert!(err.contains("line"), "{name}: should be located: {err}");
+        }
+    }
+
+    /// Nothing in the valid corpus loses its dump status.
+    #[test]
+    fn statuses_survive_the_corpus() {
+        let dat = load("ckmame/mamedb-merge-parent.dat");
+        assert!(dat.roms().all(|(_, r)| r.status().is_usable()
+            || matches!(r.status(), Status::BadDump | Status::NoDump)));
+    }
+}

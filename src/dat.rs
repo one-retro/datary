@@ -19,7 +19,33 @@
 
 use crate::enums::{ForceMerging, ForceNoDump, ForcePacking, RomMode, SampleMode, Status, YesNo};
 use crate::hash::{Crc32, Md5, Sha1, Sha256};
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Deserializer, Serialize};
+
+/// Parses a file size, tolerating what real datafiles contain.
+///
+/// Accepts surrounding whitespace (attribute values are sometimes split across
+/// lines) and a `0x` hex prefix, which ckmame supports and has a test for.
+///
+/// Unlike ckmame — which uses `strtoull(.., 0)` and therefore reads a leading
+/// zero as octal — a zero-padded value stays decimal here. `0100` is far more
+/// likely to be a padded hundred than an intentional sixty-four.
+pub(crate) fn parse_size(raw: &str) -> Option<u64> {
+    let raw = raw.trim();
+    if raw.is_empty() {
+        return Some(0);
+    }
+    match raw.strip_prefix("0x").or_else(|| raw.strip_prefix("0X")) {
+        Some(hex) => u64::from_str_radix(hex, 16).ok(),
+        None => raw.parse().ok(),
+    }
+}
+
+/// Deserialises a size through [`parse_size`].
+fn deserialize_size<'de, D: Deserializer<'de>>(deserializer: D) -> Result<u64, D::Error> {
+    use serde::de::Error as _;
+    let raw = String::deserialize(deserializer)?;
+    parse_size(&raw).ok_or_else(|| D::Error::custom(format!("invalid size {raw:?}")))
+}
 
 /// The `xsi` namespace URI that No-Intro datafiles declare on the root element.
 pub const XSI_NAMESPACE: &str = "http://www.w3.org/2001/XMLSchema-instance";
@@ -406,7 +432,7 @@ pub struct Rom {
     /// This is a `u64`, not a `u32`: the No-Intro schema declares it
     /// `xs:unsignedInt`, but real datafiles exceed that (a decrypted 3DS entry
     /// is `4294967296`, exactly one past [`u32::MAX`]).
-    #[serde(rename = "@size", default)]
+    #[serde(rename = "@size", default, deserialize_with = "deserialize_size")]
     pub size: u64,
 
     /// `@crc`.

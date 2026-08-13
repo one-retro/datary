@@ -70,6 +70,17 @@ current No-Intro datafile format, and given a real test suite.
 
 ### Fixed
 
+- **A hexadecimal ROM size read as zero.** `size "0x10"` is valid — ckmame
+  parses sizes with `strtoull(.., 0)` and has a regression test for it — but
+  `str::parse` rejected it and the value fell back to `0`, which would make the
+  entry verify against any empty file. Sizes now accept a `0x` prefix and
+  surrounding whitespace, and an unparseable one is an error rather than a
+  silent zero. A leading zero stays decimal, unlike ckmame, since a padded
+  `0100` is far likelier than intentional octal.
+- **Checksums with surrounding whitespace were rejected.** Attribute values in
+  real datafiles are sometimes split across lines. They are trimmed when read
+  from a document; `FromStr` stays strict.
+
 - **Three ClrMamePro parsing faults, found by reading ckmame's parser in full
   rather than grepping it.**
   - A bare `baddump` or `nodump` keyword inside a `rom` block — the spelling

@@ -132,7 +132,7 @@ fn to_game(block: &Block<'_>, source: &str) -> Result<Game> {
     for rom in block.blocks("rom") {
         game.roms.push(Rom {
             name: rom.field("name").unwrap_or_default().to_string(),
-            size: rom.field("size").and_then(|s| s.parse().ok()).unwrap_or(0),
+            size: size_of(rom, source)?,
             // ckmame writes `crc32`, ClrMamePro writes `crc`.
             crc: hash(rom, &["crc", "crc32"], source)?,
             md5: hash(rom, &["md5"], source)?,
@@ -193,6 +193,23 @@ fn to_game(block: &Block<'_>, source: &str) -> Result<Game> {
     }
 
     Ok(game)
+}
+
+/// Reads a file size, erroring rather than silently reading zero.
+///
+/// A zero size is meaningful — `nodump` entries have one — so quietly turning
+/// an unparseable value into zero would produce an entry that verifies against
+/// any empty file.
+fn size_of(block: &Block<'_>, source: &str) -> Result<u64> {
+    let Some(raw) = block.field("size") else {
+        return Ok(0);
+    };
+    crate::dat::parse_size(raw).ok_or_else(|| {
+        Error::Cmpro(CmproError {
+            message: format!("invalid size value {raw:?}"),
+            position: Position::of_substring(source, raw),
+        })
+    })
 }
 
 /// Reads a dump status, which ClrMamePro spells three ways: `flags baddump`,

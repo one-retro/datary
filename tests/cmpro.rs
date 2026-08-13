@@ -367,26 +367,26 @@ fn valid_checksums_still_parse() {
     assert!(rom.sha1.is_some());
 }
 
-/// Semantic errors have no source position; syntax errors do.
+/// Both syntax and value errors are located in the source.
 #[test]
-fn only_syntax_errors_carry_a_position() {
-    let Error::Cmpro(syntax) = datary::cmpro::from_str("game (\n").unwrap_err() else {
-        panic!("expected a Cmpro error");
-    };
-    assert!(syntax.position.is_some(), "syntax errors are located");
-    assert!(syntax.to_string().contains("line"), "{syntax}");
-
-    let Error::Cmpro(semantic) =
-        datary::cmpro::from_str("game ( rom ( name a size 1 sha1 abcd ) )").unwrap_err()
-    else {
-        panic!("expected a Cmpro error");
-    };
-    assert!(
-        semantic.position.is_none(),
-        "the block tree carries no spans, so this cannot be located"
-    );
-    // ...and Display must not invent one.
-    assert!(!semantic.to_string().contains("line 0"), "{semantic}");
+fn every_error_carries_a_position() {
+    for (label, source) in [
+        ("syntax", "game (\n"),
+        ("value", "game ( rom ( name a size 1 sha1 abcd ) )"),
+    ] {
+        let Error::Cmpro(e) = datary::cmpro::from_str(source).unwrap_err() else {
+            panic!("{label}: expected a Cmpro error");
+        };
+        let position = e
+            .position
+            .unwrap_or_else(|| panic!("{label} errors must be located"));
+        assert!(position.offset <= source.len(), "{label}: offset in range");
+        assert!(
+            position.line >= 1 && position.column >= 1,
+            "{label}: 1-based"
+        );
+        assert!(e.to_string().contains("line"), "{label}: {e}");
+    }
 }
 
 /// ckmame and ClrMamePro sometimes prefix a checksum with `0x`.
@@ -413,4 +413,37 @@ fn hex_prefixed_checksums_are_accepted() {
 
     // The prefix does not excuse a bad value.
     assert!(datary::cmpro::from_str("game ( rom ( name a size 1 crc 0xzzzz ) )").is_err());
+}
+
+/// Errors carry a byte offset as well as a line and column, so a caller can
+/// hand the span straight to a diagnostic renderer.
+#[test]
+fn errors_carry_a_byte_offset() {
+    // Syntax error.
+    let source = "game (\n\tname \"oops\n)\n";
+    let Error::Cmpro(e) = datary::cmpro::from_str(source).unwrap_err() else {
+        panic!("expected a Cmpro error");
+    };
+    let p = e.position.expect("syntax errors are located");
+    assert_eq!(p.line, 2);
+    // The offset must index the source at the reported line.
+    assert!(p.offset < source.len());
+    assert_eq!(
+        source[..p.offset].matches('\n').count() + 1,
+        p.line,
+        "offset and line must agree"
+    );
+
+    // Value error: located too, via the borrowed slice.
+    let source = "game (\n\trom ( name a size 1 sha1 abcd )\n)";
+    let Error::Cmpro(e) = datary::cmpro::from_str(source).unwrap_err() else {
+        panic!("expected a Cmpro error");
+    };
+    let p = e.position.expect("value errors are located too");
+    assert_eq!(p.line, 2, "the bad sha1 is on line 2");
+    assert_eq!(
+        &source[p.offset..p.offset + 4],
+        "abcd",
+        "the offset must point at the offending value"
+    );
 }

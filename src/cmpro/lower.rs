@@ -5,7 +5,7 @@
 use super::ir::Block;
 use crate::dat::{ClrMamePro, Datafile, Disk, Game, Header, Rom, Sample};
 use crate::enums::{ForceMerging, ForceNoDump, ForcePacking, Status};
-use crate::error::{Error, Result};
+use crate::error::{CmproError, Error, Position, Result};
 use crate::hash::HashParseError;
 use std::str::FromStr;
 
@@ -19,7 +19,7 @@ use std::str::FromStr;
 /// malformed checksum would leave the entry with no checksum at all, and
 /// `Rom::verify` does not check what an entry does not record — so a typo would
 /// turn into a ROM that verifies against anything of the right size.
-fn hash<T>(block: &Block<'_>, keys: &[&str]) -> Result<Option<T>>
+fn hash<T>(block: &Block<'_>, keys: &[&str], source: &str) -> Result<Option<T>>
 where
     T: FromStr<Err = HashParseError>,
 {
@@ -33,9 +33,11 @@ where
 
     match raw.parse::<T>() {
         Ok(value) => Ok(Some(value)),
-        Err(source) => Err(Error::Cmpro(crate::error::CmproError {
-            message: format!("invalid {} value {raw:?}: {source}", keys[0]),
-            position: None,
+        Err(cause) => Err(Error::Cmpro(CmproError {
+            message: format!("invalid {} value {field:?}: {cause}", keys[0]),
+            // The value is a slice of the source, so its position is
+            // recoverable without the parser having tracked a span.
+            position: Position::of_substring(source, field),
         })),
     }
 }
@@ -53,14 +55,14 @@ const GAME_BLOCKS: [&str; 4] = ["game", "machine", "resource", "set"];
 ///
 /// Returns [`Error::Cmpro`] if a checksum value is not valid hex of the width
 /// its algorithm requires.
-pub fn to_datafile(blocks: &[Block<'_>]) -> Result<Datafile> {
+pub fn to_datafile(blocks: &[Block<'_>], source: &str) -> Result<Datafile> {
     let mut dat = Datafile::default();
 
     for block in blocks {
         if HEADER_BLOCKS.contains(&block.name) {
             dat.header = Some(to_header(block));
         } else if GAME_BLOCKS.contains(&block.name) {
-            let mut game = to_game(block)?;
+            let mut game = to_game(block, source)?;
             // `resource` sets are BIOS-like; record that in the model.
             if block.name == "resource" {
                 game.is_bios = Some(crate::enums::YesNo::Yes);
@@ -99,7 +101,7 @@ fn to_header(block: &Block<'_>) -> Header {
     }
 }
 
-fn to_game(block: &Block<'_>) -> Result<Game> {
+fn to_game(block: &Block<'_>, source: &str) -> Result<Game> {
     let mut game = Game {
         name: block.field("name").unwrap_or_default().to_string(),
         description: block.field("description").unwrap_or_default().to_string(),
@@ -116,10 +118,10 @@ fn to_game(block: &Block<'_>) -> Result<Game> {
             name: rom.field("name").unwrap_or_default().to_string(),
             size: rom.field("size").and_then(|s| s.parse().ok()).unwrap_or(0),
             // ckmame writes `crc32`, ClrMamePro writes `crc`.
-            crc: hash(rom, &["crc", "crc32"])?,
-            md5: hash(rom, &["md5"])?,
-            sha1: hash(rom, &["sha1"])?,
-            sha256: hash(rom, &["sha256"])?,
+            crc: hash(rom, &["crc", "crc32"], source)?,
+            md5: hash(rom, &["md5"], source)?,
+            sha1: hash(rom, &["sha1"], source)?,
+            sha256: hash(rom, &["sha256"], source)?,
             merge: rom.field("merge").map(str::to_string),
             date: rom.field("date").map(str::to_string),
             serial: rom.field("serial").map(str::to_string),
@@ -131,8 +133,8 @@ fn to_game(block: &Block<'_>) -> Result<Game> {
     for disk in block.blocks("disk") {
         game.disks.push(Disk {
             name: disk.field("name").unwrap_or_default().to_string(),
-            md5: hash(disk, &["md5"])?,
-            sha1: hash(disk, &["sha1"])?,
+            md5: hash(disk, &["md5"], source)?,
+            sha1: hash(disk, &["sha1"], source)?,
             merge: disk.field("merge").map(str::to_string),
             status: disk.any_field(&["flags", "status"]).and_then(parse_status),
         });

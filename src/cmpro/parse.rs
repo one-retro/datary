@@ -141,22 +141,10 @@ fn to_error(source: &str, err: &winnow::error::ParseError<&str, ContextError>) -
         (None, true) => "unexpected input".to_string(),
     };
 
-    let (line, column) = line_column(source, offset);
     CmproError {
         message,
-        position: Some(Position { line, column }),
+        position: Some(Position::from_offset(source, offset)),
     }
-}
-
-/// Converts a byte offset into a 1-based line and column.
-fn line_column(source: &str, offset: usize) -> (usize, usize) {
-    let offset = offset.min(source.len());
-    let before = &source[..offset];
-    let line = before.matches('\n').count() + 1;
-    let line_start = before.rfind('\n').map_or(0, |i| i + 1);
-    // Count characters rather than bytes so non-ASCII names report sensibly.
-    let column = source[line_start..offset].chars().count() + 1;
-    (line, column)
 }
 
 #[cfg(test)]
@@ -210,15 +198,6 @@ mod tests {
         let err = blocks("%%%\nclrmamepro ( name T )").unwrap_err();
         let p = err.position.unwrap();
         assert_eq!((p.line, p.column), (1, 1));
-    }
-
-    #[test]
-    fn line_and_column_count_characters_not_bytes() {
-        // 'é' is two bytes, so byte offset 3 is the third *character*.
-        // Counting bytes would wrongly report column 4.
-        assert_eq!(line_column("aéb\nx", 3), (1, 3));
-        // Offset 5 is past the newline.
-        assert_eq!(line_column("aéb\nx", 5), (2, 1));
     }
 
     #[test]

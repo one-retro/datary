@@ -68,7 +68,7 @@ use crate::write::WriteOptions;
 /// Returns [`Error::Cmpro`] with a line and column if the input is malformed.
 pub fn from_str(source: &str) -> Result<Datafile> {
     let blocks = parse::blocks(source).map_err(Error::Cmpro)?;
-    Ok(lower::to_datafile(&blocks))
+    lower::to_datafile(&blocks)
 }
 
 /// Parses a ClrMamePro datafile from any reader.

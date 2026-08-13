@@ -14,7 +14,7 @@
 //! appear, and strict only about structure.
 
 use super::ir::{Block, Entry};
-use crate::error::CmproError;
+use crate::error::{CmproError, Position};
 use winnow::combinator::{alt, cut_err, preceded, repeat, terminated};
 use winnow::error::{ContextError, StrContext, StrContextValue};
 use winnow::token::{take_till, take_while};
@@ -144,8 +144,7 @@ fn to_error(source: &str, err: &winnow::error::ParseError<&str, ContextError>) -
     let (line, column) = line_column(source, offset);
     CmproError {
         message,
-        line,
-        column,
+        position: Some(Position { line, column }),
     }
 }
 
@@ -209,7 +208,8 @@ mod tests {
     #[test]
     fn garbage_is_reported_at_the_start() {
         let err = blocks("%%%\nclrmamepro ( name T )").unwrap_err();
-        assert_eq!((err.line, err.column), (1, 1));
+        let p = err.position.unwrap();
+        assert_eq!((p.line, p.column), (1, 1));
     }
 
     #[test]
@@ -225,7 +225,11 @@ mod tests {
     fn an_unterminated_quote_does_not_swallow_the_rest_of_the_file() {
         let src = "game (\n\tname \"unterminated\n)\n";
         let err = blocks(src).unwrap_err();
-        assert_eq!(err.line, 2, "must report the line the quote opened on");
+        assert_eq!(
+            err.position.unwrap().line,
+            2,
+            "must report the line the quote opened on"
+        );
         assert!(err.message.contains("closing"), "{}", err.message);
     }
 }

@@ -120,7 +120,7 @@ pub use format::{detect, DatFormat, BUILTIN_FORMATS};
 pub use hash::{Crc32, HashParseError, Md5, Sha1, Sha256};
 
 #[cfg(feature = "cmpro")]
-pub use error::CmproError;
+pub use error::{CmproError, Position};
 pub use write::{
     to_string_with, to_writer_as, to_writer_with, write_file_as, write_file_with, LineEnding,
     WriteOptions,

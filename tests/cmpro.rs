@@ -199,7 +199,8 @@ fn syntax_errors_carry_a_line_and_column() {
         panic!("expected a Cmpro error, got {err:?}");
     };
 
-    assert_eq!(e.line, 3, "should point at the unterminated quote");
+    let position = e.position.expect("a syntax error carries a position");
+    assert_eq!(position.line, 3, "should point at the unterminated quote");
     assert!(e.message.contains("closing"), "{}", e.message);
     // The Display impl includes the position.
     assert!(e.to_string().contains("line 3"), "{e}");
@@ -298,4 +299,118 @@ fn a_third_party_format_plugs_in() {
     // And writing goes through the same helper.
     let text = datary::to_string_as(&dat, &Csv, &WriteOptions::default()).unwrap();
     assert_eq!(text, source);
+}
+
+/// A malformed checksum must be an error, never silently dropped.
+///
+/// Dropping it would leave the entry with no checksum, and `Rom::verify` does
+/// not check what an entry does not record — so a typo would produce a ROM that
+/// verifies against any file of the right size.
+#[test]
+fn a_malformed_checksum_is_rejected_not_ignored() {
+    for (label, source) in [
+        ("sha1 too short", "game ( rom ( name a size 1 sha1 abcd ) )"),
+        (
+            "md5 too long",
+            "game ( rom ( name a size 1 md5 0123456789abcdef0123456789abcdef00 ) )",
+        ),
+        ("crc not hex", "game ( rom ( name a size 1 crc zzzzzzzz ) )"),
+        (
+            "crc32 alias not hex",
+            "game ( rom ( name a size 1 crc32 nothex12 ) )",
+        ),
+        (
+            "sha256 too short",
+            "game ( rom ( name a size 1 sha256 abcd ) )",
+        ),
+        (
+            "disk sha1 not hex",
+            "game ( disk ( name d sha1 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq ) )",
+        ),
+    ] {
+        let result = datary::cmpro::from_str(source);
+        assert!(result.is_err(), "{label} was accepted: {source}");
+
+        // The message must name the offending key and value.
+        let message = result.unwrap_err().to_string();
+        assert!(
+            message.contains("invalid"),
+            "{label}: unhelpful message {message:?}"
+        );
+    }
+}
+
+/// Both syntaxes must reject the same bad data. An asymmetry here means one
+/// front-end silently accepts what the other rejects.
+#[test]
+fn both_syntaxes_reject_a_bad_checksum() {
+    let cmpro = datary::cmpro::from_str("game ( rom ( name a size 1 sha1 abcd ) )");
+    let xml = datary::from_str(
+        r#"<datafile><game name="g"><description>d</description>
+             <rom name="a" size="1" sha1="abcd"/>
+           </game></datafile>"#,
+    );
+
+    assert!(cmpro.is_err(), "ClrMamePro accepted a 4-digit sha1");
+    assert!(xml.is_err(), "XML accepted a 4-digit sha1");
+}
+
+/// A valid checksum in either dialect spelling still parses.
+#[test]
+fn valid_checksums_still_parse() {
+    let dat = datary::cmpro::from_str(
+        "game ( rom ( name a size 1 crc32 d87f7e0c sha1 a94a8fe5ccb19ba61c4c0873d391e987982fbbd3 ) )",
+    )
+    .unwrap();
+    let rom = &dat.games[0].roms[0];
+    assert_eq!(rom.crc.unwrap().to_string(), "d87f7e0c");
+    assert!(rom.sha1.is_some());
+}
+
+/// Semantic errors have no source position; syntax errors do.
+#[test]
+fn only_syntax_errors_carry_a_position() {
+    let Error::Cmpro(syntax) = datary::cmpro::from_str("game (\n").unwrap_err() else {
+        panic!("expected a Cmpro error");
+    };
+    assert!(syntax.position.is_some(), "syntax errors are located");
+    assert!(syntax.to_string().contains("line"), "{syntax}");
+
+    let Error::Cmpro(semantic) =
+        datary::cmpro::from_str("game ( rom ( name a size 1 sha1 abcd ) )").unwrap_err()
+    else {
+        panic!("expected a Cmpro error");
+    };
+    assert!(
+        semantic.position.is_none(),
+        "the block tree carries no spans, so this cannot be located"
+    );
+    // ...and Display must not invent one.
+    assert!(!semantic.to_string().contains("line 0"), "{semantic}");
+}
+
+/// ckmame and ClrMamePro sometimes prefix a checksum with `0x`.
+///
+/// Found in ckmame's own corpus (its `deadbeefish` set), not invented.
+#[test]
+fn hex_prefixed_checksums_are_accepted() {
+    let dat = datary::cmpro::from_str(
+        "game ( rom ( name a size 4 crc32 0xd87f7e0c sha1 0X0b0dcdf77237b4e5d920990b92d4b59ad264910f ) )",
+    )
+    .unwrap();
+
+    let rom = &dat.games[0].roms[0];
+    // The prefix is stripped, not stored.
+    assert_eq!(rom.crc.unwrap().to_string(), "d87f7e0c");
+    assert_eq!(
+        rom.sha1.unwrap().to_string(),
+        "0b0dcdf77237b4e5d920990b92d4b59ad264910f"
+    );
+
+    // A prefixed value equals its bare form.
+    let bare = datary::cmpro::from_str("game ( rom ( name a size 4 crc32 d87f7e0c ) )").unwrap();
+    assert_eq!(rom.crc, bare.games[0].roms[0].crc);
+
+    // The prefix does not excuse a bad value.
+    assert!(datary::cmpro::from_str("game ( rom ( name a size 1 crc 0xzzzz ) )").is_err());
 }

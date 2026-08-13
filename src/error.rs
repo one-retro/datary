@@ -36,19 +36,52 @@ pub enum Error {
     UnknownFormat,
 }
 
-/// A syntax error in a ClrMamePro datafile, located in the source.
+/// An error in a ClrMamePro datafile.
 #[cfg(feature = "cmpro")]
 #[cfg_attr(docsrs, doc(cfg(feature = "cmpro")))]
-#[derive(Debug, Clone, PartialEq, Eq, thiserror::Error)]
-#[error("{message}, at line {line} column {column}")]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct CmproError {
-    /// What the parser expected at that point.
+    /// What went wrong.
     pub message: String,
+
+    /// Where in the source, when the error is tied to one.
+    ///
+    /// Syntax errors carry a position. Errors found while interpreting the
+    /// parsed blocks — an invalid checksum value, say — do not, because the
+    /// block tree does not retain spans.
+    pub position: Option<Position>,
+}
+
+/// A 1-based position in a source file.
+#[cfg(feature = "cmpro")]
+#[cfg_attr(docsrs, doc(cfg(feature = "cmpro")))]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub struct Position {
     /// 1-based line number.
     pub line: usize,
-    /// 1-based column, counted in characters.
+    /// 1-based column, counted in characters rather than bytes.
     pub column: usize,
 }
+
+#[cfg(feature = "cmpro")]
+impl std::fmt::Display for Position {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "line {} column {}", self.line, self.column)
+    }
+}
+
+#[cfg(feature = "cmpro")]
+impl std::fmt::Display for CmproError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self.position {
+            Some(position) => write!(f, "{}, at {position}", self.message),
+            None => f.write_str(&self.message),
+        }
+    }
+}
+
+#[cfg(feature = "cmpro")]
+impl std::error::Error for CmproError {}
 
 /// A `Result` whose error type is [`Error`].
 pub type Result<T, E = Error> = std::result::Result<T, E>;

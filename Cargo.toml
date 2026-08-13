@@ -1,6 +1,6 @@
 [package]
 name = "datary"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 # Set by the RustCrypto 0.11 hash crates, which require 1.85.
 rust-version = "1.85"
@@ -13,7 +13,9 @@ keywords = ["dat", "rom", "retro", "emulation", "no-intro"]
 categories = ["emulators", "parser-implementations", "game-development"]
 authors = ["Hans Larsen <hans.larsen@gmail.com>"]
 readme = "README.md"
-exclude = ["tests/fixtures/**", ".github/**"]
+# Fixtures are kept in the package so `cargo test` works from the tarball,
+# which downstream packagers rely on. CI config is not useful to consumers.
+exclude = [".github/**"]
 
 [dependencies]
 quick-xml = { version = "0.41", features = ["serialize"] }

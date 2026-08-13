@@ -13,7 +13,7 @@ being carried around as a bag of strings.
 
 ```toml
 [dependencies]
-datary = "0.2"
+datary = "0.3"
 ```
 
 ## Reading

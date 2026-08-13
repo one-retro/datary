@@ -5,10 +5,10 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.0] - 2026-08-12
+## [0.3.0] - 2026-08-13
 
-Moved out of the `retronomicon` monorepo into its own repository, updated to the
-current No-Intro datafile format, and given a real test suite.
+Adds a second datafile syntax, integrity checking, and the trait for third
+parties to plug in syntaxes of their own.
 
 ### Added
 
@@ -19,7 +19,6 @@ current No-Intro datafile format, and given a real test suite.
   deliberately not policed. An `Issue` carries the game index, its name and a
   structured `IssueKind`, so callers can filter rather than parse strings.
   A `lint` example gates on the result.
-
 - **The native ClrMamePro syntax**, behind the default `cmpro` feature. Both it
   and the Logiqx XML syntax parse into the same [`Datafile`], so `index`,
   `verify` and every helper method work regardless of which a file arrived in,
@@ -39,6 +38,43 @@ current No-Intro datafile format, and given a real test suite.
   content — both syntaxes conventionally use a `.dat` extension, so the name
   cannot be trusted. `*_as` variants take a format explicitly, and
   `format::detect` can be pointed at a custom list of candidates.
+
+### Fixed
+
+- **A hexadecimal ROM size read as zero.** `size "0x10"` is valid — ckmame
+  parses sizes with `strtoull(.., 0)` and has a regression test for it — but
+  `str::parse` rejected it and the value fell back to `0`, which would make the
+  entry verify against any empty file. Sizes now accept a `0x` prefix and
+  surrounding whitespace, and an unparseable one is an error rather than a
+  silent zero. A leading zero stays decimal, unlike ckmame, since a padded
+  `0100` is far likelier than intentional octal.
+- **Checksums with surrounding whitespace were rejected.** Attribute values in
+  real datafiles are sometimes split across lines. They are trimmed when read
+  from a document; `FromStr` stays strict.
+
+### Changed
+
+- **Breaking**: `Error::Encoding` now reports a non-UTF-8 datafile. 0.2.0
+  classified it as `Error::Io`, so code matching on that variant to detect a
+  missing or unreadable file also caught encoding failures.
+- **Breaking**: the `cmpro` feature is on by default, so a default build gains
+  the `winnow` dependency. Disable default features for an XML-only build.
+- `read_file`, `from_str` and `from_reader` detect the syntax from the content
+  rather than assuming XML. Existing callers keep working and gain ClrMamePro
+  support; `*_as` variants force a syntax.
+- The test suite now runs against part of [ckmame]'s regression corpus, an
+  independent implementation of the ClrMamePro syntax, under its BSD-3-Clause
+  notice. Every ClrMamePro fault found during development came from reading
+  ckmame or its data rather than from fixtures written against our own
+  assumptions.
+
+## [0.2.0] - 2026-08-13
+
+Moved out of the `retronomicon` monorepo into its own repository, updated to the
+current No-Intro datafile format, and given a real test suite.
+
+### Added
+
 - **No-Intro schema v3 support**: header `<id>` and `<subset>`, game `@id`,
   `@cloneofid` and `<category>` (repeatable), and the `sha256`, `serial` and
   `header` ROM attributes.
@@ -69,48 +105,6 @@ current No-Intro datafile format, and given a real test suite.
 - Examples: `info` and `scan`.
 
 ### Fixed
-
-- **A hexadecimal ROM size read as zero.** `size "0x10"` is valid — ckmame
-  parses sizes with `strtoull(.., 0)` and has a regression test for it — but
-  `str::parse` rejected it and the value fell back to `0`, which would make the
-  entry verify against any empty file. Sizes now accept a `0x` prefix and
-  surrounding whitespace, and an unparseable one is an error rather than a
-  silent zero. A leading zero stays decimal, unlike ckmame, since a padded
-  `0100` is far likelier than intentional octal.
-- **Checksums with surrounding whitespace were rejected.** Attribute values in
-  real datafiles are sometimes split across lines. They are trimmed when read
-  from a document; `FromStr` stays strict.
-
-- **Three ClrMamePro parsing faults, found by reading ckmame's parser in full
-  rather than grepping it.**
-  - A bare `baddump` or `nodump` keyword inside a `rom` block — the spelling
-    ClrMamePro uses alongside `flags baddump` — was a *parse error*, so a valid
-    datafile was refused outright rather than merely misread.
-  - Backslash escapes were not implemented. `"Tom \"Cat\" Jerry"` silently
-    truncated to `Tom \`.
-  - The writer replaced an embedded `"` with `'`, documented as an unavoidable
-    loss. It was not unavoidable: ckmame's tokenizer resolves `\"`, so quotes
-    and backslashes are now escaped and round-trip intact.
-
-- **`sample` was read only as a block, and written as one.** It is a bare
-  scalar in this syntax — `sample shot.wav`, repeated once per sample — as
-  ClrMamePro's own documented example and ckmame's parser both have it. Every
-  sample in a real datafile was therefore dropped. Both spellings now read, the
-  scalar form is written, and a fixture in the documented form guards it.
-  `archive` gets the same treatment, since ckmame's handling of it is a stub
-  that settles nothing.
-
-- **A non-UTF-8 datafile reported `Error::Io("stream did not contain valid
-  UTF-8")`**, classifying an encoding problem as I/O — indistinguishable from a
-  missing file or a permissions failure. There is now an `Error::Encoding`
-  variant carrying the byte offset of the first invalid sequence. Older TOSEC
-  and ClrMamePro files are sometimes ISO-8859-1, and the ClrMamePro syntax
-  carries no declaration to say so. `decode_latin1` is provided for the explicit
-  conversion; the crate still refuses to guess, because reinterpreting bytes
-  silently would corrupt game names rather than report a problem.
-- A ClrMamePro `serial` on a game block is now inherited by roms that lack their
-  own. The XML schema puts it on the rom and this crate writes it there, but
-  where real ClrMamePro exports put it is unverified, so both are accepted.
 
 - **Game `@id` was parsed as `u32`**, which discarded No-Intro's zero padding
   (`"0001"` became `1` and was written back as `1`). It is now a `String`, as
@@ -156,4 +150,5 @@ current No-Intro datafile format, and given a real test suite.
 Initial release, as part of the [retronomicon] repository.
 
 [RustCrypto]: https://github.com/RustCrypto/hashes
+[ckmame]: https://github.com/nih-at/ckmame
 [retronomicon]: https://github.com/one-retro/retronomicon

@@ -630,3 +630,31 @@ fn unrepresentable_fields_are_dropped_cleanly() {
     assert_eq!(back.games[0].roms[0].size, 1);
     assert!(back.games[0].bios_sets.is_empty());
 }
+
+/// A serial on the game block is inherited by roms that lack their own.
+///
+/// The XML schema puts `serial` on the rom and this crate writes it there, but
+/// it is unverified where real ClrMamePro exports put it. Accepting both makes
+/// the question moot.
+#[test]
+fn a_game_level_serial_is_inherited_by_its_roms() {
+    let dat = datary::cmpro::from_str(
+        "game (\n\tname g\n\tserial SLUS-00001\n\trom ( name a.rom size 1 )\n\trom ( name b.rom size 1 serial OWN-1 )\n)",
+    )
+    .unwrap();
+
+    let roms = &dat.games[0].roms;
+    assert_eq!(roms[0].serial.as_deref(), Some("SLUS-00001"), "inherited");
+    assert_eq!(roms[1].serial.as_deref(), Some("OWN-1"), "own wins");
+}
+
+/// A rom-level serial round-trips, which is the placement this crate writes.
+#[test]
+fn a_rom_level_serial_round_trips() {
+    let dat = datary::cmpro::from_str("game (\n\trom ( name a.rom size 1 serial S-1 )\n)").unwrap();
+    assert_eq!(dat.games[0].roms[0].serial.as_deref(), Some("S-1"));
+
+    let text = datary::cmpro::to_string(&dat);
+    assert!(text.contains("serial S-1"), "{text}");
+    assert_eq!(datary::cmpro::from_str(&text).unwrap(), dat);
+}

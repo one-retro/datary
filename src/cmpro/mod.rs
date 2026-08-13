@@ -107,9 +107,9 @@ pub fn from_str(source: &str) -> Result<Datafile> {
 /// Returns [`Error::Io`] if the reader fails, or [`Error::Cmpro`] if the input
 /// is malformed.
 pub fn from_reader(mut reader: impl std::io::Read) -> Result<Datafile> {
-    let mut source = String::new();
-    reader.read_to_string(&mut source)?;
-    from_str(&source)
+    let mut bytes = Vec::new();
+    reader.read_to_end(&mut bytes)?;
+    from_str(crate::decode_utf8(&bytes)?)
 }
 
 /// Reads a ClrMamePro datafile from a path.
@@ -119,7 +119,7 @@ pub fn from_reader(mut reader: impl std::io::Read) -> Result<Datafile> {
 /// Returns [`Error::Io`] if the file cannot be read, or [`Error::Cmpro`] if it
 /// is malformed.
 pub fn read_file(path: impl AsRef<std::path::Path>) -> Result<Datafile> {
-    from_str(&std::fs::read_to_string(path.as_ref())?)
+    from_str(crate::decode_utf8(&std::fs::read(path.as_ref())?)?)
 }
 
 /// Serialises a datafile in ClrMamePro syntax with the default formatting.

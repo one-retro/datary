@@ -28,6 +28,33 @@ pub enum Error {
     #[error("{0}")]
     Cmpro(#[from] CmproError),
 
+    /// The input was not valid UTF-8.
+    ///
+    /// Datafiles are conventionally UTF-8 — No-Intro's XML declaration omits an
+    /// encoding, which per the XML spec *means* UTF-8 — but older TOSEC and
+    /// ClrMamePro files are sometimes ISO-8859-1, and the ClrMamePro syntax
+    /// carries no declaration to say so.
+    ///
+    /// This crate does not guess: silently reinterpreting bytes would corrupt
+    /// game names rather than report a problem. Decode explicitly instead:
+    ///
+    /// ```no_run
+    /// # fn main() -> Result<(), datary::Error> {
+    /// let bytes = std::fs::read("old-tosec.dat")?;
+    /// let dat = match std::str::from_utf8(&bytes) {
+    ///     Ok(text) => datary::from_str(text)?,
+    ///     Err(_) => datary::from_str(&datary::decode_latin1(&bytes))?,
+    /// };
+    /// # Ok(())
+    /// # }
+    /// ```
+    #[error("invalid UTF-8 at byte {valid_up_to}; the file may be ISO-8859-1")]
+    Encoding {
+        /// Byte offset of the first invalid sequence. Everything before this
+        /// point decoded successfully.
+        valid_up_to: usize,
+    },
+
     /// The input was empty, so its syntax could not be determined.
     ///
     /// There is no "unsupported format" case to go with this: formats are

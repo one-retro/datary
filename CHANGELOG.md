@@ -70,6 +70,18 @@ current No-Intro datafile format, and given a real test suite.
 
 ### Fixed
 
+- **A non-UTF-8 datafile reported `Error::Io("stream did not contain valid
+  UTF-8")`**, classifying an encoding problem as I/O — indistinguishable from a
+  missing file or a permissions failure. There is now an `Error::Encoding`
+  variant carrying the byte offset of the first invalid sequence. Older TOSEC
+  and ClrMamePro files are sometimes ISO-8859-1, and the ClrMamePro syntax
+  carries no declaration to say so. `decode_latin1` is provided for the explicit
+  conversion; the crate still refuses to guess, because reinterpreting bytes
+  silently would corrupt game names rather than report a problem.
+- A ClrMamePro `serial` on a game block is now inherited by roms that lack their
+  own. The XML schema puts it on the rom and this crate writes it there, but
+  where real ClrMamePro exports put it is unverified, so both are accepted.
+
 - **Game `@id` was parsed as `u32`**, which discarded No-Intro's zero padding
   (`"0001"` became `1` and was written back as `1`). It is now a `String`, as
   the schema specifies.

@@ -152,6 +152,30 @@ pub use index::{Index, IndexedDatafile, RomRef};
 use std::io::{BufReader, Read, Write};
 use std::path::Path;
 
+/// Decodes bytes as UTF-8, reporting an encoding failure as such.
+pub(crate) fn decode_utf8(bytes: &[u8]) -> Result<&str> {
+    std::str::from_utf8(bytes).map_err(|e| Error::Encoding {
+        valid_up_to: e.valid_up_to(),
+    })
+}
+
+/// Decodes ISO-8859-1 (Latin-1) bytes.
+///
+/// Every byte is valid in that encoding — its 256 values map onto the first 256
+/// code points — so this cannot fail. That is exactly why it must not be used
+/// as a blind fallback: it will happily turn genuinely broken UTF-8 into
+/// plausible-looking mojibake. Reach for it when you know the file is Latin-1,
+/// which for datafiles usually means older TOSEC or ClrMamePro output.
+///
+/// ```
+/// // 0xE9 is `é` in ISO-8859-1, and invalid on its own in UTF-8.
+/// assert_eq!(datary::decode_latin1(b"Pok\xe9mon"), "Pokémon");
+/// ```
+#[must_use]
+pub fn decode_latin1(bytes: &[u8]) -> String {
+    bytes.iter().map(|&b| char::from(b)).collect()
+}
+
 /// Reads a datafile from a path, detecting its syntax from the contents.
 ///
 /// Both syntaxes conventionally use a `.dat` extension, so the file's leading
@@ -164,7 +188,17 @@ use std::path::Path;
 /// [`Error::UnknownFormat`] if it is empty, and [`Error::Xml`] or
 /// [`Error::Cmpro`] if its contents are malformed.
 pub fn read_file(path: impl AsRef<Path>) -> Result<Datafile> {
-    from_str(&std::fs::read_to_string(path.as_ref())?)
+    from_bytes(&std::fs::read(path.as_ref())?)
+}
+
+/// Reads a datafile from bytes, detecting its syntax from the contents.
+///
+/// # Errors
+///
+/// Returns [`Error::Encoding`] if the bytes are not UTF-8, plus the errors
+/// [`from_str`] can return.
+pub fn from_bytes(bytes: &[u8]) -> Result<Datafile> {
+    from_str(decode_utf8(bytes)?)
 }
 
 /// Reads a datafile from a path, in a known syntax.
@@ -173,7 +207,7 @@ pub fn read_file(path: impl AsRef<Path>) -> Result<Datafile> {
 ///
 /// As [`read_file`], but never returns [`Error::UnknownFormat`].
 pub fn read_file_as(path: impl AsRef<Path>, format: &dyn DatFormat) -> Result<Datafile> {
-    format.parse(&std::fs::read_to_string(path.as_ref())?)
+    format.parse(decode_utf8(&std::fs::read(path.as_ref())?)?)
 }
 
 /// Reads a datafile from any [`Read`], detecting its syntax from the contents.
@@ -182,9 +216,9 @@ pub fn read_file_as(path: impl AsRef<Path>, format: &dyn DatFormat) -> Result<Da
 ///
 /// As [`read_file`].
 pub fn from_reader(reader: impl Read) -> Result<Datafile> {
-    let mut source = String::new();
-    BufReader::new(reader).read_to_string(&mut source)?;
-    from_str(&source)
+    let mut bytes = Vec::new();
+    BufReader::new(reader).read_to_end(&mut bytes)?;
+    from_bytes(&bytes)
 }
 
 /// Reads a datafile from any [`Read`], in a known syntax.
@@ -193,9 +227,9 @@ pub fn from_reader(reader: impl Read) -> Result<Datafile> {
 ///
 /// As [`read_file_as`].
 pub fn from_reader_as(reader: impl Read, format: &dyn DatFormat) -> Result<Datafile> {
-    let mut source = String::new();
-    BufReader::new(reader).read_to_string(&mut source)?;
-    format.parse(&source)
+    let mut bytes = Vec::new();
+    BufReader::new(reader).read_to_end(&mut bytes)?;
+    format.parse(decode_utf8(&bytes)?)
 }
 
 /// Reads a datafile from a string, detecting its syntax from the contents.

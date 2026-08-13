@@ -252,3 +252,76 @@ fn a_size_of_zero_is_valid() {
     assert_eq!(dat.games[0].roms[0].size, 0);
     assert!(dat.games[0].roms[0].is_no_dump());
 }
+
+#[test]
+fn non_utf8_input_is_reported_as_an_encoding_error_not_io() {
+    // 0xE9 is `é` in ISO-8859-1 and invalid alone in UTF-8.
+    let bytes =
+        b"<datafile><game name=\"Pok\xe9mon\"><description>d</description></game></datafile>";
+
+    let err = datary::from_bytes(bytes).unwrap_err();
+    let datary::Error::Encoding { valid_up_to } = err else {
+        panic!("an encoding problem must not be classified as I/O: {err:?}");
+    };
+    assert_eq!(&bytes[valid_up_to..valid_up_to + 1], b"\xe9");
+    assert!(
+        err_mentions_latin1(valid_up_to),
+        "the message should hint at the cause"
+    );
+}
+
+fn err_mentions_latin1(valid_up_to: usize) -> bool {
+    datary::Error::Encoding { valid_up_to }
+        .to_string()
+        .contains("ISO-8859-1")
+}
+
+#[test]
+fn reading_a_latin1_file_reports_encoding_not_io() {
+    let dir = std::env::temp_dir().join("datary-encoding-test");
+    std::fs::create_dir_all(&dir).unwrap();
+    let path = dir.join("latin1.dat");
+    std::fs::write(
+        &path,
+        b"<datafile><game name=\"Pok\xe9mon\"><description>d</description></game></datafile>",
+    )
+    .unwrap();
+
+    assert!(matches!(
+        datary::read_file(&path),
+        Err(datary::Error::Encoding { .. })
+    ));
+
+    // A genuinely missing file is still an I/O error, not an encoding one.
+    assert!(matches!(
+        datary::read_file(dir.join("nope.dat")),
+        Err(datary::Error::Io(_))
+    ));
+
+    std::fs::remove_dir_all(&dir).ok();
+}
+
+#[test]
+fn latin1_can_be_decoded_explicitly() {
+    let bytes =
+        b"<datafile><game name=\"Pok\xe9mon\"><description>d</description></game></datafile>";
+
+    let text = datary::decode_latin1(bytes);
+    let dat = datary::from_str(&text).unwrap();
+    assert_eq!(dat.games[0].name, "Pokémon");
+
+    // Every byte is valid Latin-1, so decoding never fails.
+    assert_eq!(
+        datary::decode_latin1(&[0x00, 0x7f, 0x80, 0xff])
+            .chars()
+            .count(),
+        4
+    );
+}
+
+#[test]
+fn valid_utf8_still_reads_through_the_byte_path() {
+    let bytes = "<datafile><game name=\"ポケモン\"><description>d</description></game></datafile>"
+        .as_bytes();
+    assert_eq!(datary::from_bytes(bytes).unwrap().games[0].name, "ポケモン");
+}

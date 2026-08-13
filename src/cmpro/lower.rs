@@ -140,7 +140,14 @@ fn to_game(block: &Block<'_>, source: &str) -> Result<Game> {
             sha256: hash(rom, &["sha256"], source)?,
             merge: rom.field("merge").map(str::to_string),
             date: rom.field("date").map(str::to_string),
-            serial: rom.field("serial").map(str::to_string),
+            // The XML schema puts `serial` on the rom, and this crate writes it
+            // there. Whether real ClrMamePro exports do the same is unverified,
+            // so a serial on the enclosing game block is inherited by any rom
+            // that lacks its own. That way either convention reads correctly.
+            serial: rom
+                .field("serial")
+                .or_else(|| block.field("serial"))
+                .map(str::to_string),
             status: rom.any_field(&["flags", "status"]).and_then(parse_status),
             ..Rom::default()
         });

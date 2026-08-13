@@ -39,6 +39,7 @@ features:
     cargo check --lib --no-default-features
     cargo check --lib --no-default-features --features index
     cargo check --lib --no-default-features --features verify
+    cargo check --lib --no-default-features --features cmpro
     cargo check --all-targets --all-features
 
 # Check against the minimum supported Rust version.

@@ -12,6 +12,25 @@ current No-Intro datafile format, and given a real test suite.
 
 ### Added
 
+- **The native ClrMamePro syntax**, behind the default `cmpro` feature. Both it
+  and the Logiqx XML syntax parse into the same [`Datafile`], so `index`,
+  `verify` and every helper method work regardless of which a file arrived in,
+  and a file read in one can be written in the other. MAME's `-listinfo` output
+  uses the same grammar and is read by the same parser.
+  - Dialect differences are absorbed on read: `crc`/`crc32`,
+    `forcepacking`/`forcezipping`, `flags`/`status`, optional `BEGIN`/`END`
+    markers, and the `clrmamepro`/`emulator` header block names.
+  - Round-tripping this syntax is *semantic*, not byte-exact: it has no
+    specification, producers disagree about when to quote a bare token, and with
+    no escape sequence a `"` inside a value cannot be represented (it is written
+    as `'`). The XML side remains byte-exact.
+- **`format::DatFormat`**, a public trait, so a downstream crate can add a
+  syntax and use the same reading, writing and detection helpers. `Xml` and
+  `ClrMamePro` are ordinary implementations of it.
+- **Format detection.** `read_file`, `from_str` and `from_reader` now sniff the
+  content — both syntaxes conventionally use a `.dat` extension, so the name
+  cannot be trusted. `*_as` variants take a format explicitly, and
+  `format::detect` can be pointed at a custom list of candidates.
 - **No-Intro schema v3 support**: header `<id>` and `<subset>`, game `@id`,
   `@cloneofid` and `<category>` (repeatable), and the `sha256`, `serial` and
   `header` ROM attributes.

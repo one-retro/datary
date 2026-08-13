@@ -66,11 +66,19 @@
 //! One set of types covers all of them. See [`dat`] for exactly which fields
 //! come from which specification.
 //!
+//! # Which syntax?
+//!
+//! Both the Logiqx XML syntax and ClrMamePro's native one parse into the same
+//! [`Datafile`], and [`read_file`] detects which it was given. See [`mod@format`]
+//! to choose explicitly, or to add a syntax of your own.
+//!
 //! # Feature flags
 //!
 //! * `index` (default) — [`index::IndexedDatafile`], lookup tables by checksum,
 //!   size and name.
 //! * `verify` (default) — hashing files and checking them against a datafile.
+//! * `cmpro` (default) — the native ClrMamePro syntax, via [`cmpro`] and
+//!   [`format::ClrMamePro`].
 //!
 //! [No-Intro]: https://no-intro.org
 //! [Redump]: http://redump.org
@@ -85,8 +93,13 @@
 pub mod dat;
 pub mod enums;
 pub mod error;
+pub mod format;
 pub mod hash;
 pub mod write;
+
+#[cfg(feature = "cmpro")]
+#[cfg_attr(docsrs, doc(cfg(feature = "cmpro")))]
+pub mod cmpro;
 
 #[cfg(feature = "index")]
 #[cfg_attr(docsrs, doc(cfg(feature = "index")))]
@@ -101,8 +114,17 @@ pub use dat::{
 };
 pub use enums::{ForceMerging, ForceNoDump, ForcePacking, RomMode, SampleMode, Status, YesNo};
 pub use error::{Error, Result};
+// The format markers live in `format` rather than at the root: `ClrMamePro`
+// here would collide with `dat::ClrMamePro`, the `<clrmamepro>` header element.
+pub use format::{detect, DatFormat, BUILTIN_FORMATS};
 pub use hash::{Crc32, HashParseError, Md5, Sha1, Sha256};
-pub use write::{to_string_with, to_writer_with, write_file_with, LineEnding, WriteOptions};
+
+#[cfg(feature = "cmpro")]
+pub use error::CmproError;
+pub use write::{
+    to_string_with, to_writer_as, to_writer_with, write_file_as, write_file_with, LineEnding,
+    WriteOptions,
+};
 
 #[cfg(feature = "index")]
 pub use index::{Index, IndexedDatafile, RomRef};
@@ -110,36 +132,70 @@ pub use index::{Index, IndexedDatafile, RomRef};
 use std::io::{BufReader, Read, Write};
 use std::path::Path;
 
-/// Reads a datafile from a path.
+/// Reads a datafile from a path, detecting its syntax from the contents.
+///
+/// Both syntaxes conventionally use a `.dat` extension, so the file's leading
+/// bytes decide: `<` means XML, anything else means ClrMamePro. Use
+/// [`read_file_as`] to force one.
 ///
 /// # Errors
 ///
-/// Returns [`Error::Io`] if the file cannot be opened or read, and
-/// [`Error::Xml`] if its contents are not a valid datafile.
+/// Returns [`Error::Io`] if the file cannot be opened or read,
+/// [`Error::UnknownFormat`] if it is empty, and [`Error::Xml`] or
+/// [`Error::Cmpro`] if its contents are malformed.
 pub fn read_file(path: impl AsRef<Path>) -> Result<Datafile> {
-    let file = std::fs::File::open(path.as_ref())?;
-    from_reader(file)
+    from_str(&std::fs::read_to_string(path.as_ref())?)
 }
 
-/// Reads a datafile from any [`Read`].
-///
-/// The reader is buffered internally, so there is no need to wrap it.
+/// Reads a datafile from a path, in a known syntax.
 ///
 /// # Errors
 ///
-/// Returns [`Error::Xml`] if the contents are not a valid datafile.
+/// As [`read_file`], but never returns [`Error::UnknownFormat`].
+pub fn read_file_as(path: impl AsRef<Path>, format: &dyn DatFormat) -> Result<Datafile> {
+    format.parse(&std::fs::read_to_string(path.as_ref())?)
+}
+
+/// Reads a datafile from any [`Read`], detecting its syntax from the contents.
+///
+/// # Errors
+///
+/// As [`read_file`].
 pub fn from_reader(reader: impl Read) -> Result<Datafile> {
-    let mut reader = BufReader::new(reader);
-    Ok(quick_xml::de::from_reader(&mut reader)?)
+    let mut source = String::new();
+    BufReader::new(reader).read_to_string(&mut source)?;
+    from_str(&source)
 }
 
-/// Reads a datafile from a string.
+/// Reads a datafile from any [`Read`], in a known syntax.
 ///
 /// # Errors
 ///
-/// Returns [`Error::Xml`] if the contents are not a valid datafile.
-pub fn from_str(xml: &str) -> Result<Datafile> {
-    Ok(quick_xml::de::from_str(xml)?)
+/// As [`read_file_as`].
+pub fn from_reader_as(reader: impl Read, format: &dyn DatFormat) -> Result<Datafile> {
+    let mut source = String::new();
+    BufReader::new(reader).read_to_string(&mut source)?;
+    format.parse(&source)
+}
+
+/// Reads a datafile from a string, detecting its syntax from the contents.
+///
+/// # Errors
+///
+/// Returns [`Error::UnknownFormat`] if the input is empty or entirely
+/// whitespace, and [`Error::Xml`] or [`Error::Cmpro`] if it is malformed.
+pub fn from_str(source: &str) -> Result<Datafile> {
+    let format = detect(source.as_bytes(), BUILTIN_FORMATS).ok_or(Error::UnknownFormat)?;
+    format.parse(source)
+}
+
+/// Reads a datafile from a string, in a known syntax.
+///
+/// # Errors
+///
+/// Returns [`Error::Xml`] or [`Error::Cmpro`] if the input is malformed.
+pub fn from_str_as(source: &str, format: &dyn DatFormat) -> Result<Datafile> {
+    format.parse(source)
 }
 
 /// Serialises a datafile to a string, indented with tabs.
@@ -152,6 +208,19 @@ pub fn from_str(xml: &str) -> Result<Datafile> {
 /// Returns [`Error::Serialize`] if the datafile cannot be serialised.
 pub fn to_string(dat: &Datafile) -> Result<String> {
     to_string_with(dat, &WriteOptions::default())
+}
+
+/// Serialises a datafile in the given syntax.
+///
+/// # Errors
+///
+/// Returns whatever the format reports.
+pub fn to_string_as(
+    dat: &Datafile,
+    format: &dyn DatFormat,
+    options: &WriteOptions,
+) -> Result<String> {
+    format.write(dat, options)
 }
 
 /// Serialises a datafile to any [`Write`], as UTF-8.

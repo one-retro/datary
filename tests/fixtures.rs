@@ -17,19 +17,31 @@ fn load(relative: &str) -> Datafile {
         .unwrap_or_else(|e| panic!("failed to read {relative}: {e}"))
 }
 
-/// Every fixture must parse, re-serialise, and parse back to an equal value.
+/// Every fixture must parse, re-serialise *in its own syntax*, and parse back
+/// to an equal value.
 #[rstest]
 fn round_trips(#[files("tests/fixtures/**/*.dat")] path: PathBuf) {
-    let original = datary::read_file(&path).unwrap_or_else(|e| panic!("{path:?}: {e}"));
+    let source = std::fs::read_to_string(&path).unwrap();
+    let format = datary::detect(source.as_bytes(), datary::BUILTIN_FORMATS)
+        .unwrap_or_else(|| panic!("{path:?}: format not recognised"));
 
-    let xml = datary::to_string(&original).unwrap_or_else(|e| panic!("{path:?}: {e}"));
-    let reparsed = datary::from_str(&xml).unwrap_or_else(|e| panic!("{path:?} reparse: {e}"));
+    let original = format
+        .parse(&source)
+        .unwrap_or_else(|e| panic!("{path:?}: {e}"));
+
+    let options = datary::WriteOptions::default();
+    let text = format
+        .write(&original, &options)
+        .unwrap_or_else(|e| panic!("{path:?}: {e}"));
+    let reparsed = format
+        .parse(&text)
+        .unwrap_or_else(|e| panic!("{path:?} reparse: {e}"));
 
     assert_eq!(original, reparsed, "round trip changed {path:?}");
 
     // And a second pass must be byte-identical to the first.
-    let xml2 = datary::to_string(&reparsed).unwrap();
-    assert_eq!(xml, xml2, "serialisation is not stable for {path:?}");
+    let text2 = format.write(&reparsed, &options).unwrap();
+    assert_eq!(text, text2, "serialisation is not stable for {path:?}");
 }
 
 /// No fixture may lose data: every game must keep its name and description.

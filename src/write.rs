@@ -15,6 +15,7 @@
 
 use crate::dat::Datafile;
 use crate::error::Result;
+use crate::format::DatFormat;
 use serde::Serialize;
 use std::io::Write;
 use std::path::Path;
@@ -41,6 +42,10 @@ impl LineEnding {
 }
 
 /// How to serialise a [`Datafile`].
+///
+/// These are formatting concerns only; *which syntax* to write is chosen by the
+/// [`DatFormat`] doing the writing. Options that make
+/// no sense for a given syntax are ignored by it.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct WriteOptions {
     /// Line terminator. Defaults to [`LineEnding::Lf`].
@@ -50,7 +55,8 @@ pub struct WriteOptions {
     /// everything on one line. Defaults to one tab.
     pub indent: Option<(char, usize)>,
 
-    /// Whether to write an `<?xml version="1.0"?>` declaration. Defaults to `true`.
+    /// Whether to write an `<?xml version="1.0"?>` declaration. Defaults to
+    /// `true`. Ignored by syntaxes that have no such construct.
     pub declaration: bool,
 
     /// Whether to end the document with a line terminator. Defaults to `true`;
@@ -83,6 +89,20 @@ impl WriteOptions {
         }
     }
 
+    /// Options for the native ClrMamePro syntax: tab indentation, LF line
+    /// endings and a trailing newline.
+    #[cfg(feature = "cmpro")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "cmpro")))]
+    #[must_use]
+    pub fn clrmamepro() -> Self {
+        Self {
+            line_ending: LineEnding::Lf,
+            indent: Some(('\t', 1)),
+            declaration: false,
+            trailing_newline: true,
+        }
+    }
+
     /// Options producing the smallest output: no indentation, no declaration
     /// and no trailing newline.
     #[must_use]
@@ -110,12 +130,19 @@ impl WriteOptions {
     }
 }
 
-/// Serialises a datafile using the given options.
+/// Serialises a datafile as XML using the given options.
+///
+/// Use [`crate::to_string_as`] for another syntax.
 ///
 /// # Errors
 ///
 /// Returns [`crate::Error::Serialize`] if the datafile cannot be serialised.
 pub fn to_string_with(dat: &Datafile, options: &WriteOptions) -> Result<String> {
+    to_xml_string(dat, options)
+}
+
+/// The XML writer proper, called by [`crate::format::Xml`].
+pub(crate) fn to_xml_string(dat: &Datafile, options: &WriteOptions) -> Result<String> {
     let mut out = String::new();
 
     if options.declaration {
@@ -141,22 +168,37 @@ pub fn to_string_with(dat: &Datafile, options: &WriteOptions) -> Result<String> 
     Ok(out)
 }
 
-/// Serialises a datafile to any [`Write`] using the given options.
+/// Serialises a datafile as XML to any [`Write`], using the given options.
+///
+/// Use [`to_writer_as`] for another syntax.
 ///
 /// # Errors
 ///
 /// Returns [`crate::Error::Serialize`] if the datafile cannot be serialised, or
 /// [`crate::Error::Io`] if the writer fails.
-pub fn to_writer_with(
+pub fn to_writer_with(writer: impl Write, dat: &Datafile, options: &WriteOptions) -> Result<()> {
+    to_writer_as(writer, dat, &crate::format::Xml, options)
+}
+
+/// Serialises a datafile in the given syntax to any [`Write`].
+///
+/// # Errors
+///
+/// Returns whatever the format reports, or [`crate::Error::Io`] if the writer
+/// fails.
+pub fn to_writer_as(
     mut writer: impl Write,
     dat: &Datafile,
+    format: &dyn DatFormat,
     options: &WriteOptions,
 ) -> Result<()> {
-    writer.write_all(to_string_with(dat, options)?.as_bytes())?;
+    writer.write_all(format.write(dat, options)?.as_bytes())?;
     Ok(())
 }
 
-/// Writes a datafile to a path using the given options, replacing any existing file.
+/// Writes a datafile as XML to a path, replacing any existing file.
+///
+/// Use [`write_file_as`] for another syntax.
 ///
 /// # Errors
 ///
@@ -167,8 +209,23 @@ pub fn write_file_with(
     dat: &Datafile,
     options: &WriteOptions,
 ) -> Result<()> {
+    write_file_as(path, dat, &crate::format::Xml, options)
+}
+
+/// Writes a datafile in the given syntax to a path, replacing any existing file.
+///
+/// # Errors
+///
+/// Returns whatever the format reports, or [`crate::Error::Io`] if the file
+/// cannot be written.
+pub fn write_file_as(
+    path: impl AsRef<Path>,
+    dat: &Datafile,
+    format: &dyn DatFormat,
+    options: &WriteOptions,
+) -> Result<()> {
     let file = std::fs::File::create(path.as_ref())?;
-    to_writer_with(std::io::BufWriter::new(file), dat, options)
+    to_writer_as(std::io::BufWriter::new(file), dat, format, options)
 }
 
 #[cfg(test)]

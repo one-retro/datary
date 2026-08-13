@@ -126,14 +126,56 @@ follows reality:
 | `rom/@size` | `xs:unsignedInt` | A decrypted 3DS entry is `4294967296` — one past `u32::MAX`. Modelled as `u64`. |
 | `game/@id` | `xs:string` | Zero-padded (`"0001"`). Kept as a string so the padding survives a round trip. |
 
+## Two syntaxes, one model
+
+Projects publish datafiles both as Logiqx XML and in ClrMamePro's native
+brace-delimited syntax. `datary` reads both into the same `Datafile`, so
+everything downstream works regardless of which arrived:
+
+```rust
+use datary::format::{ClrMamePro, DatFormat, Xml};
+
+// Both conventionally use a .dat extension, so read_file sniffs the content.
+let dat = datary::read_file("Nintendo - Virtual Boy.dat")?;
+
+// ...and a file read in one syntax can be written in the other.
+let text = ClrMamePro.write(&dat, &datary::WriteOptions::clrmamepro())?;
+```
+
+MAME's `-listinfo` output uses the same grammar with an `emulator (` header
+and is read by the same parser.
+
+Formats are a public trait, so a downstream crate can add one and use the same
+reading, writing and detection helpers:
+
+```rust
+use datary::format::{detect, DatFormat};
+
+struct Sfv;
+impl DatFormat for Sfv {
+    fn name(&self) -> &'static str { "SFV" }
+    fn detect(&self, bytes: &[u8]) -> bool { bytes.starts_with(b"; ") }
+    fn parse(&self, source: &str) -> datary::Result<datary::Datafile> { /* ... */ }
+    fn write(&self, dat: &datary::Datafile, o: &datary::WriteOptions) -> datary::Result<String> { /* ... */ }
+}
+
+let dat = datary::from_str_as(source, &Sfv)?;
+let format = detect(bytes, &[&Sfv, &Xml]).unwrap();
+```
+
+One caveat: the ClrMamePro syntax has no specification and no escape sequence,
+so round-tripping it is *semantic* rather than byte-exact — a `"` inside a value
+cannot be represented and is written as `'`. The XML side stays byte-exact.
+
 ## Feature flags
 
 | Feature | Default | What it adds |
 | --- | --- | --- |
 | `index` | yes | `IndexedDatafile`: lookup by checksum, size, game name/id, or ROM name prefix |
 | `verify` | yes | `FileHashes` and `Rom::verify` for checking files on disk |
+| `cmpro` | yes | Reading and writing the native ClrMamePro syntax |
 
-Both can be disabled for a parse-and-serialise-only build.
+All can be disabled for an XML-only build.
 
 ## Examples
 

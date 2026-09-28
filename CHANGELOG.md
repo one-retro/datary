@@ -5,6 +5,21 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- **A `dat` command-line tool**, behind a new `cli` feature that is off by
+  default, so depending on the library still never pulls in an argument parser.
+  It reads either syntax from files or standard input, and writes text, JSON,
+  Logiqx XML or ClrMamePro. `--sha1`, `--sha256` and `--md5` find the games
+  holding a ROM with that checksum, or a disk for SHA-1 and MD5. `--title`
+  matches words in order against names and descriptions, ignoring case and
+  accents after Unicode normalisation, and suggests the closest title when
+  nothing matches. `--latin1` reads input that is not valid UTF-8 as
+  ISO-8859-1. Text output is coloured only on a terminal. Exit status follows
+  grep: 1 when a search matched nothing, 2 on an error.
+
 ## [0.3.0] - 2026-08-13
 
 Adds a second datafile syntax, integrity checking, and the trait for third

@@ -195,6 +195,61 @@ published datafiles do that on purpose.
 cargo run --example lint -- Nintendo\ -\ Virtual\ Boy.dat
 ```
 
+## Command-line tool
+
+The `dat` binary reads, converts, searches and inspects datafiles. It sits
+behind the `cli` feature, so depending on the library never pulls in an
+argument parser:
+
+```sh
+cargo install datary --features cli
+```
+
+```sh
+dat "Nintendo - Virtual Boy.dat"                     # every game, as text
+dat --title "bound high" ~/dats/*.dat                # search titles
+dat --sha1 5177015a91442e56bd76af39447bca365e06c272 ~/dats/*.dat
+dat --format mame -o vb.dat "Nintendo - Virtual Boy.dat"   # convert
+```
+
+```text
+$ dat --title "3-d tetris" "Nintendo - Virtual Boy.dat"
+3-D Tetris (USA):
+  id: 0001
+  categories:
+    - Games
+  description: 3-D Tetris (USA)
+  roms:
+    - name: 3-D Tetris (USA).vb
+      size: 1048576
+      crc: bb71b522
+      md5: ecf1218706e9b547eab9e4be58d54e21
+      sha1: 5177015a91442e56bd76af39447bca365e06c272
+      serial: VPBE
+```
+
+- **Input** is either syntax, told apart by content, from each `PATH` or from
+  standard input when there is none. It must be UTF-8 unless `--latin1` is
+  given, which reads input that is *not* valid UTF-8 as ISO-8859-1 instead —
+  so UTF-8 files keep their accents, even in a mixed batch. Output is always
+  UTF-8.
+- **`--format`** is `text` (the default), `json`, `dat` (Logiqx XML) or `mame`
+  (ClrMamePro), in any case. Text is coloured only on a terminal, and honours
+  `NO_COLOR`.
+- **`--title`** matches words in order, with anything between them — `A C`
+  matches `A: b C` — against both the name and the description, since
+  MAME-style datafiles keep the real title in the latter. Case and accents are
+  ignored either way round, after Unicode normalisation: `pokemon` matches
+  `Pokémon`, and `pokémon` matches `Pokemon`. When nothing matches, it suggests
+  the closest title by edit distance.
+- **`--sha1`**, **`--sha256`** and **`--md5`** find the games holding a ROM
+  with that checksum. SHA-1 and MD5 also match disks, which have no SHA-256.
+- **Several inputs** are shown one after another in text and JSON. `dat` and
+  `mame` must write one datafile, so they combine the games and leave out the
+  header, since no one input's header would describe the result.
+- **Exit status** follows grep: 0 on success, 1 when a search matched nothing,
+  2 on an error.
+
 ## Feature flags
 
 | Feature | Default | What it adds |
@@ -202,6 +257,7 @@ cargo run --example lint -- Nintendo\ -\ Virtual\ Boy.dat
 | `index` | yes | `IndexedDatafile`: lookup by checksum, size, game name/id, or ROM name prefix |
 | `verify` | yes | `FileHashes` and `Rom::verify` for checking files on disk |
 | `cmpro` | yes | Reading and writing the native ClrMamePro syntax |
+| `cli` | no | The `dat` command-line tool; implies `cmpro` |
 
 All can be disabled for an XML-only build.
 
@@ -234,6 +290,7 @@ A [`justfile`](justfile) collects the common tasks — run `just` to list them.
 just test          # cargo test --all-features
 just ci            # everything CI runs: fmt, clippy, test, features, doc, msrv
 just info          # summarise a bundled fixture
+just dat --help    # run the command-line tool
 just doc --open    # build and read the docs
 ```
 

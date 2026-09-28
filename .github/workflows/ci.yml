@@ -34,6 +34,7 @@ jobs:
       - run: cargo check --lib --no-default-features --features index
       - run: cargo check --lib --no-default-features --features verify
       - run: cargo check --lib --no-default-features --features cmpro
+      - run: cargo check --bin dat --no-default-features --features cli
       - run: cargo check --all-targets --all-features
 
   lint:

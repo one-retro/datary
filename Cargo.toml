@@ -32,6 +32,14 @@ sha2 = "0.11"
 crc32fast = { version = "1.5", optional = true }
 winnow = { version = "1.0", optional = true }
 
+# Only for the `dat` command-line tool. `preserve_order` keeps JSON keys in the
+# order the model declares them, which the text renderer relies on too.
+clap = { version = "4.6", features = ["derive"], optional = true }
+serde_json = { version = "1", features = ["preserve_order"], optional = true }
+anstream = { version = "1", optional = true }
+anstyle = { version = "1", optional = true }
+unicode-normalization = { version = "0.1", optional = true }
+
 [dev-dependencies]
 pretty_assertions = "1.4"
 rstest = "0.26"
@@ -44,6 +52,26 @@ index = []
 verify = ["dep:crc32fast"]
 # Reading and writing the native ClrMamePro (non-XML) datafile format.
 cmpro = ["dep:winnow"]
+# The `dat` command-line tool. Off by default so that depending on the library
+# never pulls in an argument parser; install with `--features cli`.
+cli = [
+    "cmpro",
+    "dep:clap",
+    "dep:serde_json",
+    "dep:anstream",
+    "dep:anstyle",
+    "dep:unicode-normalization",
+]
+
+[[bin]]
+name = "dat"
+path = "src/bin/dat/main.rs"
+required-features = ["cli"]
+
+# Drives the built `dat` binary, so it only exists when the binary does.
+[[test]]
+name = "cli"
+required-features = ["cli"]
 
 [package.metadata.docs.rs]
 all-features = true

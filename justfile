@@ -42,6 +42,7 @@ features:
     cargo check --lib --no-default-features --features index
     cargo check --lib --no-default-features --features verify
     cargo check --lib --no-default-features --features cmpro
+    cargo check --bin dat --no-default-features --features cli
     cargo check --all-targets --all-features
 
 # Check against the minimum supported Rust version.
@@ -65,6 +66,14 @@ info FILE=sample:
 # Check a directory of ROMs against a datafile.
 scan DAT DIR:
     cargo run --quiet --release --example scan -- {{ DAT }} {{ DIR }}
+
+# Run the `dat` command-line tool. Extra args are passed to it.
+dat *ARGS:
+    cargo run --quiet --features cli --bin dat -- {{ ARGS }}
+
+# Install the `dat` command-line tool from this checkout.
+install:
+    cargo install --path . --features cli
 
 # Dry-run the crates.io release.
 publish-dry:
